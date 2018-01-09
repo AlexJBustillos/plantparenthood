@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.STRING,
     plantId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
-  }, {
+  }
+  , {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
@@ -12,5 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+  // journal.belongsTo(plant);
+
   return journal;
 };

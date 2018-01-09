@@ -11,11 +11,12 @@ var router = express.Router();
 // Profile route
 router.get('/profile', isLoggedIn, function(req, res){
 
-	db.user_plant.findAll({
-		where: {userId: req.user.id}
-	}).then(function(ownedPlants){
-		console.log(ownedPlants);
-	})
+	var user = req.user;
+
+	user.getPlant().then(function(plants){
+		console.log(plants);
+	});
+
 		
 	res.render('users/profile');
 });

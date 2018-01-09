@@ -31,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
           pendingUser.password = hash;
         }
       }
-    },
+    }
+    ,
     classMethods: {
       associate: function(models) {
         // associations can be defined here
@@ -39,6 +40,8 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+  // user.belongsToMany(splant, {through: 'user_plant'});
 
 // For loggin in, comparing pw typed with the pw stored in user row in table
 user.prototype.isValidPassword = function(passwordTyped){

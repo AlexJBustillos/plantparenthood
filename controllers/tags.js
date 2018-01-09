@@ -9,7 +9,7 @@ var db = require('../models');
 var router = express.Router();
 
 // Profile route
-router.get('/', isLoggedIn, function(req, res){
+router.get('/', function(req, res){
 	res.send('Tags route');
 });
 
