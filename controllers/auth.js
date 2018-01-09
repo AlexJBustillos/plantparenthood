@@ -10,7 +10,7 @@ router.get('/login', function(req, res){
 
 // Where login form data gets sent
 router.post('/login', passport.authenticate('local', {
-	successRedirect: '/profile',
+	successRedirect: '/account/profile',
 	successFlash: 'Login successful',
 	failureRedirect: '/auth/login',
 	failureFlash: 'Username or password is incorrect'
@@ -44,7 +44,7 @@ router.post('/signup', function(req, res, next){
 		if(wasCreated){
 			//Good job, you didnt make a duplicate and youre in the db
 			passport.authenticate('local', {
-				successRedirect: '/profile',
+				successRedirect: '/account/profile',
 				successFlash: 'Login successful'
 			})(req, res, next);
 		}

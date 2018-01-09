@@ -3,12 +3,7 @@ var bcrypt = require('bcrypt');
 
 module.exports = (sequelize, DataTypes) => {
   var user = sequelize.define('user', {
-    firstname: DataTypes.STRING,
-    lastname: DataTypes.STRING,
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    name: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
       validate: {
@@ -17,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    ownedPlants: DataTypes.STRING,
     password: {
       type: DataTypes.STRING,
       validate: {
@@ -25,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Password must be between 6 and 32 characters long'
         }
       }
-    } 
+    }
   }, {
     hooks: {
       beforeCreate: function(pendingUser, options){
@@ -38,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+        models.user.belongsToMany(models.plant, { through: models.user_plant });
       }
     }
   });
