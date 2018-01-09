@@ -35,9 +35,7 @@ router.post('/signup', function(req, res, next){
 	db.user.findOrCreate({
 		where: { email: req.body.email },
 		defaults: {
-			username: req.body.username,
-			firstname: req.body.firstname,
-			lastname: req.body.lastname,
+			name: req.body.name,
 			password: req.body.password
 		}
 	}).spread(function(user, wasCreated){

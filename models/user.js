@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    ownedPlants: DataTypes.STRING,
     password: {
       type: DataTypes.STRING,
       validate: {
@@ -21,7 +20,9 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Password must be between 6 and 32 characters long'
         }
       }
-    }
+    },
+    zipcode: DataTypes.INTEGER,
+    lastWatered: DataTypes.DATE
   }, {
     hooks: {
       beforeCreate: function(pendingUser, options){
