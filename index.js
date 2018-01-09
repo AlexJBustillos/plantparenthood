@@ -35,9 +35,10 @@ app.get('/', function(req, res){
 
 // Controllers
 app.use('/auth', require('./controllers/auth'));
-app.use('/account', require('./controllers/account'));
 app.use('/plants', require('./controllers/plants'));
-
+app.use('/tags', require('./controllers/tags'));
+app.use('/journal', require('./controllers/journal'));
+app.use('/users', require('./controllers/users'));
 
 // Listen port where hosted or find port 3000
 app.listen(process.env.PORT || 3000);

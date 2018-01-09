@@ -9,8 +9,8 @@ var db = require('../models');
 var router = express.Router();
 
 // Profile route
-router.get('/profile', isLoggedIn, function(req, res){
-	res.render('account/profile');
+router.get('/', isLoggedIn, function(req, res){
+	res.send('Tags route');
 });
 
 module.exports = router;

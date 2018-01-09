@@ -18,14 +18,19 @@ router.get('/', function(req, res){
 });
 
 router.post('/', function(req, res) {
+
+	db.user_plant.create({
+		userId: req.body.userId,
+		plantId: req.body.plantId
+	})
+
 	res.send('Added plant');
-	console.log(req.body);
+
 });
 
 router.get('/:id', function(req, res){
 	db.plant.findOne({
 		where: {id: req.params.id},
-		// include: [db.tag]
 	}).then(function(plant){
 		res.render('plants/show', {plant: plant});
 	});
