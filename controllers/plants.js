@@ -12,18 +12,19 @@ var router = express.Router();
 
 // Profile route
 router.get('/', function(req, res){
-	db.plant.findAll().then(function(plants){
+	db.plant.findAll({
+		// include: [db.tag]
+	}).then(function(plants){
 		res.render('plants/all', {plants: plants});	
 	});
 });
 
 router.post('/', function(req, res) {
 
-	db.user_plant.create({
-		userId: req.body.userId,
-		plantId: req.body.plantId
-	})
-
+	// db.user_plant.create({
+	// 	userId: req.body.userId,
+	// 	plantId: req.body.plantId
+	// })
 	res.send('Added plant');
 
 });
@@ -31,6 +32,7 @@ router.post('/', function(req, res) {
 router.get('/:id', function(req, res){
 	db.plant.findOne({
 		where: {id: req.params.id},
+		// include: [db.user, db.journal]
 	}).then(function(plant){
 		res.render('plants/show', {plant: plant});
 	});
