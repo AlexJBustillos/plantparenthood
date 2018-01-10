@@ -1,14 +1,16 @@
 <h2><%= currentUser.name %></h2>
-<% if(user.lastWatered){ %>
-	<p>Last checked on moisture levels of your plants: <%= user.lastWatered %></p>
-<% } else { %>
-	<p>When did you last water your plants?</p>
-<% } %>
-<form method="post" action="/users/lastwatered">
-	<input type="hidden" name="id" value="<%= currentUser.id %>">
-	<input type="date" name="lastWatered">
-	<input type="submit" value="Update">
-</form>
+<div>
+	<% if(user.lastWatered){ %>
+		<p>Last checked on moisture levels of your plants: <%= user.lastWatered %></p>
+	<% } else { %>
+		<p>When did you last water your plants?</p>
+	<% } %>
+	<form method="post" action="/users/lastwatered">
+		<input type="hidden" name="id" value="<%= currentUser.id %>">
+		<input type="date" name="lastWatered">
+		<input type="submit" value="Update">
+	</form>
+</div>
 <h3>Your Plants</h3>
 <% if(user.plants.length <= 0) { %>
 	<p>No plants added</p>
@@ -34,5 +36,9 @@
 <% } %>
 <h3>Journal</h3>
 <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+<p>
+	<a href="journal">View All Entries</a>
+	<a href="journal/post">Write New Entry</a>
+</p>
 <h3>Plant Stores Near You</h3>
 <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>

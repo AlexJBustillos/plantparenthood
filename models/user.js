@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
 
 user.associate = function (models) {
   models.user.belongsToMany(models.plant, { through: models.user_plant });
+  models.user.hasMany(models.journal);
 };
 
 // For loggin in, comparing pw typed with the pw stored in user row in table

@@ -13,4 +13,53 @@ router.get('/', function(req, res){
 	res.send('Tags route');
 });
 
+
+
+// DB Tag creation
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "dog-friendly"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "cat-friendly"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "palm"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "cactus"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "flowering"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "ivy"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "fern"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "succulent"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "good for beginners"
+// 	}
+// });
+
 module.exports = router;

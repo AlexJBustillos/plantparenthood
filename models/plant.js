@@ -22,9 +22,9 @@ module.exports = (sequelize, DataTypes) => {
   );
 
 plant.associate = function (models) {
-  models.plant.hasMany(models.journal);
   models.plant.belongsToMany(models.tag, { through: models.plant_tag });
   models.plant.belongsToMany(models.user, { through: models.user_plant });
+  models.plant.hasMany(models.comment);
 };
 
   return plant;
