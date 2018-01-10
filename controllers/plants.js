@@ -27,11 +27,19 @@ router.post('/', isLoggedIn, function(req, res) {
 			plant.addUser(req.user);
 		}
 	}).then(function(plantAdded){
-		res.send('Added plant');
+		db.plant.findAll({
+			include: [db.tag]
+		}).then(function(plants){
+			res.render('plants/all', {plants: plants});	
+		});
 	}).catch(function(err){
 		console.log('An error happened', err);
 		res.send('Fail');
 	});
+});
+
+router.delete('/:id', function(req, res){
+	res.send('Delete route reached');	
 });
 
 router.get('/:id', function(req, res){

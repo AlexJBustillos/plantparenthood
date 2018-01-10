@@ -1,2 +1,24 @@
-<h2>Profile</h2>
-<h3>Welcome back, <%= currentUser.name %>!</h3>
+<h2><%= currentUser.name %>!</h2>
+<h3>Your Plants</h3>
+<% if(user.plants.length <= 0) { %>
+	<p>No plants added</p>
+<% } else { %>
+	<div class="grid-container">
+		<% user.plants.forEach(function(item){ %>
+			<div class="grid-item">
+				<a href="/plants/<%= item.id %>">
+					<div class="plant-image">
+						<% if (item.imageUrl){ %>
+							<img src="<%= item.imageUrl %>" alt="<%= item.name %>">
+						<% } else { %>
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder">
+						<% } %>
+					</div>
+					<h3><%= item.name %></h3>
+				</a>
+				<h5><em><%= item.botanicalName %></em></h5>
+			</div>
+		<% }); %>
+	</div>
+<% } %>
+

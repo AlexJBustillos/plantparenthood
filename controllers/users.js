@@ -10,9 +10,14 @@ var router = express.Router();
 
 // Profile route
 router.get('/profile', isLoggedIn, function(req, res){	
-	res.render('users/profile');
-});
 
+	db.user.findOne({
+		where: {id: req.user.id},
+		include: [db.plant]
+	}).then(function(user){
+		res.render('users/profile', {user: user});	
+	});
+});
 
 
 module.exports = router;
