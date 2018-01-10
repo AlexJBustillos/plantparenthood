@@ -1,0 +1,6 @@
+<h2>New Journal Entry</h2>
+<form method="post" action="/users/journal">
+	<textarea name="content" placeholder="Text here"></textarea>
+	<input type="hidden" name="userId" value="<%= currentUser.id %>">
+	<input type="submit" value="Post" class="btn btn-info">
+</form>

@@ -41,7 +41,7 @@ app.use('/plants', require('./controllers/plants'));
 app.use('/tags', require('./controllers/tags'));
 app.use('/comments', require('./controllers/comments'));
 app.use('/users', require('./controllers/users'));
-app.use('users/journal', require('./controllers/journal'));
+app.use('/users/journal', require('./controllers/journal'));
 
 // Listen port where hosted or find port 3000
 app.listen(process.env.PORT || 3000);
