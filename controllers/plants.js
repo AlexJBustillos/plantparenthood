@@ -56,7 +56,7 @@ router.delete('/:id', isLoggedIn, function(req, res){
 router.get('/:id', function(req, res){
 	db.plant.findOne({
 		where: {id: req.params.id},
-		include: [db.tag, db.journal, db.user]
+		include: [db.tag, db.user, db.comment]
 	}).then(function(plant){
 		res.render('plants/show', {plant: plant});
 	});

@@ -8,7 +8,6 @@ var passport = require('../config/passportConfig');
 var db = require('../models');
 var router = express.Router();
 
-// Profile route
 router.get('/', function(req, res){
   res.send('Journal route');
 });

@@ -6,6 +6,7 @@ var flash = require('connect-flash');
 var isLoggedIn = require('./middleware/IsLoggedIn');
 var session = require('express-session');
 var passport = require('./config/passportConfig');
+var moment = require('moment');
 var app = express();
 
 // Middleware
@@ -24,6 +25,7 @@ app.use(passport.session());
 app.use(function(req, res, next){
 	res.locals.currentUser = req.user; //Assigning this so we can use in all our views so we dont have to pass it thru every single time
 	res.locals.alerts = req.flash();
+	res.locals.moment = moment;
 	next();
 })
 

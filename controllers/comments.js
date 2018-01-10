@@ -8,9 +8,12 @@ var passport = require('../config/passportConfig');
 var db = require('../models');
 var router = express.Router();
 
-// Profile route
-router.get('/', function(req, res){
-  res.send('Comments route');
+router.post('/', function(req, res){
+	// console.log(req.body);
+	// res.send('comments post route stub');
+	db.comment.create(req.body).then(function(createdComment){
+		res.redirect('/plants/' + createdComment.plantId);
+	});
 });
 
 module.exports = router;

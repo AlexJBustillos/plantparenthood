@@ -12,7 +12,7 @@ var router = express.Router();
 router.get('/profile', isLoggedIn, function(req, res){	
 	db.user.findOne({
 		where: {id: req.user.id},
-		include: [db.plant]
+		include: [db.plant, db.journal]
 	}).then(function(user){
 		res.render('users/profile', {user: user});	
 	});

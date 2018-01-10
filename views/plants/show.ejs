@@ -21,10 +21,29 @@
 <% } else { %>
 	<p>Not logged in</p>
 <% } %>
-<h3>Comments</h3>
+<hr>
+<h3>Discussion</h3>
 <% if(currentUser){ %>
-	<p>Comment form here.</p>
+	<form method="post" action="/comments">
+		<p>Posting as <%= currentUser.name %></p>
+		<textarea name="content" placeholder="Text here"></textarea>
+		<input type="hidden" name="userId" value="<%= currentUser.id %>">
+		<input type="hidden" name="authorName" value="<%= currentUser.name %>">
+		<input type="hidden" name="plantId" value="<%= plant.id %>">
+		<input type="submit" value="Post" class="btn btn-info">
+	</form>
 <% } else { %>
-	<p>Log in to leave a comment.</p>
+	<p>Log in to join the discussion.</p>
 <% } %>
-
+<hr>
+<% if(plant.comments && plant.comments.length > 0) { %>
+	<% plant.comments.forEach(function(c){ %>
+		<h5><%= c.authorName %> &nbsp; <em><%= moment(c.createdAt).calendar() %></em></h5>
+		<p><%= c.content %></p>
+		<% if (currentUser && currentUser.id === c.userId) { %>
+			<p>Delete Link</p>
+		<% } %>
+	<% }); %>
+<% } else { %>
+	<p>No posts yet</p>
+<% }; %>
