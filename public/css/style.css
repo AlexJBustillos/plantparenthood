@@ -26,6 +26,7 @@ em {
 
 /* CSS Grid */
 .grid-container {
+	width: 100%;
 	display: grid;
 	justify-content: center;
 	grid-template-columns: auto auto auto auto;
@@ -33,6 +34,7 @@ em {
 
 .grid-item {
 	display: inline-block;
+	padding: 20px;
 }
 
 .hero {
@@ -64,4 +66,12 @@ em {
 	min-width: 150px;
 	max-height: 200px;
 	max-width: 200px;
+}
+
+.delete-link {
+	background: #1C3E5D;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+	font-weight: 400;
 }

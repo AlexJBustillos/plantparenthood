@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var journal = sequelize.define('journal', {
+  var comment = sequelize.define('comment', {
     content: DataTypes.STRING,
     userId: DataTypes.INTEGER,
     plantId: DataTypes.INTEGER
@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
   //     associate: function(models) {
   //       // associations can be defined here
   //     }
-  //   }
+    // }
   });
 
-  journal.associate = function (models) {
-    models.journal.belongsTo(models.user);
+  comment.associate = function (models) {
+    models.comment.belongsTo(models.plant);
   };
 
-  return journal;
+  return comment;
 };

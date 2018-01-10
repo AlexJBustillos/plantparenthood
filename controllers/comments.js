@@ -10,7 +10,7 @@ var router = express.Router();
 
 // Profile route
 router.get('/', function(req, res){
-  res.send('Journal route');
+  res.send('Comments route');
 });
 
 module.exports = router;
