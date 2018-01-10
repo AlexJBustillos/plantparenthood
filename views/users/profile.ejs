@@ -33,10 +33,21 @@
 			</div>
 		<% }); %>
 	</div>
+	<a href="plants">View All Plants</a>
 <% } %>
 <h3>Journal</h3>
+<% if(!user.journals) { %>
+	<h2>No entries yet</h2>
+<% } else { %>
+	<% user.journals.forEach(function(j){ %>
+	<h4><%= moment(j.createdAt).calendar() %></h4>
+	<p><%= j.content %></p>
+<% }); %>
+<% } %>
+<p>
 	<a href="journal">View All Entries</a>
 	<a href="journal/new">Write New Entry</a>
+</p>
 </p>
 <h3>Plant Stores Near You</h3>
 <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>

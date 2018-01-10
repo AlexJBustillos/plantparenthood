@@ -26,11 +26,7 @@ router.post('/', isLoggedIn, function(req, res) {
 			plant.addUser(req.user);
 		}
 	}).then(function(plantAdded){
-		db.plant.findAll({
-			include: [db.tag]
-		}).then(function(plants){
-			res.render('plants/all', {plants: plants});	
-		});
+		res.redirect('/users/profile');
 	}).catch(function(err){
 		console.log('An error happened', err);
 		res.send('Fail');

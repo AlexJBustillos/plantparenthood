@@ -18,6 +18,17 @@ router.get('/profile', isLoggedIn, function(req, res){
 	});
 });
 
+// User's plant collection
+router.get('/plants', isLoggedIn, function(req, res){	
+	db.user.findOne({
+		where: {id: req.user.id},
+		include: [db.plant]
+	}).then(function(user){
+		res.render('users/plants', {user: user});	
+	});
+});
+
+// For updating the last watered date on profile
 router.post('/lastwatered', isLoggedIn, function(req, res) {
 	var lastWatered = req.body.lastWatered;
 	db.user.findOne({
@@ -26,7 +37,7 @@ router.post('/lastwatered', isLoggedIn, function(req, res) {
 		user.lastWatered = lastWatered;
 		user.save();
 	}).then(function(dateUpdated){
-		res.send('date updated');	
+		res.redirect('/users/profile');
 	}).catch(function(err){
 		console.log('An error happened', err);
 		res.send('Fail');

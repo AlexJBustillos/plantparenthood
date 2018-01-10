@@ -47,7 +47,7 @@ em {
 .hero h1 {
 	position: relative;
 	line-height: 1em;
-	/*color: white;*/
+	color: #E3CB43;
 	font-size: 5em;
 	display: inline-block;
 }
