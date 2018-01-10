@@ -11,10 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   //     }
   //   }
   });
-
 tag.associate = function (models) {
   models.tag.belongsToMany(models.plant, { through: models.plant_tag });;
 };
-
   return tag;
 };

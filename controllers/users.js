@@ -10,9 +10,28 @@ var router = express.Router();
 
 // Profile route
 router.get('/profile', isLoggedIn, function(req, res){	
-	res.render('users/profile');
+	db.user.findOne({
+		where: {id: req.user.id},
+		include: [db.plant]
+	}).then(function(user){
+		res.render('users/profile', {user: user});	
+	});
 });
 
+router.post('/lastwatered', isLoggedIn, function(req, res) {
+	var lastWatered = req.body.lastWatered;
+	db.user.findOne({
+		where: {id: req.body.id}
+	}).then(function(user){
+		user.lastWatered = lastWatered;
+		user.save();
+	}).then(function(dateUpdated){
+		res.send('date updated');	
+	}).catch(function(err){
+		console.log('An error happened', err);
+		res.send('Fail');
+	});
+});
 
 
 module.exports = router;

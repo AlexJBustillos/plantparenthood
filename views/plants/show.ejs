@@ -1,4 +1,4 @@
-<h1><%= plant.name %></h1>
+<h2><%= plant.name %></h2>
 <h3><em><%= plant.botanicalName %></em></h3>
 <div class="plant-image">
 	<% if (plant.imageUrl){ %>
@@ -12,16 +12,13 @@
 <p>Humidity: <%= plant.humidity %></p>
 <p>Temperature: <%= plant.temperature %></p>
 <p>Soil: <%= plant.soil %></p>
-<p>Description:</p>
-
-<% if(currentUser) { %>
-	<p>Current user is: <%= currentUser.id %> <%= currentUser.name %></p>
-
-<form method="post" action="/plants">
-	<input type="hidden" name="userId" value="<%= currentUser.id %>">
-	<input type="hidden" name="plantId" value="<%= plant.id %>">
-	<input type="submit" value="Add Plant" class="btn btn-success">
-</form>
+<p>Tags:</p>
+<% if(currentUser){ %>
+	<form method="post" action="/plants">
+		<input type="hidden" name="id" value="<%= plant.id %>">
+		<input type="submit" value="Add Plant">
+	</form>
 <% } else { %>
 	<p>Not logged in</p>
 <% } %>
+
