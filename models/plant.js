@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     water: DataTypes.STRING,
     soil: DataTypes.STRING,
     imageUrl: DataTypes.STRING
-  }
+  },
   {
     classMethods: {
       associate: function(models) {

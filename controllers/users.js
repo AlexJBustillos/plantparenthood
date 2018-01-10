@@ -9,15 +9,7 @@ var db = require('../models');
 var router = express.Router();
 
 // Profile route
-router.get('/profile', isLoggedIn, function(req, res){
-
-	var user = req.user;
-
-	user.getPlant().then(function(plants){
-		console.log(plants);
-	});
-
-		
+router.get('/profile', isLoggedIn, function(req, res){	
 	res.render('users/profile');
 });
 
