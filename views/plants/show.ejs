@@ -16,10 +16,8 @@
 <% if(currentUser){ %>
 	<form method="post" action="/plants">
 		<input type="hidden" name="id" value="<%= plant.id %>">
-		<input type="submit" value="Add Plant" class="btn btn-success">
+		<input type="submit" value="Add Plant">
 	</form>
-<h3><%= plant.name %> Journal</h3>
-<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
 <% } else { %>
 	<p>Not logged in</p>
 <% } %>

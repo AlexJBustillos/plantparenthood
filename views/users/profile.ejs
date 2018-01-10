@@ -1,4 +1,14 @@
-<h2><%= currentUser.name %>!</h2>
+<h2><%= currentUser.name %></h2>
+<% if(user.lastWatered){ %>
+	<p><%= user.lastWatered %> days since you last checked on your plants</p>
+<% } else { %>
+	<p>When did you last water your plants?</p>
+<% } %>
+<form method="post" action="/users/lastwatered">
+	<input type="hidden" name="id" value="<%= currentUser.id %>">
+	<input type="date" name="lastWatered">
+	<input type="submit" value="Update">
+</form>
 <h3>Your Plants</h3>
 <% if(user.plants.length <= 0) { %>
 	<p>No plants added</p>
@@ -21,4 +31,7 @@
 		<% }); %>
 	</div>
 <% } %>
-
+<h3>Journal</h3>
+<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+<h3>Plant Stores Near You</h3>
+<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
