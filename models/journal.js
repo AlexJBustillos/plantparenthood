@@ -5,16 +5,18 @@ module.exports = (sequelize, DataTypes) => {
     plantId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }
-  , {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-        models.journal.belongsTo(models.plant);
-      }
-    }
-  });
+  // , {
+  //   classMethods: {
+  //     associate: function(models) {
+  //       // associations can be defined here
+  //       models.journal.belongsTo(models.plant);
+  //     }
+  //   }
+  );
 
-  // journal.belongsTo(plant);
+journal.associate = function (models) {
+  models.journal.belongsTo(models.plant);
+};
 
   return journal;
 };

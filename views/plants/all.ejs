@@ -2,18 +2,22 @@
 <% if(plants.length <= 0) { %>
 	<h2>Nothing in the database yet</h2>
 <% } else { %>
-	<% plants.forEach(function(item){ %>
-			<a href="/plants/<%= item.id %>">
-				<div class="plant-image">
-					<% if (item.imageUrl){ %>
-						<img src="<%= item.imageUrl %>" alt="<%= item.name %>"></p>
-					<% } else { %>
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
-					<% } %>
-				</div>
-				<h3><%= item.name %></h3>
-			</a>
-			<h5><em><%= item.botanicalName %></em></h5>
-			<hr>
-	<% }); %>
+	<div class="grid-container">
+		<% plants.forEach(function(item){ %>
+			<div class="grid-item">
+				<a href="/plants/<%= item.id %>">
+					<div class="plant-image">
+						<% if (item.imageUrl){ %>
+							<img src="<%= item.imageUrl %>" alt="<%= item.name %>">
+						<% } else { %>
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder">
+						<% } %>
+					</div>
+					<h3><%= item.name %></h3>
+				</a>
+				<h5><em><%= item.botanicalName %></em></h5>
+			</div>
+		<% }); %>
+	</div>
 <% } %>
+

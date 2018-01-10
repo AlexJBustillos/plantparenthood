@@ -31,17 +31,18 @@ module.exports = (sequelize, DataTypes) => {
           pendingUser.password = hash;
         }
       }
-    }
-    ,
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-        models.user.belongsToMany(models.plant, { through: models.user_plant });
-      }
+    // },
+    // classMethods: {
+    //   associate: function(models) {
+    //     // associations can be defined here
+    //     models.user.belongsToMany(models.plant, { through: models.user_plant });
+    //   }
     }
   });
 
-  // user.belongsToMany(splant, {through: 'user_plant'});
+user.associate = function (models) {
+  models.user.belongsToMany(models.plant, { through: models.user_plant });
+};
 
 // For loggin in, comparing pw typed with the pw stored in user row in table
 user.prototype.isValidPassword = function(passwordTyped){
