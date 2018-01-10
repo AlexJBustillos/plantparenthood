@@ -19,12 +19,7 @@ router.get('/profile', isLoggedIn, function(req, res){
 });
 
 router.post('/lastwatered', isLoggedIn, function(req, res) {
-	
-	// console.log(req.body);
-	// res.send('date updated');
-
 	var lastWatered = req.body.lastWatered;
-
 	db.user.findOne({
 		where: {id: req.body.id}
 	}).then(function(user){

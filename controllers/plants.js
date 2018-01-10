@@ -10,7 +10,6 @@ var request = require('request');
 var cheerio = require('cheerio');
 var router = express.Router();
 
-// Profile route
 router.get('/', function(req, res){
 	db.plant.findAll({
 		include: [db.tag]
@@ -38,8 +37,20 @@ router.post('/', isLoggedIn, function(req, res) {
 	});
 });
 
-router.delete('/:id', function(req, res){
-	res.send('Delete route reached');	
+router.delete('/:id', isLoggedIn, function(req, res){
+	console.log('Delete route reached');
+	db.plant.findOne({
+		where: {id: req.params.id}
+	}).then(function(plant){
+		if(plant){
+			plant.removeUser(req.user);
+		}
+	}).then(function(plantDeleted){
+		res.send('Plant deleted');
+	}).catch(function(err){
+		console.log('An error happened', err);
+		res.send('Fail');
+	})
 });
 
 router.get('/:id', function(req, res){

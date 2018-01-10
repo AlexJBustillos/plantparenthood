@@ -36,7 +36,7 @@ em {
 }
 
 .hero {
-	background: url('/img/pexels-photo-707194.jpg');
+/*	background: url('/img/pexels-photo-707194.jpg');*/
 	background-position: center;
 	background-size: cover;
 	height: 600px;
@@ -45,7 +45,7 @@ em {
 .hero h1 {
 	position: relative;
 	line-height: 1em;
-	color: white;
+	/*color: white;*/
 	font-size: 5em;
 	display: inline-block;
 }
