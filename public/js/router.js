@@ -43,7 +43,8 @@ $('.delete-comment').click(function(event){
 		url: $(this).attr('href'),
 		method: 'DELETE'
 	}).success(function(data){
-		window.location.href = 'profile'; //Reloads the current page on success
+		console.log("Got to the promise");
+		window.location.href = '/plants'; //Reloads the current page on success
 	});
 });
 

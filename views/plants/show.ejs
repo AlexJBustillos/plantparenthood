@@ -1,26 +1,32 @@
 <h2><%= plant.name %></h2>
 <h3><em><%= plant.botanicalName %></em></h3>
-<div class="plant-image">
-	<% if (plant.imageUrl){ %>
-		<img src="<%= plant.imageUrl %>" alt="<%= plant.name %>"></p>
-	<% } else { %>
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
-	<% } %>
-</div> 
-<p>Light: <%= plant.light %></p>
-<p>Water: <%= plant.water %></p>
-<p>Humidity: <%= plant.humidity %></p>
-<p>Temperature: <%= plant.temperature %></p>
-<p>Soil: <%= plant.soil %></p>
-<p>Tags:</p>
-<% if(currentUser){ %>
-	<form method="post" action="/plants">
-		<input type="hidden" name="id" value="<%= plant.id %>">
-		<input type="submit" value="Add Plant">
-	</form>
-<% } else { %>
-	<p>Add button links to login page</p>
-<% } %>
+<div class="pure-g">
+	<div class="pure-u-sm-1 pure-u-md-1-2">
+		<div class="plant-image">
+			<% if (plant.imageUrl){ %>
+				<img src="<%= plant.imageUrl %>" alt="<%= plant.name %>"></p>
+			<% } else { %>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
+			<% } %>
+		</div> 
+		<% if(currentUser){ %>
+			<form method="post" action="/plants">
+				<input type="hidden" name="id" value="<%= plant.id %>">
+				<input type="submit" value="Add Plant">
+			</form>
+		<% } else { %>
+			<p>Add button links to login page</p>
+		<% } %>
+	</div>
+	<div class="pure-u-1 pure-u-md-1-2">
+		<p>Light: <%= plant.light %></p>
+		<p>Water: <%= plant.water %></p>
+		<p>Humidity: <%= plant.humidity %></p>
+		<p>Temperature: <%= plant.temperature %></p>
+		<p>Soil: <%= plant.soil %></p>
+		<p>Tags:</p>
+	</div>
+</div>
 <a href="/plants">Back to All Plants</a>
 <hr>
 <h3>Discussion</h3>
@@ -42,7 +48,7 @@
 		<h5><%= c.authorName %> &nbsp; <em><%= moment(c.createdAt).calendar() %></em></h5>
 		<p><%= c.content %></p>
 		<% if (currentUser && currentUser.id === c.userId) { %>
-			<p><a href="" class="delete-comment">Delete Link</a></p>
+			<p><a href="/comments/<%= c.id %>" class="delete-comment">Delete Comment</a></p>
 		<% } %>
 	<% }); %>
 <% } else { %>

@@ -4,7 +4,7 @@
 <% } else { %>
 	<div class="pure-g">
 		<% user.plants.forEach(function(item){ %>
-			<div class="pure-u-sm-1 pure-u-md-1-4">
+			<div class="pure-u-2 pure-u-md-1-4">
 				<% include ../partials/plantgrid %>
 				<a href="/plants/<%= item.id %>" class="delete-plant">Delete</a>
 			</div>

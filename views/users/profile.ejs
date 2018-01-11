@@ -22,25 +22,35 @@
 	<p>You currently own <%= user.plants.length %> plants.</p>
 		<div class="pure-g">
 			<% user.plants.slice(0,4).forEach(function(item){ %>
-				<div class="pure-u-sm-1 pure-u-md-1-4">
+				<div class="pure-u-2 pure-u-md-1-4">
 					<% include ../partials/plantgrid %>
 					<a href="/plants/<%= item.id %>" class="delete-plant">Delete</a>
 				</div>
 			<% }); %>
 		</div>
-	<a href="plants">View All Plants</a>
+	<% if(user.plants.length > 4) { %>
+		<p>Showing 4 of <%= user.plants.length %></p>
+		<a href="plants">View All Plants</a>
+		<% } %>
 <% } %>
 <h3>Journal</h3>
 <% if(!user.journals) { %>
 	<h2>No entries yet</h2>
 <% } else { %>
-	<% user.journals.slice(0,2).forEach(function(j){ %>
-	<h4><%= moment(j.createdAt).calendar() %></h4>
-	<p><%= j.content %></p>
-<% }); %>
+	<div class="pure-g">
+		<% user.journals.reverse(function(a, b){return a - b}).slice(0,2).forEach(function(j){ %>
+			<div class="pure-u-1 pure-u-md-1-2">
+				<h4><%= moment(j.createdAt).calendar() %></h4>
+				<p><%= j.content %></p>
+			</div>
+		<% }); %>
+	</div>
 <% } %>
 <p>
-	<a href="journal">View All Entries</a>
+	<% if(user.journals.length > 2) { %>
+		<p>Showing 2 of <%= user.journals.length %> entries</p>
+		<a href="journal">View All Entries</a>
+	<% } %>
 	<a href="journal/new">Write New Entry</a>
 </p>
 </p>

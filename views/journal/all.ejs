@@ -6,7 +6,7 @@
 <% if(user.journals.length <= 0) { %>
 	<h2>No entries yet</h2>
 <% } else { %>
-	<% user.journals.forEach(function(j){ %>
+	<% user.journals.reverse(function(a, b){return a - b}).forEach(function(j){ %>
 	<h4><%= moment(j.createdAt).calendar() %></h4>
 	<p><%= j.content %></p>
 	<a href="/users/journal/edit/<%= j.id %>">Edit Entry</a>

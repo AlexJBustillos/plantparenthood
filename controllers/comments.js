@@ -16,4 +16,19 @@ router.post('/', function(req, res){
 	});
 });
 
+router.delete('/:id', isLoggedIn, function(req, res){
+  db.comment.destroy({
+    where: { 
+    	id: req.params.id,
+    	userId: req.user.id
+    }
+  }).then(function(deleted){
+    res.send('We done did a delete');
+  }).catch(function(err){
+    console.log('An error happened', err);
+    res.send('Fail');
+  });
+});
+
+
 module.exports = router;
