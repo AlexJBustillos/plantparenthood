@@ -1,5 +1,4 @@
 // Profile page
-document.getElementById('wateringCalendar').valueAsDate = new Date();
 
 $('.delete-plant').click(function(event){
 	event.preventDefault();
@@ -47,3 +46,5 @@ $('.delete-comment').click(function(event){
 		window.location.href = 'profile'; //Reloads the current page on success
 	});
 });
+
+// document.getElementById('wateringCalendar').valueAsDate = new Date();

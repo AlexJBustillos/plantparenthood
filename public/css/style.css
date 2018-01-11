@@ -15,7 +15,7 @@ h1, h2 {
 
 h1 {
 	font-size: 5em;
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 }
 
 a {
@@ -47,7 +47,7 @@ hr {
 }
 
 .hero {
-	background: url('/img/pexels-photo-92733.jpeg');
+	background: url('/img/pexels-photo-92733.jpg');
 	background-position: center;
 	background-size: cover;
 	height: 500px;
@@ -62,14 +62,15 @@ hr {
 }
 
 .plants-hero {
-	background: url('/img/pexels-photo-213727.jpeg');
+	background: url('/img/pexels-photo-213727.jpg');
 	background-position: center;
 	background-size: cover;
+	background-attachment: fixed;
 	padding: 50px;
 }
 
 .profile-hero {
-	background: url('/img/pexels-photo-175247.jpeg');
+	background: url('/img/pexels-photo-175247.jpg');
 	background-position: center;
 	background-size: cover;
 	padding: 10px;
@@ -81,13 +82,19 @@ hr {
 }
 
 input {
-	background: white;
+	background: none;
+	font-weight: 800;
 	font-family: 'Open Sans', sans-serif;
 	border: 4px solid black;
 	padding: 10px;
 	color: black;
 	font-size: 1em;
 	border-radius: 20px;
+}
+
+input[type="text"]:focus {
+	outline: none;
+	border: 4px solid #2B7D43;
 }
 
 input[type="submit"] {
@@ -105,9 +112,15 @@ input[type="submit"] {
 
 .tag-large {
 	background: #E3CB43;
+	color: black;
 	padding: 10px;
-	border-radius: 20px;
 	line-height: 3em;
+	font-weight: 800;
+	border-radius: 10px;
+}
+
+.tag-large:hover {
+	background: white;
 }
 
 .plant-image {

@@ -1,7 +1,7 @@
 <header class="plants-hero">
 	<h1>Plants</h1>
 	<div>
-		<input type="text" placeholder="Search for a plant">
+		<input type="text">
 		<input type="submit" value="Search">
 	</div>
 	<div class="filter-box">
@@ -42,6 +42,14 @@
 				<h3><%= item.name %></h3>
 			</a>
 			<h5><em><%= item.botanicalName %></em></h5>
+			<% if(currentUser){ %>
+				<form method="post" action="/plants">
+					<input type="hidden" name="id" value="<%= item.id %>">
+					<input type="submit" value="Add Plant">
+				</form>
+			<% } else { %>
+				<p>Add button links to login page</p>
+			<% } %>
 		</div>
 		<% }); %>
 	
