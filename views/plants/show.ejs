@@ -42,7 +42,7 @@
 		<h5><%= c.authorName %> &nbsp; <em><%= moment(c.createdAt).calendar() %></em></h5>
 		<p><%= c.content %></p>
 		<% if (currentUser && currentUser.id === c.userId) { %>
-			<p>Delete Link</p>
+			<p><a href="" class="delete-comment">Delete Link</a></p>
 		<% } %>
 	<% }); %>
 <% } else { %>

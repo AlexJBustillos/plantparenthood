@@ -21,7 +21,7 @@ router.post('/', isLoggedIn, function(req, res){
   // console.log(req.body);
   // res.send('Journal post route stub');
   db.journal.create(req.body).then(function(createdJournal){
-    res.redirect('/');
+    res.redirect('/users/journal');
   });
 });
 
@@ -31,6 +31,17 @@ router.get('/new', isLoggedIn, function(req, res){
     include: [db.plant, db.journal]
   }).then(function(user){
     res.render('journal/new', {user: user});  
+  });
+});
+
+router.delete('/:id', isLoggedIn, function(req, res){
+  db.journal.destroy({
+    where: { id: req.params.id }
+  }).then(function(deleted){
+    res.send('We done did a delete');
+  }).catch(function(err){
+    console.log('An error happened', err);
+    res.send('Fail');
   });
 });
 

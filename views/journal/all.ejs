@@ -1,10 +1,11 @@
 <h2>Journal</h2>
 <a href="/users/journal/new">Write new entry</a>
-<% if(!user.journals) { %>
+<% if(user.journals.length <= 0) { %>
 	<h2>No entries yet</h2>
 <% } else { %>
 	<% user.journals.forEach(function(j){ %>
 	<h4><%= moment(j.createdAt).calendar() %></h4>
 	<p><%= j.content %></p>
+	<a href="/users/journal/<%= j.id %>" class="delete-journal">Delete Entry</a>
 <% }); %>
 <% } %>

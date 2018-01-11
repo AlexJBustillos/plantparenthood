@@ -90,7 +90,7 @@ router.get('/:id', function(req, res){
 // 	db.plant.findOne({
 // 		where: {id: i}
 // 		}).then(function(plant){
-// 			request('https://en.wikipedia.org/wiki/' + plant.name, function(error, response, data){
+// 			request('https://en.wikipedia.org/wiki/' + plant.botanicalName, function(error, response, data){
 // 			var $ = cheerio.load(data);
 // 			var imageSrc = $('#mw-content-text > div > table.infobox.biota > tbody > tr:nth-child(2) > td > a > img').attr('src');
 // 			if (imageSrc && !plant.imageUrl){

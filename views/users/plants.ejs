@@ -1,5 +1,5 @@
 <h2><%= currentUser.name %>'s Plants</h2>
-<% if(!user.plants) { %>
+<% if(user.plants.length <= 0) { %>
 	<p>No plants added</p>
 <% } else { %>
 	<div class="grid-container">
@@ -16,7 +16,7 @@
 					<h3><%= item.name %></h3>
 				</a>
 				<h5><em><%= item.botanicalName %></em></h5>
-				<a href="/plants/<%= item.id %>" class="delete-link">Delete <%= item.id %></a>
+				<a href="/plants/<%= item.id %>" class="delete-plant delete-link">Delete <%= item.id %></a>
 			</div>
 		<% }); %>
 	</div>
