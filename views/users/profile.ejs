@@ -1,10 +1,8 @@
 <header class="profile-hero">
 	<h2>Hello,</h2>
 	<h1><%= currentUser.name %></h1>
-</header>
-<div>
 	<% if(user.lastWatered){ %>
-		<p>It's been <%= moment(user.lastWatered).fromNow(true) %> since you last checked your plants.</p>
+		<p>It's been <h3><%= moment(user.lastWatered).fromNow(true) %></h3> since you last checked your plants.</p>
 	<% } else { %>
 		<p>When did you last check on your plants?</p>
 	<% } %>
@@ -14,6 +12,8 @@
 		<input type="date" name="lastWatered" id="wateringCalendar">
 		<input type="submit" value="Update">
 	</form>
+</header>
+<div>
 </div>
 <h3>Your Plants</h3>
 <% if(user.plants.length <= 0) { %>
@@ -54,5 +54,3 @@
 	<a href="journal/new">Write New Entry</a>
 </p>
 </p>
-<h3>Plant Stores Near You</h3>
-<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>

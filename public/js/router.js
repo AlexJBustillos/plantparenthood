@@ -47,5 +47,3 @@ $('.delete-comment').click(function(event){
 		window.location.href = '/plants'; //Reloads the current page on success
 	});
 });
-
-// document.getElementById('wateringCalendar').valueAsDate = new Date();
