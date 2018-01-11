@@ -25,16 +25,10 @@ em {
 }
 
 /* CSS Grid */
-.grid-container {
-	width: 100%;
-	display: grid;
-	justify-content: center;
-	grid-template-columns: auto auto auto auto;
-}
-
 .grid-item {
 	display: inline-block;
 	padding: 20px;
+	width: 225px;
 }
 
 .hero {
@@ -50,6 +44,17 @@ em {
 	color: #E3CB43;
 	font-size: 5em;
 	display: inline-block;
+}
+
+.filter-box {
+	padding: 40px;
+}
+
+.tag-large {
+	background: #72766C;
+	color: white;
+	padding: 10px;
+	border-radius: 20px;
 }
 
 .plant-image {

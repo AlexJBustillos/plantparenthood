@@ -1,0 +1,7 @@
+<h2>Edit Journal Entry</h2>
+<form class="edit-journal" action="/users/journal/<%= journal.id %>">
+	<textarea name="content" id="content"><%= journal.content %></textarea>
+	<input type="hidden" name="userId" id="userId" value="<%= currentUser.id %>">
+	<input type="hidden" name="id" id="journalId" value="<%= journal.id %>">
+	<input type="submit" value="Post" class="btn btn-info">
+</form>

@@ -14,13 +14,25 @@ router.get('/', function(req, res){
 });
 
 
-
 // DB Tag creation
+
+// db.plant.findOrCreate({
+// 	where: { id: 5 }
+// }).spread(function(plant, found){
+// 	db.tag.findOrCreate({
+// 		where: { content: "dog-friendly" }
+// 	}).spread(function(tag, added){
+// 		plant.addTag(tag).then(function(tag){
+// 			console.log(tag,"added to",plant);
+// 		});
+// 	});
+// });
+
 // db.tag.findOrCreate({
 // 	where: {
 // 		content: "dog-friendly"
 // 	}
-// });
+// })
 // db.tag.findOrCreate({
 // 	where: {
 // 		content: "cat-friendly"

@@ -1,23 +1,43 @@
 <h1>Plants</h1>
+<div>
+	<input type="text" placeholder="Type plant here...">
+	<input type="submit" value="Search">
+</div>
+<div class="filter-box">
+	Water
+</div>
+<div class="filter-box">
+	Light 
+</div>
+<div class="filter-box">
+	<span class="tag">cat-friendly</span> 
+	<span class="tag">dog-friendly</span> 
+	<span class="tag">cactus</span> 
+	<span class="tag">palm</span> 
+	<span class="tag">flowering</span> 
+	<span class="tag">ivy</span> 
+	<span class="tag">fern</span> 
+	<span class="tag">succulent</span>
+	<span class="tag">good for beginners</span>  
+</div>
 <% if(plants.length <= 0) { %>
 	<h2>Nothing in the database yet</h2>
 <% } else { %>
-	<div class="grid-container">
-		<% plants.forEach(function(item){ %>
-			<div class="grid-item">
-				<a href="/plants/<%= item.id %>">
-					<div class="plant-image">
-						<% if (item.imageUrl){ %>
-							<img src="<%= item.imageUrl %>" alt="<%= item.name %>">
-						<% } else { %>
-							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder">
+	<% plants.forEach(function(item){ %>
+		<div class="grid-item">
+			<a href="/plants/<%= item.id %>">
+				<div class="plant-image">
+					<% if (item.imageUrl){ %>
+						<img src="<%= item.imageUrl %>" alt="<%= item.name %>">
+					<% } else { %>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder">
 						<% } %>
-					</div>
-					<h3><%= item.name %></h3>
-				</a>
-				<h5><em><%= item.botanicalName %></em></h5>
-			</div>
+				</div>
+				<h3><%= item.name %></h3>
+			</a>
+			<h5><em><%= item.botanicalName %></em></h5>
+		</div>
 		<% }); %>
-	</div>
+	
 <% } %>
 

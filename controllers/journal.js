@@ -18,8 +18,6 @@ router.get('/', isLoggedIn, function(req, res){
 });
 
 router.post('/', isLoggedIn, function(req, res){
-  // console.log(req.body);
-  // res.send('Journal post route stub');
   db.journal.create(req.body).then(function(createdJournal){
     res.redirect('/users/journal');
   });
@@ -28,10 +26,34 @@ router.post('/', isLoggedIn, function(req, res){
 router.get('/new', isLoggedIn, function(req, res){
   db.user.findOne({
     where: {id: req.user.id},
-    include: [db.plant, db.journal]
+    include: [db.journal]
   }).then(function(user){
     res.render('journal/new', {user: user});  
   });
+});
+
+router.get('/edit/:id', function(req, res){
+  db.journal.findOne({
+    where: {id: req.params.id},
+    include: [db.user]
+  }).then(function(journal){
+    res.render('journal/edit', {journal: journal})
+  })
+});
+
+router.put('/:id', function(req, res){
+  var newContent = req.body.content;
+  db.journal.findOne({
+    where: {id: req.body.id}
+  }).then(function(journal){
+    journal.content = newContent;
+    journal.save();
+  }).then(function(journalUpdated){
+    res.send('We have edited the journal');
+  }).catch(function(err){
+    console.log('An error happened',err);
+    res.send('Fail');
+  })
 });
 
 router.delete('/:id', isLoggedIn, function(req, res){

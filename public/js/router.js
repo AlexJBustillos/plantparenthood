@@ -29,3 +29,18 @@ $('.delete-journal').click(function(event){
 		window.location.href = 'journal'; //Reloads the current page on success
 	});
 });
+
+$('.edit-journal').on('submit', function(event) {
+	event.preventDefault();
+	$.ajax({
+		url: $(this).attr('action'),
+		method: 'PUT',
+		data: {
+			content: $('#content').val(),
+			id: $('#journalId').val()
+		}
+	}).done(function(response){
+		console.log("Got to the promise");
+		window.location.href = '/users/journal';
+	})
+});
