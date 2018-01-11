@@ -8,9 +8,7 @@ var passport = require('../config/passportConfig');
 var db = require('../models');
 var router = express.Router();
 
-router.post('/', function(req, res){
-	// console.log(req.body);
-	// res.send('comments post route stub');
+router.post('/', isLoggedIn, function(req, res){
 	db.comment.create(req.body).then(function(createdComment){
 		res.redirect('/plants/' + createdComment.plantId);
 	});
@@ -29,6 +27,5 @@ router.delete('/:id', isLoggedIn, function(req, res){
     res.send('Fail');
   });
 });
-
 
 module.exports = router;
