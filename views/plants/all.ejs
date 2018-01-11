@@ -29,29 +29,20 @@
 <% if(plants.length <= 0) { %>
 	<h2>Nothing in the database yet</h2>
 <% } else { %>
-	<% plants.forEach(function(item){ %>
-		<div class="grid-item">
-			<a href="/plants/<%= item.id %>">
-				<div class="plant-image">
-					<% if (item.imageUrl){ %>
-						<img src="<%= item.imageUrl %>" alt="<%= item.name %>">
-					<% } else { %>
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder">
-						<% } %>
-				</div>
-				<h3><%= item.name %></h3>
-			</a>
-			<h5><em><%= item.botanicalName %></em></h5>
-			<% if(currentUser){ %>
-				<form method="post" action="/plants">
-					<input type="hidden" name="id" value="<%= item.id %>">
-					<input type="submit" value="Add Plant">
-				</form>
-			<% } else { %>
-				<p>Add button links to login page</p>
-			<% } %>
-		</div>
+	<div class="pure-g">
+		<% plants.forEach(function(item){ %>
+			<div class="pure-u-sm-1 pure-u-md-1-4">
+				<% include ../partials/plantgrid %>
+				<% if(currentUser){ %>
+					<form method="post" action="/plants">
+						<input type="hidden" name="id" value="<%= item.id %>">
+						<input type="submit" value="Add Plant">
+					</form>
+				<% } else { %>
+						<p>Add button links to login page</p>
+				<% } %>
+			</div>
 		<% }); %>
-	
+	</div>
 <% } %>
 

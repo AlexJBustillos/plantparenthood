@@ -39,13 +39,6 @@ hr {
 	background: #72766C;
 }
 
-/* CSS Grid */
-.grid-item {
-	display: inline-block;
-	padding: 20px;
-	width: 225px;
-}
-
 .hero {
 	background: url('/img/pexels-photo-92733.jpg');
 	background-position: center;

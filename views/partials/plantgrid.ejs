@@ -1,0 +1,11 @@
+<a href="/plants/<%= item.id %>">
+	<div class="plant-image">
+		<% if (item.imageUrl){ %>
+			<img src="<%= item.imageUrl %>" alt="<%= item.name %>">
+		<% } else { %>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder">
+			<% } %>
+	</div>
+	<h3><%= item.name %></h3>
+</a>
+<h5><em><%= item.botanicalName %></em></h5>
