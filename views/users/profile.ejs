@@ -1,13 +1,17 @@
-<h2><%= currentUser.name %></h2>
+<header class="profile-hero">
+	<h2>Hello,</h2>
+	<h1><%= currentUser.name %></h1>
+</header>
 <div>
 	<% if(user.lastWatered){ %>
-		<p>Last checked on moisture levels of your plants: <%= user.lastWatered %></p>
+		<p>It's been <%= moment(user.lastWatered).fromNow(true) %> since you last checked your plants.</p>
 	<% } else { %>
-		<p>When did you last water your plants?</p>
+		<p>When did you last check on your plants?</p>
 	<% } %>
+	<p>Last Checkup Date:</p>
 	<form method="post" action="/users/lastwatered">
 		<input type="hidden" name="id" value="<%= currentUser.id %>">
-		<input type="date" name="lastWatered">
+		<input type="date" name="lastWatered" id="wateringCalendar">
 		<input type="submit" value="Update">
 	</form>
 </div>
@@ -15,6 +19,7 @@
 <% if(user.plants.length <= 0) { %>
 	<p>No plants added</p>
 <% } else { %>
+	<p>You currently own <%= user.plants.length %> plants.</p>
 	<div class="grid-container">
 		<% user.plants.forEach(function(item){ %>
 			<div class="grid-item">

@@ -1,25 +1,31 @@
-<h1>Plants</h1>
-<div>
-	<input type="text" placeholder="Type plant here...">
-	<input type="submit" value="Search">
-</div>
-<div class="filter-box">
-	Water
-</div>
-<div class="filter-box">
-	Light 
-</div>
-<div class="filter-box">
-	<span class="tag">cat-friendly</span> 
-	<span class="tag">dog-friendly</span> 
-	<span class="tag">cactus</span> 
-	<span class="tag">palm</span> 
-	<span class="tag">flowering</span> 
-	<span class="tag">ivy</span> 
-	<span class="tag">fern</span> 
-	<span class="tag">succulent</span>
-	<span class="tag">good for beginners</span>  
-</div>
+<header class="plants-hero">
+	<h1>Plants</h1>
+	<div>
+		<input type="text" placeholder="Search for a plant">
+		<input type="submit" value="Search">
+	</div>
+	<div class="filter-box">
+		<h2>Water</h2>
+		<hr>
+		XXXXX
+	</div>
+	<div class="filter-box">
+		<h2>Light</h2>
+		<hr>
+		XXXXX
+	</div>
+	<div class="filter-box">
+		<span class="tag-large">cat-friendly</span> 
+		<span class="tag-large">dog-friendly</span> 
+		<span class="tag-large">cactus</span>
+		<span class="tag-large">good for beginners</span>  
+		<span class="tag-large">palm</span> 
+		<span class="tag-large">flowering</span> 
+		<span class="tag-large">ivy</span> 
+		<span class="tag-large">fern</span> 
+		<span class="tag-large">succulent</span> 
+	</div>
+</header>
 <% if(plants.length <= 0) { %>
 	<h2>Nothing in the database yet</h2>
 <% } else { %>

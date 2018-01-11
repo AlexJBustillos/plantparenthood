@@ -1,4 +1,3 @@
-<a href="/">Back to All Plants</a>
 <h2><%= plant.name %></h2>
 <h3><em><%= plant.botanicalName %></em></h3>
 <div class="plant-image">
@@ -7,7 +6,7 @@
 	<% } else { %>
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
 	<% } %>
-</div>
+</div> 
 <p>Light: <%= plant.light %></p>
 <p>Water: <%= plant.water %></p>
 <p>Humidity: <%= plant.humidity %></p>
@@ -22,6 +21,7 @@
 <% } else { %>
 	<p>Add button links to login page</p>
 <% } %>
+<a href="/plants">Back to All Plants</a>
 <hr>
 <h3>Discussion</h3>
 <% if(currentUser){ %>
