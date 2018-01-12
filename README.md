@@ -38,8 +38,8 @@ Technologies Used:
     * `GET /journal` - renders full page of all journal entries
     * `GET /journal/new` - renders page for user to post a new journal entry
     * `GET /journal/:id` - renders page for individual journal entry
-	  * `POST /journal` - adds entry to user's journal
-	  * `GET /journal/edit/:id` - renders page for user to edit an existing journal entry
+    * `POST /journal` - adds entry to user's journal
+    * `GET /journal/edit/:id` - renders page for user to edit an existing journal entry
     * `PUT /journal/:id` - edits journal entry in database
     * `DELETE /journal/:id` - deletes journal entry from database
   * Users
