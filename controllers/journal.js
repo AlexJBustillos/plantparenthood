@@ -32,7 +32,16 @@ router.get('/new', isLoggedIn, function(req, res){
   });
 });
 
-router.get('/edit/:id', function(req, res){
+router.get('/:id', isLoggedIn, function(req, res){
+  db.journal.findOne({
+    where: {id: req.params.id},
+    include: [db.user]
+  }).then(function(journal){
+    res.render('journal/show', {journal: journal});
+  });
+});
+
+router.get('/edit/:id', isLoggedIn, function(req, res){
   db.journal.findOne({
     where: {id: req.params.id},
     include: [db.user]
@@ -41,7 +50,7 @@ router.get('/edit/:id', function(req, res){
   })
 });
 
-router.put('/:id', function(req, res){
+router.put('/:id', isLoggedIn, function(req, res){
   var newTitle = req.body.title;
   var newContent = req.body.content;
   db.journal.findOne({
