@@ -16,16 +16,51 @@ router.get('/', function(req, res){
 
 // DB Tag creation
 
-// db.plant.findOrCreate({
-// 	where: { id: 5 }
-// }).spread(function(plant, found){
-// 	db.tag.findOrCreate({
-// 		where: { content: "dog-friendly" }
-// 	}).spread(function(tag, added){
-// 		plant.addTag(tag).then(function(tag){
-// 			console.log(tag,"added to",plant);
+var soilType = "1";
+
+// var floweringPlantsArr = [];
+
+// db.plant.findAll({where: { soil: soilType }}).then(function(data){
+// 	for (var i = 1; i < data.length; i++) {
+// 		console.log(data[i].id);
+// 		var currentPlantId = data[i].id;
+// 		floweringPlantsArr.push(currentPlantId);
+// 	}
+// 	console.log(floweringPlantsArr);
+
+// 	for (var i = 0; i <= floweringPlantsArr.length; i++) {
+// 		db.plant.findOrCreate({
+// 		  where: {
+// 		    id: floweringPlantsArr[i]
+// 		  }
+// 		}).spread(function(plant, created) {
+// 		  db.tag.findOrCreate({
+// 		    where: { content: "flowering" }
+// 		  }).spread(function(tag, created) {
+// 		   		plant.addTag(tag).then(function(tag) {
+// 		      console.log(tag, "added to", plant);
+// 		    });
+// 		  });
 // 		});
-// 	});
+// 	}
+
+// });
+
+
+
+
+// db.plant.findAll({
+// 	where: { soil: soilType }
+// }).then(function(plant, found){
+// 	for(var i = 1; i <= plant.length; i++) {
+// 		db.tag.findOrCreate({
+// 			where: { content: 'flowering' }
+// 		}).spread(function(tag, created){
+// 			plant[i].addTag(tag).then(function(tag){
+// 				console.log(tag,"added to",plant);
+// 			})
+// 		})
+// 	}
 // });
 
 // db.tag.findOrCreate({
@@ -45,7 +80,7 @@ router.get('/', function(req, res){
 // });
 // db.tag.findOrCreate({
 // 	where: {
-// 		content: "cactus"
+// 		content: "cactus & succulent"
 // 	}
 // });
 // db.tag.findOrCreate({
@@ -65,12 +100,22 @@ router.get('/', function(req, res){
 // });
 // db.tag.findOrCreate({
 // 	where: {
-// 		content: "succulent"
+// 		content: "low maintenance"
 // 	}
 // });
 // db.tag.findOrCreate({
 // 	where: {
-// 		content: "good for beginners"
+// 		content: "orchid"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "foliage"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "bromeliad"
 // 	}
 // });
 
