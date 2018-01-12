@@ -16,10 +16,30 @@ router.get('/', function(req, res){
 
 // Adding tags to plants
 
+// db.plant.findAll().then(function(plant){
+// 	plant.forEach(function(plant){
+// 		var plantName = JSON.stringify(plant.name).toLowerCase();
+// 		var plantId = plant.id;
+// 		var bonsai = plantName.includes('bonsai');
+// 		if (bonsai){
+// 			console.log(plant.name,'includes bonsai and ID is',plantId);
+// 			db.plant.findOne({
+// 				where: { id: plantId }
+// 			}).then(function(plant, found){
+// 				db.tag.findOrCreate({
+// 					where: { content: 'bonsai' }
+// 				}).spread(function(tag, found){
+// 					plant.addTag(tag);
+// 					console.log(tag,'added to',plant);
+// 				});
+// 			});
+// 		} 
+// 	});
+// });
+
+
 // var soilType = "6";
-
 // var floweringPlantsArr = [];
-
 // db.plant.findAll({where: { soil: soilType }}).then(function(data){
 // 	for (var i = 1; i < data.length; i++) {
 // 		console.log(data[i].id);
