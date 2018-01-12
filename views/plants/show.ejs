@@ -22,21 +22,37 @@
 		<p>Light: 
 			<% var lightMax = 4; %>
 			<% for(var i = 1; i <= lightMax; i++) { %>
-				<% if(plant.light >= i) { %>
+				<% if(plant.light <= i) { %>
 					Y
 				<% } else { %>
 					N
 				<% } %>
 			<% } %>
+			<% if(plant.light == 1) { %>
+				Sunny light areas: At least 4 hours of direct sun
+			<% } else if(plant.light == 2) { %>
+				High-light areas: Over 200 ft-c, but not direct sun
+			<% } else if(plant.light == 3) { %>
+				Medium-light areas: 75 ft-c to 200 ft-c
+			<% } else if(plant.light == 4) { %>
+				Low-light areas: 25 ft-c to 75 ft-c
+			<% } %>
 		</p>
 		<p>Water: 
 			<% var waterMax = 3; %>
 			<% for(var i = 1; i <= waterMax; i++) { %>
-				<% if(plant.water >= i) { %>
+				<% if(plant.water <= i) { %>
 					Y
 				<% } else { %>
 					N
 				<% } %>
+			<% } %>
+			<% if (plant.water == 1) { %>
+				Keep soil mix moist
+			<% } else if (plant.water == 2) { %>
+				Surface of soil mix should dry before re-watering
+			<% } else if (plant.water == 3) { %>
+				Soil mix can become moderately dry before re-watering
 			<% } %>
 		</p>
 		<p>Humidity: <%= plant.humidity %></p>

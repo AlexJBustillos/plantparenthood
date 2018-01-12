@@ -1,6 +1,8 @@
 # Plant Parenthood
 Become a better plant parent.
 
+Technologies Used:
+
 ## Requirements
 
 ## Process
@@ -35,8 +37,8 @@ Become a better plant parent.
   * Journal
     * `GET /journal` - renders full page of all journal entries
 	* `GET /journal/new` - renders page for user to post a new journal entry
+	* `POST /journal` - adds entry to user's journal
 	* `GET /journal/edit/:id` - renders page for user to edit an existing journal entry
-    * `POST /journal` - adds entry to user's journal
     * `PUT /journal/:id` - edits journal entry in database
     * `DELETE /journal/:id` - deletes journal entry from database
   * Users
@@ -50,3 +52,13 @@ Become a better plant parent.
 * Fork and clone this repository
 * Run `npm install` to install dependencies
   * Use `nodemon` to start your application
+* ENV
+* Sequelize
+
+## Sources
+* Data
+  * Plant Care Rankings - http://extension.uga.edu/publications/detail.html?number=B1318
+* Images
+  * Individual Plant Images - Wikipedia
+  * Stock Photo - Pexel
+  * Icons - Noun
