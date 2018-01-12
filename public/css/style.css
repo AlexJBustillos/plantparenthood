@@ -1,6 +1,6 @@
 /* YELLOW: #E3CB43 */
 /* GREEN: #2B7D43 */
-/* BLUE: #1C3E5D */
+/* BLUE: #125d9e */
 /* GREY: #72766C */
 
 body {
@@ -72,11 +72,16 @@ hr {
 }
 
 .profile-hero {
-	background: url('/img/pexels-photo-175247.jpg');
+	background: url('/img/pexels-photo-92733.jpg');
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	padding: 40px;
+	color: white;
+	display: inline-block;
+}
+
+.profile-hero input {
+	background: white;
 }
 
 .plants-hero h1 {
@@ -136,14 +141,14 @@ input[type="submit"] {
 
 .plant-image-small {
 	border-radius: 120px;
-	width: 120px;
-	height: 120px;
+	width: 100px;
+	height: 100px;
 	margin: 10px;
 }
 
 .plant-image-small img {
-	min-height: 120px;
-	min-width: 120px;
+	min-height: 100px;
+	min-width: 100px;
 	max-height: 150px;
 	max-width: 150px;
 }
@@ -165,6 +170,29 @@ input[type="submit"] {
 	font-weight: 400;
 }
 
+.sidebar {
+	background: black;
+	color: white;
+}
+
+.sidebar img {
+	padding-top: 50px;
+	filter: invert(100%);
+	max-width: 100px;
+}
+
+.sidebar a {
+	color: white;
+}
+
+.yellow-box {
+	background: #E3CB43;;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 	h1, .hero h1 {
@@ -172,15 +200,9 @@ input[type="submit"] {
 		letter-spacing: 3px;
 	}
 
-}
+	.hide-on-mobile {
+		display: none;
+		/* Need to make this disappear for tablet too */
+	}
 
-.sidebar {
-	background: black;
-	color: white;
-	padding-top: 100px;
-}
-
-.sidebar img {
-	filter: invert(100%);
-	max-width: 100px;
 }
