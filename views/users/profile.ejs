@@ -12,7 +12,8 @@
 	<div class="pure-u-1 pure-u-md-3-4 profile-hero">
 		<div class="pure-u-1 pure-u-md-1-4">
 				<% if(user.lastWatered){ %>
-					<p>It's been <h2><%= moment(user.lastWatered).fromNow(true) %></h2> since you last checked your plants.</p>
+					<h2><%= moment(user.lastWatered).fromNow(true) %></h2>
+					<p>since you last checked your plants.</p>
 				<% } else { %>
 					<p>When did you last check on your plants?</p>
 				<% } %>

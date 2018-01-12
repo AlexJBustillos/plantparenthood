@@ -6,16 +6,17 @@
 body {
 	text-align: center;
 	margin: 0 auto;
-	font-family: 'Open Sans', sans-serif;
-}
-
-h1, h2 {
-	font-family: 'Shrikhand', cursive;
+	font-family: 'Raleway', sans-serif;
 }
 
 h1 {
 	font-size: 5em;
 	letter-spacing: 3px;
+	font-weight: 900;
+}
+
+h2 {
+	font-family: 'Shrikhand', cursive;
 }
 
 a {
@@ -53,14 +54,14 @@ hr {
 	color: #E3CB43;
 	font-size: 5em;
 	display: inline-block;
-	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 	text-align: left;
 }
 
 .hero h2 {
 	color: white;
-	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	font-family: 'Raleway', sans-serif;
 }
 
 .plants-hero {
@@ -87,11 +88,12 @@ hr {
 .plants-hero h1 {
 	display: inline-block;
 	line-height: 1em;
+	text-transform: uppercase;
 }
 
 input, textarea {
 	background: none;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	border: 3px solid black;
 	padding: 10px;
 	color: black;
@@ -191,6 +193,11 @@ input[type="submit"] {
 
 .inline-block {
 	display: inline-block;
+}
+
+footer {
+	background: #72766C;
+	color: white;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
