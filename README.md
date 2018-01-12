@@ -62,3 +62,7 @@ Technologies Used:
   * Individual Plant Images - Wikipedia
   * Stock Photo - Pexel
   * Icons - Noun
+    * https://thenounproject.com/term/drop/1372766/
+    * https://thenounproject.com/term/fog/19882/
+    * https://thenounproject.com/term/sun/1241046/
+    * https://thenounproject.com/term/temperature/399436/

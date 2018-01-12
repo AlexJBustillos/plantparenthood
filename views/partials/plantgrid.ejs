@@ -9,21 +9,21 @@
 	<h3><%= item.name %></h3>
 </a>
 <h5><em><%= item.botanicalName %></em></h5>
-<p>Light: 
+<p>
 	<% var lightMax = 4; %>
 	<% for(var i = 1; i <= lightMax; i++) { %>
 		<% if(item.light >= i) { %>
-			Y
+			<img src="/img/water-empty.png" class="plant-icon-small" alt="Water">
 		<% } else { %>
 			N
 		<% } %>
 	<% } %>
 </p>
-<p>Water: 
+<p>
 	<% var waterMax = 3; %>
 	<% for(var i = 1; i <= waterMax; i++) { %>
 		<% if(item.water >= i) { %>
-			Y
+			<img src="/img/sun-empty.png" class="plant-icon-small" alt="Light">
 		<% } else { %>
 			N
 		<% } %>

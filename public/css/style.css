@@ -131,6 +131,14 @@ input[type="submit"] {
 	max-width: 200px;
 }
 
+.plant-icon-large {
+	max-height: 75px;
+}
+
+.plant-icon-small {
+	max-height: 25px;
+}
+
 .delete-link {
 	background: #1C3E5D;
 	color: white;

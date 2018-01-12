@@ -31,7 +31,7 @@
 			<% } else { %>
 				<p>You currently own <%= user.plants.length %> plants.</p>
 				<p><a href="plants">View All Plants</a></p>
-					<% user.plants.sort(function(a, b){return 0.5 - Math.random()}).slice(0,4).forEach(function(item){ %>
+					<% user.plants.sort(function(a, b){return 0.5 - Math.random()}).slice(0,6).forEach(function(item){ %>
 						<a href="/plants/<%= item.id %>">
 							<div class="plant-image">
 								<% if (item.imageUrl){ %>
@@ -50,7 +50,7 @@
 				<h2>No entries yet</h2>
 			<% } else { %>
 				<p>You have <%= user.journals.length %> entries.</p>
-				<% user.journals.reverse(function(a, b){return a - b}).slice(0,4).forEach(function(j){ %>
+				<% user.journals.reverse(function(a, b){return a - b}).slice(0,5).forEach(function(j){ %>
 					<h5><a href="journal/<%= j.id %>"><%= j.title %></a> <em><%= moment(j.updatedAt).calendar() %></em></h5>
 				<% }); %>
 				<a href="journal">View and Edit All Entries</a>

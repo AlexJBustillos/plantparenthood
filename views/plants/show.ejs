@@ -23,7 +23,7 @@
 			<% var lightMax = 4; %>
 			<% for(var i = 1; i <= lightMax; i++) { %>
 				<% if(plant.light >= i) { %>
-					Y
+					<img src="/img/sun-empty.png" class="plant-icon-large" alt="Light">
 				<% } else { %>
 					N
 				<% } %>
@@ -42,7 +42,7 @@
 			<% var waterMax = 3; %>
 			<% for(var i = 1; i <= waterMax; i++) { %>
 				<% if(plant.water >= i) { %>
-					Y
+					<img src="/img/water-empty.png" class="plant-icon-large" alt="Water">
 				<% } else { %>
 					N
 				<% } %>
@@ -55,7 +55,8 @@
 				Keep soil mix moist
 			<% } %>
 		</p>
-		<p>Humidity:
+		<p><img src="/img/humidity.png" class="plant-icon-large" alt="Humidity">
+			Humidity:
 			<% if(plant.humidity == 1) { %>
 				Low: 5% to 24%
 			<% } else if (plant.humidity == 2) { %>
@@ -64,7 +65,8 @@
 				High: 50% or higher
 			<% } %>
 		</p>
-		<p>Temperature: 
+		<p><img src="/img/temperature.png" class="plant-icon-large" alt="Temperature">
+			Temperature: 
 			<% if(plant.temperature == 1){ %>
 				Cool: 50°F night, 65°F day temperatures
 			<% } else if(plant.temperature == 2){ %>
