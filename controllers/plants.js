@@ -85,7 +85,7 @@ router.get('/:id', function(req, res){
 // });
 
 // Used the below to scrape wikipedia for plant images
-// for (var i = 299; i <= 525; i++) {
+// for (var i = 5; i <= 235; i++) {
 // 	db.plant.findOne({
 // 		where: {id: i}
 // 		}).then(function(plant){

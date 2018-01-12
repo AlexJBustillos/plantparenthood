@@ -42,10 +42,12 @@ router.get('/edit/:id', function(req, res){
 });
 
 router.put('/:id', function(req, res){
+  var newTitle = req.body.title;
   var newContent = req.body.content;
   db.journal.findOne({
     where: {id: req.body.id}
   }).then(function(journal){
+    journal.title = newTitle;
     journal.content = newContent;
     journal.save();
   }).then(function(journalUpdated){

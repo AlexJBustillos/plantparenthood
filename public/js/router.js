@@ -27,6 +27,7 @@ $('.edit-journal').on('submit', function(event) {
 		url: $(this).attr('action'),
 		method: 'PUT',
 		data: {
+			title: $('#title').val(),
 			content: $('#content').val(),
 			id: $('#journalId').val()
 		}

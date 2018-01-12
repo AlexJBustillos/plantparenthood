@@ -29,7 +29,7 @@
 			<% }); %>
 		</div>
 	<% if(user.plants.length > 4) { %>
-		<p>Showing 4 of <%= user.plants.length %></p>
+		<p>Showing 4 of <%= user.plants.length %> plants</p>
 		<a href="plants">View All Plants</a>
 		<% } %>
 <% } %>
@@ -40,7 +40,8 @@
 	<div class="pure-g">
 		<% user.journals.reverse(function(a, b){return a - b}).slice(0,2).forEach(function(j){ %>
 			<div class="pure-u-1 pure-u-md-1-2">
-				<h4><%= moment(j.createdAt).calendar() %></h4>
+				<h4><%= j.title %></h4>
+				<em><%= moment(j.createdAt).calendar() %></em>
 				<p><%= j.content %></p>
 			</div>
 		<% }); %>
@@ -49,7 +50,7 @@
 <p>
 	<% if(user.journals.length > 2) { %>
 		<p>Showing 2 of <%= user.journals.length %> entries</p>
-		<a href="journal">View All Entries</a>
 	<% } %>
+	<a href="journal">View and Edit All Entries</a>
 	<a href="journal/new">Write New Entry</a>
 </p>

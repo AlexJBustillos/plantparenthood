@@ -108,6 +108,7 @@ input[type="submit"] {
 	line-height: 3em;
 	font-weight: 800;
 	border-radius: 10px;
+	white-space: nowrap;
 }
 
 .tag-large:hover {

@@ -9,7 +9,8 @@
 	<div class="pure-g">
 		<% user.journals.reverse(function(a, b){return a - b}).forEach(function(j){ %>
 			<div class="pure-u-1 pure-u-md-1-2">
-				<h4><%= moment(j.createdAt).calendar() %></h4>
+				<h4><%= j.title %></h4>
+				<em><%= moment(j.createdAt).calendar() %></em>
 				<p><%= j.content %></p>
 				<a href="/users/journal/edit/<%= j.id %>">Edit Entry</a>
 				<a href="/users/journal/<%= j.id %>" class="delete-journal">Delete Entry</a>

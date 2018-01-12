@@ -22,42 +22,74 @@
 		<p>Light: 
 			<% var lightMax = 4; %>
 			<% for(var i = 1; i <= lightMax; i++) { %>
-				<% if(plant.light <= i) { %>
+				<% if(plant.light >= i) { %>
 					Y
 				<% } else { %>
 					N
 				<% } %>
 			<% } %>
 			<% if(plant.light == 1) { %>
-				Sunny light areas: At least 4 hours of direct sun
+				Low-light areas
 			<% } else if(plant.light == 2) { %>
-				High-light areas: Over 200 ft-c, but not direct sun
+				Medium-light areas
 			<% } else if(plant.light == 3) { %>
-				Medium-light areas: 75 ft-c to 200 ft-c
+				High-light areas, but avoid direct sun
 			<% } else if(plant.light == 4) { %>
-				Low-light areas: 25 ft-c to 75 ft-c
+				Sunny light areas with at least 4 hours of direct sun
 			<% } %>
 		</p>
 		<p>Water: 
 			<% var waterMax = 3; %>
 			<% for(var i = 1; i <= waterMax; i++) { %>
-				<% if(plant.water <= i) { %>
+				<% if(plant.water >= i) { %>
 					Y
 				<% } else { %>
 					N
 				<% } %>
 			<% } %>
 			<% if (plant.water == 1) { %>
-				Keep soil mix moist
+				Soil mix can become moderately dry before re-watering	
 			<% } else if (plant.water == 2) { %>
 				Surface of soil mix should dry before re-watering
 			<% } else if (plant.water == 3) { %>
-				Soil mix can become moderately dry before re-watering
+				Keep soil mix moist
 			<% } %>
 		</p>
-		<p>Humidity: <%= plant.humidity %></p>
-		<p>Temperature: <%= plant.temperature %></p>
-		<p>Soil: <%= plant.soil %></p>
+		<p>Humidity:
+			<% if(plant.humidity == 1) { %>
+				Low: 5% to 24%
+			<% } else if (plant.humidity == 2) { %>
+				Average: 25% to 49%
+			<% } else if (plant.humidity == 3) { %>
+				High: 50% or higher
+			<% } %>
+		</p>
+		<p>Temperature: 
+			<% if(plant.temperature == 1){ %>
+				Cool: 50°F night, 65°F day temperatures
+			<% } else if(plant.temperature == 2){ %>
+				Average: 65°F night, 75°F day temperatures
+			<% } else if(plant.temperature === 3){ %>
+				Warm: 70°F night, 85°F day temperatures
+			<% } %>		
+		</p>
+		<p>Suggested Soil: 
+			<% if(plant.soil == 1) { %>
+				Flowering house plants
+			<% } else if (plant.soil == 2){ %>
+				Foliage plants
+			<% } else if (plant.soil == 3){ %>
+				Bromeliads
+			<% } else if (plant.soil == 4){ %>
+				Orchids
+			<% } else if (plant.soil == 5){ %>
+				Succulents and cacti
+			<% } else if (plant.soil == 6){ %>
+				Ferns
+			<% } else if (plant.soil == 7){ %>
+				African violets and other Gesneriads
+			<% } %>
+		</p>
 		<p>Tags:</p>
 	</div>
 </div>
