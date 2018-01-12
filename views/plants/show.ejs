@@ -99,6 +99,7 @@
 <% if(currentUser){ %>
 	<form method="post" action="/comments">
 		<p>Posting as <%= currentUser.name %></p>
+		<input type="text" name="title" placeholder="Title">
 		<textarea name="content" placeholder="Text here"></textarea>
 		<input type="hidden" name="userId" value="<%= currentUser.id %>">
 		<input type="hidden" name="authorName" value="<%= currentUser.name %>">
@@ -111,7 +112,9 @@
 <hr>
 <% if(plant.comments && plant.comments.length > 0) { %>
 	<% plant.comments.forEach(function(c){ %>
-		<h5><%= c.authorName %> &nbsp; <em><%= moment(c.createdAt).calendar() %></em></h5>
+		<h5><%= c.authorName %></h5>
+		<h6><%= c.title %></h6> 
+		<em><%= moment(c.createdAt).calendar() %></em>
 		<p><%= c.content %></p>
 		<% if (currentUser && currentUser.id === c.userId) { %>
 			<p><a href="/comments/<%= c.id %>" class="delete-comment">Delete Comment</a></p>
