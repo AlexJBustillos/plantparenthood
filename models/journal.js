@@ -1,15 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var journal = sequelize.define('journal', {
+    title: DataTypes.STRING,
     content: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    plantId: DataTypes.INTEGER
-  // }, {
-  //   classMethods: {
-  //     associate: function(models) {
-  //       // associations can be defined here
-  //     }
-  //   }
+    plantId: DataTypes.INTEGER,
+    imageUrl: DataTypes.STRING
   });
 
   journal.associate = function (models) {

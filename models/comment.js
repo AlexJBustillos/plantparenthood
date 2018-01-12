@@ -1,16 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var comment = sequelize.define('comment', {
+    title: DataTypes.STRING,
     content: DataTypes.STRING,
     userId: DataTypes.INTEGER,
     authorName: DataTypes.STRING,
-    plantId: DataTypes.INTEGER
-  // }, {
-  //   classMethods: {
-  //     associate: function(models) {
-  //       // associations can be defined here
-  //     }
-    // }
+    plantId: DataTypes.INTEGER,
+    imageUrl: DataTypes.STRING
   });
 
   comment.associate = function (models) {

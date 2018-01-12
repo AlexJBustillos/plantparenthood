@@ -22,7 +22,7 @@
 	<p>You currently own <%= user.plants.length %> plants.</p>
 		<div class="pure-g">
 			<% user.plants.slice(0,4).forEach(function(item){ %>
-				<div class="pure-u-2 pure-u-md-1-4">
+				<div class="pure-u-1 pure-u-md-1-4">
 					<% include ../partials/plantgrid %>
 					<a href="/plants/<%= item.id %>" class="delete-plant">Delete</a>
 				</div>
@@ -52,5 +52,4 @@
 		<a href="journal">View All Entries</a>
 	<% } %>
 	<a href="journal/new">Write New Entry</a>
-</p>
 </p>
