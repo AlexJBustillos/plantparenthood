@@ -15,7 +15,7 @@
 				<input type="submit" value="Add Plant">
 			</form>
 		<% } else { %>
-			<p>Add button links to login page</p>
+			<a href="/auth/login">+</a>
 		<% } %>
 	</div>
 	<div class="pure-u-1 pure-u-md-1-2">
@@ -69,7 +69,7 @@
 				Cool: 50°F night, 65°F day temperatures
 			<% } else if(plant.temperature == 2){ %>
 				Average: 65°F night, 75°F day temperatures
-			<% } else if(plant.temperature === 3){ %>
+			<% } else if(plant.temperature == 3){ %>
 				Warm: 70°F night, 85°F day temperatures
 			<% } %>		
 		</p>
@@ -90,7 +90,13 @@
 				African violets and other Gesneriads
 			<% } %>
 		</p>
-		<p>Tags:</p>
+		<p>
+		<% if (plant.tags && plant.tags.length > 0){ %>
+			Tags: <% plant.tags.forEach(function(t){ %>
+				<%= t.content %>
+			<% }); %>
+		<% } %>
+		</p>
 	</div>
 </div>
 <a href="/plants">Back to All Plants</a>

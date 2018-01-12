@@ -26,7 +26,7 @@ router.post('/', isLoggedIn, function(req, res) {
 			plant.addUser(req.user);
 		}
 	}).then(function(plantAdded){
-		res.redirect('/users/profile');
+		res.redirect('/users/plants');
 	}).catch(function(err){
 		console.log('An error happened', err);
 		res.send('Fail');

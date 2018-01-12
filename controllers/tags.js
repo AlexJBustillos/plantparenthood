@@ -14,9 +14,9 @@ router.get('/', function(req, res){
 });
 
 
-// DB Tag creation
+// Adding tags to plants
 
-var soilType = "1";
+// var soilType = "6";
 
 // var floweringPlantsArr = [];
 
@@ -35,7 +35,7 @@ var soilType = "1";
 // 		  }
 // 		}).spread(function(plant, created) {
 // 		  db.tag.findOrCreate({
-// 		    where: { content: "flowering" }
+// 		    where: { content: "fern" }
 // 		  }).spread(function(tag, created) {
 // 		   		plant.addTag(tag).then(function(tag) {
 // 		      console.log(tag, "added to", plant);
@@ -46,22 +46,7 @@ var soilType = "1";
 
 // });
 
-
-
-
-// db.plant.findAll({
-// 	where: { soil: soilType }
-// }).then(function(plant, found){
-// 	for(var i = 1; i <= plant.length; i++) {
-// 		db.tag.findOrCreate({
-// 			where: { content: 'flowering' }
-// 		}).spread(function(tag, created){
-// 			plant[i].addTag(tag).then(function(tag){
-// 				console.log(tag,"added to",plant);
-// 			})
-// 		})
-// 	}
-// });
+// Creating tags
 
 // db.tag.findOrCreate({
 // 	where: {

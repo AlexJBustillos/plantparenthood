@@ -29,3 +29,10 @@
 		<% } %>
 	<% } %>
 </p>
+<p>
+	<% if (item.tags && item.tags.length > 0){ %>
+		<% item.tags.forEach(function(t){ %>
+			<%= t.content %>
+		<% }); %>
+	<% } %>
+</p>

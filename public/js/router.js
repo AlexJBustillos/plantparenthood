@@ -6,7 +6,7 @@ $('.delete-plant').click(function(event){
 		url: $(this).attr('href'),
 		method: 'DELETE'
 	}).success(function(data){
-		window.location.href = 'profile'; //Reloads the current page on success
+		window.location.href = 'plants'; 
 	});
 });
 
@@ -17,7 +17,7 @@ $('.delete-journal').click(function(event){
 		url: $(this).attr('href'),
 		method: 'DELETE'
 	}).success(function(data){
-		window.location.href = 'journal'; //Reloads the current page on success
+		window.location.href = 'journal'; 
 	});
 });
 
@@ -45,6 +45,6 @@ $('.delete-comment').click(function(event){
 		method: 'DELETE'
 	}).success(function(data){
 		console.log("Got to the promise");
-		window.location.href = '/plants'; //Reloads the current page on success
+		window.location.href = '/plants'; 
 	});
 });
