@@ -20,14 +20,14 @@ router.get('/', function(req, res){
 // 	plant.forEach(function(plant){
 // 		var plantName = JSON.stringify(plant.name).toLowerCase();
 // 		var plantId = plant.id;
-// 		var bonsai = plantName.includes('bonsai');
-// 		if (bonsai){
-// 			console.log(plant.name,'includes bonsai and ID is',plantId);
+// 		var addPlantTag = plantName.includes('palm');
+// 		if (addPlantTag){
+// 			console.log(plant.name,'includes palm and ID is',plantId);
 // 			db.plant.findOne({
 // 				where: { id: plantId }
 // 			}).then(function(plant, found){
 // 				db.tag.findOrCreate({
-// 					where: { content: 'bonsai' }
+// 					where: { content: 'palm' }
 // 				}).spread(function(tag, found){
 // 					plant.addTag(tag);
 // 					console.log(tag,'added to',plant);
@@ -37,25 +37,33 @@ router.get('/', function(req, res){
 // 	});
 // });
 
+// Flowering = scale 1, id = 2
+// Foliage = scale 2, id = 9
+// Bromeliads = scale 3, id = 11
+// Orchids = scale 4, id = 8
+// Succulents & cactus = scale 5, id = 10
+// Ferns = scale 6, id = 4
+
 
 // var soilType = "6";
-// var floweringPlantsArr = [];
+// var plantsArr = [];
+
 // db.plant.findAll({where: { soil: soilType }}).then(function(data){
 // 	for (var i = 1; i < data.length; i++) {
 // 		console.log(data[i].id);
 // 		var currentPlantId = data[i].id;
-// 		floweringPlantsArr.push(currentPlantId);
+// 		plantsArr.push(currentPlantId);
 // 	}
-// 	console.log(floweringPlantsArr);
+// 	console.log(plantsArr);
 
-// 	for (var i = 0; i <= floweringPlantsArr.length; i++) {
+// 	for (var i = 0; i <= plantsArr.length; i++) {
 // 		db.plant.findOrCreate({
 // 		  where: {
-// 		    id: floweringPlantsArr[i]
+// 		    id: plantsArr[i]
 // 		  }
 // 		}).spread(function(plant, created) {
 // 		  db.tag.findOrCreate({
-// 		    where: { content: "fern" }
+// 		    where: { id: 4 }
 // 		  }).spread(function(tag, created) {
 // 		   		plant.addTag(tag).then(function(tag) {
 // 		      console.log(tag, "added to", plant);
@@ -63,7 +71,6 @@ router.get('/', function(req, res){
 // 		  });
 // 		});
 // 	}
-
 // });
 
 // Creating tags

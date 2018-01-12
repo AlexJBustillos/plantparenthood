@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     zipcode: DataTypes.INTEGER,
+    userImg: DataTypes.STRING,
     lastWatered: DataTypes.DATE
   }, {
     hooks: {

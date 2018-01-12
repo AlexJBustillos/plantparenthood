@@ -53,6 +53,9 @@ hr {
 	color: #E3CB43;
 	font-size: 5em;
 	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	text-align: left;
 }
 
 .hero h2 {
@@ -73,7 +76,7 @@ hr {
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	padding: 10px;
+	padding: 40px;
 }
 
 .plants-hero h1 {
@@ -131,6 +134,21 @@ input[type="submit"] {
 	max-width: 200px;
 }
 
+.plant-image-small {
+	border-radius: 120px;
+	width: 120px;
+	height: 120px;
+	margin: 10px;
+}
+
+.plant-image-small img {
+	min-height: 120px;
+	min-width: 120px;
+	max-height: 150px;
+	max-width: 150px;
+}
+
+
 .plant-icon-large {
 	max-height: 75px;
 }
@@ -156,6 +174,13 @@ input[type="submit"] {
 
 }
 
-#map {
-	height: 500px;
+.sidebar {
+	background: black;
+	color: white;
+	padding-top: 100px;
+}
+
+.sidebar img {
+	filter: invert(100%);
+	max-width: 100px;
 }

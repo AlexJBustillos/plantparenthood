@@ -85,11 +85,11 @@ router.get('/:id', function(req, res){
 // });
 
 // Used the below to scrape wikipedia for plant images
-// for (var i = 5; i <= 235; i++) {
+// for (var i = 1; i <= 227; i++) {
 // 	db.plant.findOne({
 // 		where: {id: i}
 // 		}).then(function(plant){
-// 			request('https://en.wikipedia.org/wiki/' + plant.botanicalName, function(error, response, data){
+// 			request('https://en.wikipedia.org/wiki/' + plant.name, function(error, response, data){
 // 			var $ = cheerio.load(data);
 // 			var imageSrc = $('#mw-content-text > div > table.infobox.biota > tbody > tr:nth-child(2) > td > a > img').attr('src');
 // 			if (imageSrc && !plant.imageUrl){

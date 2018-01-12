@@ -1,7 +1,7 @@
-<h2><%= plant.name %></h2>
-<h3><em><%= plant.botanicalName %></em></h3>
 <div class="pure-g">
 	<div class="pure-u-1 pure-u-md-1-2">
+		<h2><%= plant.name %></h2>
+		<h3><em><%= plant.botanicalName %></em></h3>
 		<div class="plant-image">
 			<% if (plant.imageUrl){ %>
 				<img src="<%= plant.imageUrl %>" alt="<%= plant.name %>"></p>
@@ -16,6 +16,12 @@
 			</form>
 		<% } else { %>
 			<a href="/auth/login">+</a>
+		<% } %>
+		<% if (plant.tags && plant.tags.length > 0){ %>
+			<p><% plant.tags.forEach(function(t){ %>
+				<%= t.content %>
+			<% }); %>
+			</p>
 		<% } %>
 	</div>
 	<div class="pure-u-1 pure-u-md-1-2">
@@ -75,32 +81,28 @@
 				Warm: 70°F night, 85°F day temperatures
 			<% } %>		
 		</p>
-		<p>Suggested Soil: 
-			<% if(plant.soil == 1) { %>
-				Flowering house plants
-			<% } else if (plant.soil == 2){ %>
-				Foliage plants
-			<% } else if (plant.soil == 3){ %>
-				Bromeliads
-			<% } else if (plant.soil == 4){ %>
-				Orchids
-			<% } else if (plant.soil == 5){ %>
-				Succulents and cacti
-			<% } else if (plant.soil == 6){ %>
-				Ferns
-			<% } else if (plant.soil == 7){ %>
-				African violets and other Gesneriads
-			<% } %>
-		</p>
-		<p>
-		<% if (plant.tags && plant.tags.length > 0){ %>
-			Tags: <% plant.tags.forEach(function(t){ %>
-				<%= t.content %>
-			<% }); %>
-		<% } %>
-		</p>
 	</div>
 </div>
+<div>
+	<p>Suggested Soil: 
+		<% if(plant.soil == 1) { %>
+			Flowering house plants
+		<% } else if (plant.soil == 2){ %>
+			Foliage plants
+		<% } else if (plant.soil == 3){ %>
+			Bromeliads
+		<% } else if (plant.soil == 4){ %>
+			Orchids
+		<% } else if (plant.soil == 5){ %>
+			Succulents and cacti
+		<% } else if (plant.soil == 6){ %>
+			Ferns
+		<% } else if (plant.soil == 7){ %>
+			African violets and other Gesneriads
+		<% } %>
+	</p>
+</div>
+<div>
 <a href="/plants">Back to All Plants</a>
 <hr>
 <h3>Discussion</h3>
@@ -131,3 +133,4 @@
 <% } else { %>
 	<p>No posts yet</p>
 <% }; %>
+</div>

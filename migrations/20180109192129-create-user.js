@@ -23,6 +23,9 @@ module.exports = {
       zipcode: {
         type: Sequelize.INTEGER
       },
+      userImg: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
