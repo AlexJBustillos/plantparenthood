@@ -9,3 +9,23 @@
 	<h3><%= item.name %></h3>
 </a>
 <h5><em><%= item.botanicalName %></em></h5>
+<p>Light: 
+	<% var lightMax = 4; %>
+	<% for(var i = 1; i <= lightMax; i++) { %>
+		<% if(item.light >= i) { %>
+			Y
+		<% } else { %>
+			N
+		<% } %>
+	<% } %>
+</p>
+<p>Water: 
+	<% var waterMax = 3; %>
+	<% for(var i = 1; i <= waterMax; i++) { %>
+		<% if(item.water >= i) { %>
+			Y
+		<% } else { %>
+			N
+		<% } %>
+	<% } %>
+</p>

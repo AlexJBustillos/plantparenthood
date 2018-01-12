@@ -19,8 +19,26 @@
 		<% } %>
 	</div>
 	<div class="pure-u-1 pure-u-md-1-2">
-		<p>Light: <%= plant.light %></p>
-		<p>Water: <%= plant.water %></p>
+		<p>Light: 
+			<% var lightMax = 4; %>
+			<% for(var i = 1; i <= lightMax; i++) { %>
+				<% if(plant.light >= i) { %>
+					Y
+				<% } else { %>
+					N
+				<% } %>
+			<% } %>
+		</p>
+		<p>Water: 
+			<% var waterMax = 3; %>
+			<% for(var i = 1; i <= waterMax; i++) { %>
+				<% if(plant.water >= i) { %>
+					Y
+				<% } else { %>
+					N
+				<% } %>
+			<% } %>
+		</p>
 		<p>Humidity: <%= plant.humidity %></p>
 		<p>Temperature: <%= plant.temperature %></p>
 		<p>Soil: <%= plant.soil %></p>

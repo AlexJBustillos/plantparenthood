@@ -21,6 +21,12 @@ module.exports = (sequelize, DataTypes) => {
           else if(pendingPlant.light === "2-3"){
             newValue = 3;
           } 
+          else if(pendingPlant.light === "3-2"){
+            newValue = 3;
+          } 
+          else if(pendingPlant.light === "1-3"){
+            newValue = 2;
+          } 
           else if(pendingPlant.light === "3-4"){
             newValue = 4;
           }
@@ -37,6 +43,9 @@ module.exports = (sequelize, DataTypes) => {
           var newValue;
 
           if(pendingPlant.temperature === "1-2"){
+            newValue = 2;
+          } 
+          else if(pendingPlant.temperature === "1-3"){
             newValue = 2;
           } 
           else if(pendingPlant.temperature === "2-3"){
@@ -60,6 +69,9 @@ module.exports = (sequelize, DataTypes) => {
           if(pendingPlant.humidity === "1-2"){
             newValue = 2;
           } 
+          else if(pendingPlant.humidity === "1-3"){
+            newValue = 2;
+          } 
           else if(pendingPlant.humidity === "2-3"){
             newValue = 3;
           } 
@@ -81,6 +93,9 @@ module.exports = (sequelize, DataTypes) => {
           if(pendingPlant.water === "1-2"){
             newValue = 2;
           } 
+          else if(pendingPlant.water === "1-3"){
+            newValue = 2;
+          } 
           else if(pendingPlant.water === "2-3"){
             newValue = 3;
           } 
@@ -100,6 +115,9 @@ module.exports = (sequelize, DataTypes) => {
           var newValue;
 
           if(pendingPlant.soil === "1-2"){
+            newValue = 2;
+          } 
+          else if(pendingPlant.soil === "1-3"){
             newValue = 2;
           } 
           else if(pendingPlant.soil === "2-3"){
