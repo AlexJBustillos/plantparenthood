@@ -3,20 +3,23 @@
 /* BLUE: #125d9e */
 /* GREY: #72766C */
 
+* {
+	font-family: 'Raleway', sans-serif;
+}
+
 body {
 	text-align: center;
 	margin: 0 auto;
-	font-family: 'Raleway', sans-serif;
 }
 
 h1 {
 	font-size: 5em;
 	letter-spacing: 3px;
-	font-weight: 900;
+
 }
 
-h2 {
-	font-family: 'Shrikhand', cursive;
+h1, h2 {
+	font-weight: 900;
 }
 
 a {
@@ -132,6 +135,7 @@ input[type="submit"] {
 	overflow: hidden;
 	text-align: center;
 	display: inline-block;
+	margin-top: 20px;
 }
 
 .plant-image img {
@@ -187,6 +191,11 @@ input[type="submit"] {
 	color: white;
 }
 
+.container {
+	width: 75%;
+	margin: 20px auto;
+}
+
 .yellow-box {
 	background: #E3CB43;;
 }
@@ -210,6 +219,10 @@ footer {
 	.hide-on-mobile {
 		display: none;
 		/* Need to make this disappear for tablet too */
+	}
+
+	.container {
+		width: 100%;
 	}
 
 }

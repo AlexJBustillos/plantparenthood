@@ -18,6 +18,14 @@ router.get('/', function(req, res){
 	});
 });
 
+router.get('/search', function(req, res){
+	db.plant.findAll({
+		where: { id: req.query.id }
+	}).then(function(plants){
+		res.redirect('/plants/' + req.query.id);
+	})
+});
+
 router.post('/', isLoggedIn, function(req, res) {
 	db.plant.findOne({
 		where: {id: req.body.id}
@@ -62,7 +70,7 @@ router.get('/:id', function(req, res){
 // request('http://extension.uga.edu/publications/detail.html?number=B1318', function(error, response, data){
 // 	var $ = cheerio.load(data);
 
-// 	for (var i = 4; i <= 230; i++) {
+// 	for (var i = 4; i <= 231; i++) {
 // 		var plantRow = 'body > main > div > div.large-8.columns.pub > table:nth-child(179) > tbody > tr:nth-child(';
 // 		var botanicalName = $(plantRow + i +') > td:nth-child(1)').text();
 // 		var commonName = $(plantRow + i +') > td:nth-child(2)').text();

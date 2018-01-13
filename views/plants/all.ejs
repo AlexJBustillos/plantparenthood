@@ -1,5 +1,23 @@
 <header class="plants-hero">
 	<h1>Plants</h1>
+	<div>
+
+		<% if(plants.length > 0) { %>
+		<form action="/plants/search" method="get" target="_blank">
+		<select name="id">
+			<% plants.sort(function(a, b){ %>
+				<% var x = a.name.toLowerCase(); %>
+	    		<% var y = b.name.toLowerCase(); %>
+	    		<% if (x < y) {return -1;} %>
+	    		<% if (x > y) {return 1;} %>
+	    		<% return 0; %>
+			<% }).forEach(function(item){ %>
+  				<option value="<%= item.id %>"><%= item.name %>, <%= item.botanicalName %></option>
+  			<% }); %>
+			</select>
+			<input type="submit" value="Search">
+		</form>
+		<% } %>
 	<div class="pure-g">
 		<div class="pure-u-1 pure-u-md-1-4">
 			<h2>Water</h2>
@@ -35,6 +53,7 @@
 		</div>
 	</div>
 </header>
+<div class="container">
 <% if(plants.length <= 0) { %>
 	<h2>Nothing in the database yet</h2>
 <% } else { %>
@@ -59,6 +78,7 @@
 			</div>
 		<% }); %>
 	</div>
+</div>
 	<a href="#" alt="Back to Top">Top</a>
 <% } %>
 
