@@ -1,5 +1,6 @@
 require('dotenv').config();
 var express = require('express');
+var isLoggedIn = require('../middleware/loggedin');
 var ejsLayouts = require('express-ejs-layouts');
 var flash = require('connect-flash');
 var session = require('express-session');
