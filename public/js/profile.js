@@ -13,5 +13,5 @@ $('.dropdown').dropdown({
 	transition: 'drop', 
 	fullTextSearch: true,
 	sortSelect: true, 
-	match:'text'
+	match: 'text',
 });

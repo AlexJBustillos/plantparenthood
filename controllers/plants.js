@@ -28,6 +28,42 @@ router.get('/search', function(req, res){
 	})
 });
 
+router.get('/filter', function(req, res){
+
+	if (req.query.water && req.query.light) {	
+		db.plant.findAll({
+			where: { 
+				water: req.query.water,
+				light:  req.query.light
+			}
+		}).then(function(plants){
+			res.render('plants/all', {plants: plants});	
+		}).catch(function(err){
+			console.log('Plants not found');
+		})
+	} else if (req.query.water) {
+		db.plant.findAll({
+			where: { 
+				water: req.query.water
+			}
+		}).then(function(plants){
+			res.render('plants/all', {plants: plants});	
+		}).catch(function(err){
+			console.log('Plants not found');
+		})
+	} else if (req.query.light) {
+		db.plant.findAll({
+			where: { 
+				light:  req.query.light
+			}
+		}).then(function(plants){
+			res.render('plants/all', {plants: plants});	
+		}).catch(function(err){
+			console.log('Plants not found');
+		})
+	}
+});
+
 router.post('/', isLoggedIn, function(req, res) {
 	db.plant.findOne({
 		where: {id: req.body.id}

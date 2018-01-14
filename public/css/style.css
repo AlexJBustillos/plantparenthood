@@ -207,6 +207,9 @@ footer {
 	color: white;
 }
 
+
+/* Semantic UI Overrides */
+
 .ui.fluid.search.selection.dropdown {
 	border: 0;
 	margin: 20px auto;
@@ -215,6 +218,17 @@ footer {
 	width: 50%;
 	font-size: 1.5em;
 }
+
+.ui.label {
+	background: #E3CB43;
+	color: black;
+}
+
+.ui.label:hover {
+	background: #72766C;
+	color: black;
+}
+
 
 body > header > form > div > div.menu.transition.visible {
 	border: 0;

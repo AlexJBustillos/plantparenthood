@@ -23,6 +23,33 @@
  		</form>
 		<% } %>
 </header>
+<form action="/plants/filter" method="get">
+<div class="ui form">
+  <div class="field">
+      <div class="ui selection dropdown">
+          <input type="hidden" name="water">
+          <i class="dropdown icon"></i>
+          <div class="default text">Water</div>
+          <div class="menu">
+              <div class="item" data-value="1"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"></div>
+          </div>
+      </div>
+      <div class="ui selection dropdown">
+          <input type="hidden" name="light">
+          <i class="dropdown icon"></i>
+          <div class="default text">Light</div>
+          <div class="menu">
+              <div class="item" data-value="1"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"></div>
+          </div>
+      </div>
+  </div>
+</div>
+<input type="submit" value="Filter">
+</form>
+
+
+
+
 <div class="container">
 <% if(plants.length <= 0) { %>
 	<h2>Nothing in the database yet</h2>
