@@ -4,4 +4,14 @@ if(wateringCalendar) {
 	wateringCalendar.valueAsDate = new Date();
 }
 
-$('.dropdown').dropdown({ transition: 'drop' });
+// Semantic UI
+$('.ui.rating')
+  .rating()
+;
+
+$('.dropdown').dropdown({ 
+	transition: 'drop', 
+	fullTextSearch: true,
+	sortSelect: true, 
+	match:'text'
+});

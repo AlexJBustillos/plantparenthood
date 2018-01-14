@@ -23,6 +23,8 @@ router.get('/search', function(req, res){
 		where: { id: req.query.id }
 	}).then(function(plants){
 		res.redirect('/plants/' + req.query.id);
+	}).catch(function(err){
+		console.log('Plant not found');
 	})
 });
 

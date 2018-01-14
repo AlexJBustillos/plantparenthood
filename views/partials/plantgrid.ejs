@@ -32,7 +32,7 @@
 <p>
 	<% if (item.tags && item.tags.length > 0){ %>
 		<% item.tags.forEach(function(t){ %>
-			<%= t.content %>
+			<a class="ui label"><%= t.content %></a>
 		<% }); %>
 	<% } %>
 </p>

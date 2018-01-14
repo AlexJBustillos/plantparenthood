@@ -15,11 +15,9 @@ body {
 h1 {
 	font-size: 5em;
 	letter-spacing: 3px;
+	font-weight: 900 !important;
+	font-family: 'Raleway', sans-serif !important;
 
-}
-
-h1, h2 {
-	font-weight: 900;
 }
 
 a {
@@ -69,7 +67,7 @@ hr {
 
 .plants-hero {
 	background: url('/img/pexels-photo-213727.jpg');
-	background-position: center;
+	background-position: bottom;
 	background-size: cover;
 	background-attachment: fixed;
 	padding: 50px;
@@ -209,6 +207,21 @@ footer {
 	color: white;
 }
 
+.ui.fluid.search.selection.dropdown {
+	border: 0;
+	margin: 20px auto;
+	border-radius: 0;
+	background: white;
+	width: 50%;
+	font-size: 1.5em;
+}
+
+body > header > form > div > div.menu.transition.visible {
+	border: 0;
+	background: white;
+	border-radius: 0;
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 	h1, .hero h1 {
@@ -223,6 +236,11 @@ footer {
 
 	.container {
 		width: 100%;
+	}
+
+	.ui.fluid.search.selection.dropdown {
+	width: 100%;
+	font-size: 1em;
 	}
 
 }
