@@ -1,35 +1,21 @@
 <header class="plants-hero">
 	<h1>Plants</h1>
-		<% if(plants.length > 0) { %>
-			<% include ../partials/searchbar %>
-		<% } %>
 </header>
-<% if(plants.length <= 0) { %>
-	<h2>Nothing in the database yet</h2>
+<% if(tag.plants.length <= 0) { %>
+	<p>No plants with this tag exist.</p>
 <% } else { %>
 	<div class="container">
-		<div class="ui stackable centered padded grid">
-			<div class="ten wide column center aligned">
-  				<h4 class="ui header">
-  					<i class="tag icon"></i>
-    				<div class="content">
-						Tags
-  					</div>
-				</h4>
-				<a class="ui label">cat-friendly</a>
-				<a class="ui label">dog-friendly</a>
-				<a class="ui label">fern</a>
-				<a class="ui label">ivy</a>
-				<a class="ui label">palm</a>
-				<a class="ui label">orchid</a>
-				<a class="ui label">foliage</a>
-				<a class="ui label">cactus & succulent</a>
-				<a class="ui label">low maintenance</a>
-				<a class="ui label">bromeliad</a>
+		<h3 class="ui header">
+			<i class="tag icon"></i>
+			<div class="content">
+				Showing plants tagged <span class="ui label big"><%= tag.content %></span>
 			</div>
-		</div>
+		</h3>
+		<a href="/plants">Back to all plants</a>
+	</div>
+	<div class="container">
 		<div class="ui stackable four column grid">
-		<% plants.sort(function(a, b){ %>
+		<% tag.plants.sort(function(a, b){ %>
 			<% var x = a.name.toLowerCase(); %>
     		<% var y = b.name.toLowerCase(); %>
     		<% if (x < y) {return -1;} %>

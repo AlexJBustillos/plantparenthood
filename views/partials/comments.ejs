@@ -7,16 +7,15 @@
    		</a>
     	<div class="content">
 			<b><%= c.authorName %></b>
-			<% if (currentUser && currentUser.id === c.userId) { %>
+			<div class="metadata">
+				<div class="date"><%= moment(c.createdAt).calendar() %></div>
+				<% if (currentUser && currentUser.id === c.userId) { %>
 	       		<a href="/comments/<%= c.id %>" class="delete-comment">
-	        		<button class="ui basic mini button right floated">
+	        		<button class="ui basic mini button circular icon">
 	  					<i class="icon delete"></i>
-	  					Delete
 					</button>
 				</a>
 			<% } %>
-			<div class="metadata">
-				<div class="date"><%= moment(c.createdAt).calendar() %></div>
       		</div>
 			<div class="text">
         		<%= c.content %>

@@ -14,17 +14,18 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 900 !important;
 	font-family: 'Raleway', sans-serif !important;
 }
 
 h1 {
-	font-size: 5em;
-	letter-spacing: 3px;
+	font-size: 4em;
+	font-weight: 900 !important;
+	line-height: 1em;
 }
 
 h2 {
-	font-size: 3em;
+	font-size: 1.5em;
+	font-weight: 800;
 }
 
 a {
@@ -41,27 +42,36 @@ em {
 	font-weight: 400;
 }
 
+hr {
+	width: 60%;
+}
+
 .hero {
 	background: url('/img/pexels-photo-92733.jpg');
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	height: 500px;
+	height: 600px;
 }
 
 .hero h1 {
+	font-size: 5em;
+	letter-spacing: 3px;
 	position: relative;
 	line-height: 1em;
 	color: #E3CB43;
 	font-size: 5em;
+	margin-top: 150px;
 	display: inline-block;
 	text-transform: uppercase;
 	text-align: left;
 }
 
 .hero h2 {
+	display: inline-block;
 	color: white;
-	font-weight: 800;
+	line-height: 3em;
+	letter-spacing: 1px;
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -74,6 +84,13 @@ em {
 	color: #E3CB43;
 }
 
+
+body > div:nth-child(2) > h3 > em {
+	position: relative;
+	bottom: 10px;
+	margin: 40px;
+}
+
 .profile-hero {
 	background: url('/img/pexels-photo-92733.jpg');
 	background-position: center;
@@ -83,13 +100,11 @@ em {
 	display: inline-block;
 }
 
-.profile-hero input {
-	background: white;
-}
-
 .plants-hero h1 {
 	display: inline-block;
 	line-height: 1em;
+	letter-spacing: 3px;
+	font-size: 5em;
 	text-transform: uppercase;
 }
 
@@ -162,8 +177,9 @@ em {
 }
 
 .plant-icon-large {
-	max-height: 75px;
+	max-height: 40px;
 	opacity: .8;
+	margin-bottom: -20px;
 }
 
 .plant-icon-small {
@@ -179,28 +195,15 @@ em {
 	font-weight: 400;
 }
 
-.sidebar {
-	background: black;
-	color: white;
-}
-
 .sidebar img {
 	padding-top: 50px;
 	filter: invert(100%);
 	max-width: 100px;
 }
 
-.sidebar a {
-	color: white;
-}
-
 .container {
 	width: 85%;
-	margin: 20px auto;
-}
-
-.yellow-box {
-	background: #E3CB43;;
+	margin: 40px auto;
 }
 
 .inline-block {
@@ -221,7 +224,7 @@ footer {
 	margin: 20px auto;
 	border-radius: 0;
 	background: white;
-	width: 50%;
+	width: 55%;
 	font-size: 1.10em;
 }
 
@@ -238,10 +241,16 @@ body > header > form > div > div.menu.transition.visible {
 
 /* Comments */
 .ui.comments {
+	font-size: 1em;
 	text-align: left;
 	margin: 10px auto;
 	padding: 20px;
 }
+
+.ui.comments .comment .text {
+	font-size: .80em;
+}
+
 
 .ui.comments .comment {
 	padding: 10px;
@@ -252,17 +261,37 @@ body > header > form > div > div.menu.transition.visible {
 	font-weight: 800;
 }
 
+/* Tags */
+.ui.label {
+	background: #E3CB43;
+	color: rgba(0,0,0,.9);
+	margin: 5px;
+}
+
+.ui.label.big {
+	margin: 10px;
+}
+
+.ui.centered.grid>.column:not(.aligned):not(.row), .ui.centered.grid>.row>.column:not(.aligned), .ui.grid .centered.row>.column:not(.aligned) {
+	text-align: center;
+	padding: 20px !important;
+}
+
+
 /* Mobile view */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 	h1, .hero h1 {
 		font-size: 2.5em;
+	}
+
+	.hero h1 {
 		letter-spacing: 3px;
 	}
 
-	.hide-on-mobile {
-		display: none;
-		/* Need to make this disappear for tablet too */
+
+	h2 {
+		font-size: 1.25em;
 	}
 
 	.container {

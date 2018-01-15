@@ -1,101 +1,142 @@
-<a href="/plants">Back to All Plants</a>
-<h2><%= plant.name %></h2>
-<h3><em><%= plant.botanicalName %></em></h3>
-<div class="plant-image">
-	<% if (plant.imageUrl){ %>
-		<img src="<%= plant.imageUrl %>" alt="<%= plant.name %>"></p>
-	<% } else { %>
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
-	<% } %>
-</div> 
-<% if(currentUser){ %>
-	<form method="post" action="/plants">
-		<input type="hidden" name="id" value="<%= plant.id %>">
-			<button type="submit" class="ui labeled icon mini button">
-  				<i class="plus icon"></i>
-  				Add Plant
-			</button>
-	</form>	
-<% } else { %>
-	<a href="/auth/login">
-		<button class="ui labeled icon mini button">
-  			<i class="plus icon"></i>
-  			Add Plant
-		</button>
-	</a>
-<% } %>
-<p>Light: 
-	<% var lightMax = 4; %>
-	<% for(var i = 1; i <= lightMax; i++) { %>
-		<% if(plant.light >= i) { %>
-			<img src="/img/sun-empty.png" class="plant-icon-large" alt="Light">
+<!-- Top -->
+<div class="container">
+	<p><a href="/plants">Back to All Plants</a></p> 
+	<div class="plant-image">
+		<% if (plant.imageUrl){ %>
+			<img src="<%= plant.imageUrl %>" alt="<%= plant.name %>"></p>
 		<% } else { %>
-			N
-		<% } %>
-	<% } %>
-	<% if(plant.light == 1) { %>
-		Low-light areas
-	<% } else if(plant.light == 2) { %>
-		Medium-light areas
-	<% } else if(plant.light == 3) { %>
-		High-light areas, but avoid direct sun
-	<% } else if(plant.light == 4) { %>
-		Sunny light areas with at least 4 hours of direct sun
-	<% } %>
-</p>
-<p>Water: 
-	<% var waterMax = 3; %>
-	<% for(var i = 1; i <= waterMax; i++) { %>
-		<% if(plant.water >= i) { %>
-			<img src="/img/water-empty.png" class="plant-icon-large" alt="Water">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
+				<% } %>
+	</div>
+	<h1><%= plant.name %></h1>
+	<h3><em><%= plant.botanicalName %></em></h3>
+	<div>
+		<% if(currentUser){ %>
+			<form method="post" action="/plants">
+				<input type="hidden" name="id" value="<%= plant.id %>">
+				<button type="submit" class="ui labeled icon tiny button">
+				  	<i class="plus icon"></i>
+				  	Add Plant
+				</button>
+			</form>	
 		<% } else { %>
-			N
+			<a href="/auth/login">
+				<button class="ui labeled icon tiny button">
+					<i class="plus icon"></i>
+					Add Plant
+				</button>
+			</a>
 		<% } %>
-	<% } %>
-	<% if (plant.water == 1) { %>
-		Soil mix can become moderately dry before re-watering	
-	<% } else if (plant.water == 2) { %>
-		Surface of soil mix should dry before re-watering
-	<% } else if (plant.water == 3) { %>
-		Keep soil mix moist
-	<% } %>
-</p>
-<p><img src="/img/humidity.png" class="plant-icon-large" alt="Humidity">
-	Humidity:
-	<% if(plant.humidity == 1) { %>
-		Low: 5% to 24%
-	<% } else if (plant.humidity == 2) { %>
-		Average: 25% to 49%
-	<% } else if (plant.humidity == 3) { %>
-		High: 50% or higher
-	<% } %>
-</p>
-<p><img src="/img/temperature.png" class="plant-icon-large" alt="Temperature">
-	Temperature: 
-	<% if(plant.temperature == 1){ %>
-		Cool: 50°F night, 65°F day temperatures
-	<% } else if(plant.temperature == 2){ %>
-		Average: 65°F night, 75°F day temperatures
-	<% } else if(plant.temperature == 3){ %>
-		Warm: 70°F night, 85°F day temperatures
-	<% } %>		
-</p>
-<p>Suggested Soil: 
-	<% if(plant.soil == 1) { %>
-		Flowering house plants
-	<% } else if (plant.soil == 2){ %>
-		Foliage plants
-	<% } else if (plant.soil == 3){ %>
-		Bromeliads
-	<% } else if (plant.soil == 4){ %>
-		Orchids
-	<% } else if (plant.soil == 5){ %>
-		Succulents and cacti
-	<% } else if (plant.soil == 6){ %>
-		Ferns
-	<% } else if (plant.soil == 7){ %>
-		African violets and other Gesneriads
-	<% } %>
-</p>
-<h3>Discussion</h3>
-<% include ../partials/comments %>
+	</div>
+</div>
+<hr>
+<div class="container">
+	<!-- Middle details section -->
+	<div class="ui stackable centered padded grid">
+		<div class="six wide column">
+			<% var lightMax = 4; %>
+			<% for(var i = 1; i <= lightMax; i++) { %>
+				<% if(plant.light >= i) { %>
+					<img src="/img/sun-empty.png" class="plant-icon-large" alt="Light">
+				<% } else { %>
+					N
+				<% } %>
+			<% } %>
+			<h3>Light</h3>
+			<p>
+				<% if(plant.light == 1) { %>
+					Low-light areas
+				<% } else if(plant.light == 2) { %>
+					Medium-light areas
+				<% } else if(plant.light == 3) { %>
+					High-light areas, but avoid direct sun
+				<% } else if(plant.light == 4) { %>
+					Sunny light areas with at least 4 hours of direct sun
+				<% } %>
+			</p>
+		</div>
+		<div class="six wide column">
+			<% var waterMax = 3; %>
+			<% for(var i = 1; i <= waterMax; i++) { %>
+				<% if(plant.water >= i) { %>
+					<img src="/img/water-empty.png" class="plant-icon-large" alt="Water">
+				<% } else { %>
+					N
+				<% } %>
+			<% } %>
+			<h3>Water</h3>
+			<p>
+				<% if (plant.water == 1) { %>
+					Soil mix can become moderately dry before re-watering	
+				<% } else if (plant.water == 2) { %>
+					Surface of soil mix should dry before re-watering
+				<% } else if (plant.water == 3) { %>
+					Keep soil mix moist
+				<% } %>
+			</p>
+		</div>
+		<div class="six wide column">
+			<img src="/img/humidity.png" class="plant-icon-large" alt="Humidity">
+			<h3>Humidity</h3>
+			<p>
+				<% if(plant.humidity == 1) { %>
+					Low: 5% to 24%
+				<% } else if (plant.humidity == 2) { %>
+					Average: 25% to 49%
+				<% } else if (plant.humidity == 3) { %>
+					High: 50% or higher
+				<% } %>
+			</p>
+		</div>
+		<div class="six wide column">
+			<img src="/img/temperature.png" class="plant-icon-large" alt="Temperature">
+			<h3>Temperature</h3>
+			<p>
+				<% if(plant.temperature == 1){ %>
+					Cool: 50°F night, 65°F day temperatures
+				<% } else if(plant.temperature == 2){ %>
+					Average: 65°F night, 75°F day temperatures
+				<% } else if(plant.temperature == 3){ %>
+					Warm: 70°F night, 85°F day temperatures
+				<% } %>		
+			</p>
+		</div>
+		<div class="six wide column">
+			<h3>Suggested Soil</h3>
+			<p>
+				<% if(plant.soil == 1) { %>
+					Flowering house plants
+				<% } else if (plant.soil == 2){ %>
+					Foliage plants
+				<% } else if (plant.soil == 3){ %>
+					Bromeliads
+				<% } else if (plant.soil == 4){ %>
+					Orchids
+				<% } else if (plant.soil == 5){ %>
+					Succulents and cacti
+				<% } else if (plant.soil == 6){ %>
+					Ferns
+				<% } else if (plant.soil == 7){ %>
+					African violets and other Gesneriads
+				<% } %>
+			</p>
+		</div>
+		<div class="six wide column">
+			<h3>Tags</h3>
+			<p>
+				<% if(plant.tags.length > 0) { %>
+					<div>
+					<% plant.tags.forEach(function(tag){ %>
+						<a class="ui label" href="/tags/<%= tag.id %>"><%= tag.content %></a>
+					<% }); %>
+					</div>
+				<% } %>
+			</p>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="container">
+	<h2>DISCUSSION</h2>
+	<% include ../partials/comments %>
+</div>

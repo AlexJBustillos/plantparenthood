@@ -45,6 +45,6 @@ $('.delete-comment').click(function(event){
 		method: 'DELETE'
 	}).success(function(data){
 		console.log("Got to the promise");
-		window.location.href = '/plants'; 
+		window.location.reload(true);
 	});
 });

@@ -2,6 +2,12 @@
 Become a better plant parent.
 
 Technologies Used:
+* Node/Express
+  * Cheerio
+* PostgreSQL
+* Sequelize
+* jQuery
+* Semantic UI
 
 ## Requirements
 
@@ -28,9 +34,10 @@ Technologies Used:
     * `GET /auth/logout` - logs out user 
   * Plants
     * `GET /plants` - loads full plant database
-	* `GET /plants/:id` - loads individual plant
-	* `POST /plants` - associates plant with user in the database (adds to their list of plants)
-	* `DELETE /plants/:id` - removes association of user and plant in the database (removes from list of plants)
+    * `GET /plants/:id` - loads individual plant
+    * `POST /plants` - associates plant with user in the database (adds to their list of plants)
+    * `DELETE /plants/:id` - removes association of user and plant in the database (removes from list of plants)
+    * `GET /plants/search` - runs a query for the plant based on the user's search input
   * Comments
     * `POST /comments` - adds comment to individual plant
     * `DELETE /comments/:id` - removes comment from individual plant

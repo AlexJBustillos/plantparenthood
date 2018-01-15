@@ -8,11 +8,22 @@ var passport = require('../config/passportConfig');
 var db = require('../models');
 var router = express.Router();
 
-// Profile route
 router.get('/', function(req, res){
-	res.send('Tags route');
+	db.tag.findAll({
+		include: [db.plant]
+	}).then(function(tag){
+		res.render('tags/all', {tag: tag});	
+	});
 });
 
+router.get('/:id', function(req, res){
+	db.tag.findOne({
+		where: { id: req.params.id },
+		include: [db.plant]
+	}).then(function(tag){
+		res.render('tags/show', {tag: tag});	
+	});
+});
 
 // Adding tags to plants
 
