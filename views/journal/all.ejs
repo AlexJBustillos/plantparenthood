@@ -1,8 +1,8 @@
-<header class="journal-hero">
-	<h1>Journal</h1>
-</header>
-<a href="/users/journal/new">Write new entry</a>
-<a href="/users/profile">Back to Profile</a>
+<div class="container">
+	<h1>Your Journal</h1>
+	<h2><a href="/users/journal/new">Write new entry</a></h2>
+</div>
+<hr>
 <% if(user.journals.length <= 0) { %>
 	<h2>No entries yet</h2>
 <% } else { %>

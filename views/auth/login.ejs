@@ -1,15 +1,21 @@
-<h2>Login</h2>
+<header class="profile-hero">
+	<h1>Login</h1>
+</header>
+</div>
+<div class="container">
 <form method="post" action="/auth/login">
-	<div class="form-group">
-		<label>Email:</label>
+	<label>
+		Email
 		<input type="text" name="email" class="form-control" placeholder="your@email.com" required>
-	</div>
-	<div class="form-group">
-		<label>Password</label>
+	</label>
+	<br>
+	<label>
+		Password
 		<input type="password" name="password" class="form-control" required>
-	</div>
-	<div class="form-group">
-		<input type="submit" class="btn btn-success" value="Login">
-	</div>
-</form>
+	</label>
+	<br>
+	<button type="submit" class="ui secondary button large">
+		Login
+	</button>
+</div>
 <p>Need to <a href="/auth/signup">create an account</a>?</p>

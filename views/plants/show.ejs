@@ -1,13 +1,14 @@
 <!-- Top -->
-<div class="container">
-	<p><a href="/plants">Back to All Plants</a></p> 
-	<div class="plant-image">
+<header class="profile-hero">
+		<div class="plant-image">
 		<% if (plant.imageUrl){ %>
 			<img src="<%= plant.imageUrl %>" alt="<%= plant.name %>"></p>
 		<% } else { %>
 			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
 				<% } %>
 	</div>
+
+
 	<h1><%= plant.name %></h1>
 	<h3><em><%= plant.botanicalName %></em></h3>
 	<div>
@@ -28,9 +29,9 @@
 			</a>
 		<% } %>
 	</div>
-</div>
-<hr>
+</header>
 <div class="container">
+	<p><a href="/plants">Back to All Plants</a></p> 
 	<!-- Middle details section -->
 	<div class="ui stackable centered padded grid">
 		<div class="six wide column">
@@ -121,17 +122,16 @@
 				<% } %>
 			</p>
 		</div>
-		<div class="six wide column">
+		<% if(plant.tags.length > 0) { %>
+			<div class="six wide column">
 			<h3>Tags</h3>
 			<p>
-				<% if(plant.tags.length > 0) { %>
-					<div>
-					<% plant.tags.forEach(function(tag){ %>
-						<a class="ui label" href="/tags/<%= tag.id %>"><%= tag.content %></a>
-					<% }); %>
-					</div>
-				<% } %>
-			</p>
+			<div>
+				<% plant.tags.forEach(function(tag){ %>
+					<a class="ui label" href="/tags/<%= tag.id %>"><%= tag.content %></a>
+				<% }); %>
+			</div>
+		<% } %>
 		</div>
 	</div>
 </div>

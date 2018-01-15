@@ -1,65 +1,59 @@
-<div class="ui stackable padded grid">
-  <div class="row">
-    <div class="four wide column">
-		<% if(user.userImg){ %>
-			Profile pic here
-		<% } else { %>
-			<img src="/img/plant-pot.png" height="100px">
-		<% } %>
-		<h2><%= currentUser.name %></h2>
-    </div>
-    <div class="six wide column">
-      	<% if(user.lastWatered){ %>
-			<h2><i class="calendar icon"></i> <%= moment(user.lastWatered).fromNow(true) %></h2>
-			<p>since you last checked your plants.</p>
-		<% } else { %>
-			<p>When did you last check on your plants?</p>
-		<% } %>
-    </div>
-    <div class="six wide column">
-      <h4 class="ui header">Last Checkin Date</h4>
-  		<div class="content">
-    		<form method="post" action="/users/lastwatered">
-				<input type="hidden" name="id" value="<%= currentUser.id %>">
-				<input type="date" name="lastWatered" id="wateringCalendar">
-				<input type="submit" value="Update">
-			</form>
-  		</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="ten wide column">
-		<h2>Your Plants</h2>
+<header class="profile-hero">
+<% if(user.userImg){ %>
+		Profile pic here
+	<% } else { %>
+		<img src="/img/plant-pot.png" class="profile-pic" height="75px">
+	<% } %>
+	<h1><%= currentUser.name %></h1>
+</div>
+</header>
+<div class="ui stackable centered padded grid">
+	<div class="row">
+		 <div class="three wide column">
 			<% if(user.plants.length <= 0) { %>
-				<p>No plants added</p>
+				<h2>0 plants</h2>
 			<% } else { %>
-				<p>You currently own <%= user.plants.length %> plants.</p>
-				<% user.plants.sort(function(a, b){return 0.5 - Math.random()}).slice(0,4).forEach(function(item){ %>
+				<% user.plants.sort(function(a, b){return 0.5 - Math.random()}).slice(0,1).forEach(function(item){ %>
 					<a href="/plants/<%= item.id %>">
 						<div class="plant-image plant-image-small">
 							<% if (item.imageUrl){ %>
 								<img src="<%= item.imageUrl %>" alt="<%= item.name %>" class="pure-img">
 							<% } else { %>
 								<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder">
-							<% } %>
+								<% } %>
 						</div>
 					</a>
 				<% }); %>
+				<h2><%= user.plants.length %> plants</h2>
 				<p><a href="plants">View All Plants</a></p>
 			<% } %>
-    </div>
-    <div class="six wide column">
-      <h2>Journal</h2>
-		<% if(user.journals.length < 1) { %>
-			<p>No entries yet.</p>
-		<% } else { %>
-			<p>You have <%= user.journals.length %> entries.</p>
-			<% user.journals.reverse(function(a, b){return a - b}).slice(0,3).forEach(function(j){ %>
-				<h5><a href="journal/<%= j.id %>"><%= j.title %></a> <em><%= moment(j.updatedAt).calendar() %></em></h5>
-			<% }); %>
-			<p><a href="journal">View All</a></p>
-		<% } %>
-		<p><a href="journal/new">Write New Entry</a></p>
-    </div>
-  </div>
+	    </div>
+	    <div class="three wide column">
+	    	<h1><i class="calendar outline icon"></i></h1>
+	      	<% if(user.lastWatered){ %>
+				<h2><%= moment(user.lastWatered).fromNow(true) %></h2>
+				<p>since you last checked your plants.</p>
+			<% } else { %>
+				<p>When did you last check on your plants?</p>
+			<% } %>
+				<form method="post" action="/users/lastwatered">
+			      	<input type="hidden" name="id" value="<%= currentUser.id %>">
+					<input type="date" name="lastWatered" id="wateringCalendar">
+					<br>
+					<button type="submit" class="ui secondary button">
+						Update
+					</button>
+				</form>
+	    </div>
+	    <div class="three wide column">
+	    	<h1><i class="book icon"></i></h1>
+			<% if(user.journals.length < 1) { %>
+				<h2> 0 journal entries</h2>
+			<% } else { %>
+				<h2><%= user.journals.length %> journal entries</h2>
+				<p><a href="journal">View All</a></p>
+			<% } %>
+			<p><a href="journal/new">Write New Entry</a></p>
+	    </div>
+	  </div>
 </div>

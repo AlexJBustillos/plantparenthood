@@ -34,9 +34,9 @@
 			<input type="hidden" name="authorName" value="<%= currentUser.name %>">
 			<input type="hidden" name="plantId" value="<%= plant.id %>">
     	</div>
-		<button type="submit" class="ui basic submit button small">
+		<button type="submit" class="ui secondary button large">
 			<i class="icon edit"></i> Post
-		</button>
+		</button> 
   	</form>
 <% } else { %>
 	<p><a href="/auth/signup">Sign up</a> or <a href="/auth/login">log in</a> to join the discussion.</p>

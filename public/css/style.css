@@ -44,6 +44,31 @@ em {
 
 hr {
 	width: 60%;
+	background: rgba(0,0,0,.5);
+	height: 2px;
+}
+
+
+input[type="date"], input[type="text"], input[type="password"], textarea, .ui.comments .reply.form textarea {
+	padding: 8px;
+	font-weight: 400;
+	border: 2px solid rgba(0,0,0,.8);
+	border-radius: 5px;
+	background: white;
+	margin: 5px;
+}
+
+input[type="password"] {
+	width: 215px;
+}
+
+input[type="date"] {
+	margin: 0 0 10px 0;
+	width: 175px;
+}
+
+.ui.comments .reply.form textarea {
+	width: default;
 }
 
 .hero {
@@ -92,16 +117,15 @@ body > div:nth-child(2) > h3 > em {
 }
 
 .profile-hero {
-	background: url('/img/pexels-photo-92733.jpg');
-	background-position: center;
+	background: url('/img/pexels-photo-213727.jpg');
+	background-position: bottom;
 	background-size: cover;
 	background-attachment: fixed;
-	color: white;
-	display: inline-block;
+	color: rgba(0,0,0,.8);
+	padding: 50px;
 }
 
 .plants-hero h1 {
-	display: inline-block;
 	line-height: 1em;
 	letter-spacing: 3px;
 	font-size: 5em;
@@ -157,16 +181,18 @@ body > div:nth-child(2) > h3 > em {
 
 .plant-image-small {
 	border-radius: 120px;
-	width: 100px;
-	height: 100px;
-	margin: 10px;
+	width: 75px;
+	height: 75px;
+	position: relative;
+	bottom: 20px;
+	margin-bottom: -20px;
 }
 
 .plant-image-small img {
-	min-height: 100px;
-	min-width: 100px;
-	max-height: 150px;
-	max-width: 150px;
+	min-height: 75px;
+	min-width: 75px;
+	max-height: 90px;
+	max-width: 90px;
 }
 
 
@@ -215,7 +241,6 @@ footer {
 	color: white;
 }
 
-
 /* Semantic UI Overrides */
 
 /* Search bar */
@@ -232,6 +257,12 @@ body > header > form > div > div.menu.transition.visible {
 	border: 0;
 	background: white;
 	border-radius: 0;
+}
+
+.ui.secondary.button {
+	background: rgba(0,0,0,.8);
+	font-family: 'Raleway', sans-serif !important;
+	margin: 10px;
 }
 
 /* Plant grid */
@@ -278,11 +309,20 @@ body > header > form > div > div.menu.transition.visible {
 }
 
 
+/* Navbar */
+
+
+
+
 /* Mobile view */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 	h1, .hero h1 {
 		font-size: 2.5em;
+	}
+
+	.plants-hero h1 {
+		font-size: 2em;
 	}
 
 	.hero h1 {
