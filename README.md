@@ -4,7 +4,7 @@ Become a better plant parent.
 Technologies Used:
 * Node/Express
   * Key modules:
-    * Cheerio - Plant data scraping
+    * Cheerio - Plant data scraping from 2 different sources
     * Passport / Bcrypt - Authentication and password hashing
     * Cloudinary / Multer - Profile photo uploading
 * PostgreSQL
@@ -41,6 +41,7 @@ Technologies Used:
     * `POST /plants` - associates plant with user in the database (adds to their list of plants)
     * `DELETE /plants/:id` - removes association of user and plant in the database (removes from list of plants)
     * `GET /plants/search` - runs a query for the plant based on the user's search input
+    * `GET /plants/notfound` - loads 404 page when user searches for a plant that doesn't exist
   * Comments
     * `POST /comments` - adds comment to individual plant
     * `DELETE /comments/:id` - removes comment from individual plant
@@ -52,12 +53,15 @@ Technologies Used:
     * `GET /journal/edit/:id` - renders page for user to edit an existing journal entry
     * `PUT /journal/:id` - edits journal entry in database
     * `DELETE /journal/:id` - deletes journal entry from database
+  * Tags
+    * `GET /tags/:id` - renders all plants for the selected tag
   * Users
     * `GET /users/profile` - renders user's profile page when logged in
     * `GET /users/plants` - renders page with user's full collection of saved plants
+    * `GET /users/profilepic` - renders page to update user's profile picture
+    * `POST /users/profile` - uploads user's new profile picture through Cloudinary
     * `POST /users/lastwatered` - edits the date in the database when user last checked on their plants
 * Models
-
 
 ## Getting Started
 * Fork and clone this repository
@@ -67,10 +71,10 @@ Technologies Used:
 * Sequelize
 
 ## Sources
-* Data
+* Plant Data
   * Plant Care Rankings - http://extension.uga.edu/publications/detail.html?number=B1318
-* Images
   * Individual Plant Images - Wikipedia
+* Supporting Icons and Imagery
   * Stock Photos
     * https://unsplash.com/photos/tn0496xKk8Q
   * Icons - Noun

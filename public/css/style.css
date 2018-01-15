@@ -65,6 +65,7 @@ input[type="date"], input[type="text"], input[type="password"], textarea, .ui.co
 	padding: 8px;
 	font-weight: 400;
 	margin: 5px;
+	font-family: 'Raleway', sans-serif !important;
 }
 
 input[type="date"] {
@@ -78,9 +79,7 @@ input[type="date"] {
 	max-height: 200px;
 }
 
-.ui.comments .reply.form textarea {
-	width: default;
-}
+
 
 .hero {
 	background: url('/img/pexels-photo-92733.jpg');
@@ -294,6 +293,17 @@ body > header > form > div > div.menu.transition.visible {
 	font-size: .80em;
 }
 
+div.text p {
+	font-size: 1.25em;
+}
+
+div.ui.comments {
+	font-size: 1.10em;
+}
+
+.ui.comments .reply.form textarea {
+	width: default;
+}
 
 .ui.comments .comment {
 	padding: 10px;

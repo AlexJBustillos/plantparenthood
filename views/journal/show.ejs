@@ -1,12 +1,32 @@
 <header class="profile-hero">
-	<h1><%= journal.title %></h1>
+	<h1>Your Journal</h1>
 </header>
-<em><%= moment(journal.updatedAt).calendar() %></em>
-<p><%= journal.content %></p>
-<a href="/users/journal/edit/<%= journal.id %>">Edit Entry</a>
-<a href="/users/journal/<%= journal.id %>" class="delete-journal">Delete Entry</a>
-<hr>
-<a href="/users/journal/new">Write new entry</a>
-<a href="/users/journal">Back to All Entries</a>
-<a href="/users/profile">Back to Profile</a>
+<div class="ui stackable centered padded grid">
+	 <div class="twelve wide column">
+		<div class="ui comments">
+			<div class="comment">
+				<div class="content">
+					<b><%= journal.title %></b>
+					<div class="metadata">
+					<div class="date"><%= moment(journal.updatedAt).calendar() %></div>
+						<a href="/users/journal/edit/<%= journal.id %>">
+							<button class="ui basic small button circular icon">
+								<i class="edit icon"></i>
+							</button>
+						</a>
+						<a href="/users/journal/<%= journal.id %>" class="delete-journal">
+							<button class="ui basic small button circular icon">
+	  							<i class="icon delete"></i>
+							</button></a>
+      				</div>
+      			</div>
+	      		<div class="text">
+	       			<p><%= journal.content %></p>
+	      		</div>
+      		</div>
+		</div>
+		<a href="/users/journal">Back to All Entries</a>
+	</div>
+</div>
+
 

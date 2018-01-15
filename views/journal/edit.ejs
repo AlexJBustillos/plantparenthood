@@ -1,8 +1,25 @@
-<h2>Edit Journal Entry</h2>
-<form class="edit-journal" action="/users/journal/<%= journal.id %>">
-	<input type="text" name="title" id="title" value="<%= journal.title %>">
-	<textarea name="content" id="content"><%= journal.content %></textarea>
-	<input type="hidden" name="userId" id="userId" value="<%= currentUser.id %>">
-	<input type="hidden" name="id" id="journalId" value="<%= journal.id %>">
-	<input type="submit" value="Post" class="btn btn-info">
-</form>
+<header class="profile-hero">
+	<h1>Your Journal</h1>
+</header>
+<div class="container">
+	<div class="ui stackable centered padded grid">
+		 <div class="twelve wide column">
+			<h2>Editing Entry: <em>"<%= journal.title %>"</em></h2>
+			<form class="edit-journal ui reply form" action="/users/journal/<%= journal.id %>">
+				<div class="field">
+					<input type="text" name="title" id="title" value="<%= journal.title %>">
+				</div>
+				<div class="field">
+					<textarea name="content" id="content"><%= journal.content %></textarea>
+					<input type="hidden" name="userId" id="userId" value="<%= currentUser.id %>">
+					<input type="hidden" name="id" id="journalId" value="<%= journal.id %>">
+				</div>
+				<button type="submit" class="ui secondary button large">
+					Post
+				</button> 
+			</form>
+			<br>
+			<p><a href="/users/journal">Back to Journal Entries</a></p>
+		</div>
+	</div>
+</div>

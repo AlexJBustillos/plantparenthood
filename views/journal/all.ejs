@@ -1,15 +1,36 @@
 <header class="profile-hero">
 	<h1>Your Journal</h1>
-	<h2><a href="/users/journal/new">Write new entry</a></h2>
 </header>
-<% if(user.journals.length <= 0) { %>
-	<h2>No entries yet</h2>
-<% } else { %>
-		<% user.journals.reverse(function(a, b){return a - b}).forEach(function(j){ %>
-		<a href="journal/<%= j.id %>"><h2><%= j.title %></h2></a>
-			<em><%= moment(j.updatedAt).calendar() %></em>
-			<p><%= j.content %></p>
-			<a href="/users/journal/edit/<%= j.id %>">Edit Entry</a>
-			<a href="/users/journal/<%= j.id %>" class="delete-journal">Delete Entry</a>
-		<% }); %>
-<% } %>
+	<div class="ui stackable centered padded grid">
+		 <div class="twelve wide column">
+			<h3><a href="/users/journal/new">New Entry</a></h3>
+			<% if(user.journals.length <= 0) { %>
+				<h2>No entries yet</h2>
+			<% } else { %>
+				<div class="ui comments">
+					<% user.journals.reverse(function(a, b){return a - b}).forEach(function(j){ %>
+					<div class="comment">
+						<div class="content">
+							<a href="/users/journal/<%= j.id %>"><b><%= j.title %></b></a>
+							<div class="metadata">
+								<div class="date"><%= moment(j.updatedAt).calendar() %></div>
+								<a href="/users/journal/edit/<%= j.id %>">
+									<button class="ui basic small button circular icon">
+										<i class="edit icon"></i>
+									</button>
+								</a>
+								<a href="/users/journal/<%= j.id %>" class="delete-journal">
+									<button class="ui basic small button circular icon">
+	  									<i class="icon delete"></i>
+									</button></a>
+      						</div>
+      					</div>
+      					<div class="text">
+        					<p><%= j.content %></p>
+      					</div>
+      				</div>
+					<% }); %>
+			<% } %>
+			</div>
+		</div>
+	</div>

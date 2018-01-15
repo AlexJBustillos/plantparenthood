@@ -1,7 +1,24 @@
-<h2>New Journal Entry</h2>
-<form method="post" action="/users/journal">
-	<input type="text" name="title" placeholder="Title">
-	<textarea name="content" placeholder="Text here"></textarea>
-	<input type="hidden" name="userId" value="<%= currentUser.id %>">
-	<input type="submit" value="Post">
-</form>
+<header class="profile-hero">
+	<h1>Your Journal</h1>
+</header>
+<div class="container">
+	<div class="ui stackable centered padded grid">
+		 <div class="twelve wide column">
+			<h2>New Entry</h2>
+			<form method="post" action="/users/journal" class="ui reply form">
+				<div class="field">
+					<input type="text" name="title" placeholder="Title">
+				</div>
+				<div class="field">
+					<textarea name="content" placeholder="Text here"></textarea>
+					<input type="hidden" name="userId" value="<%= currentUser.id %>">
+				</div>
+				<button type="submit" class="ui secondary button large">
+					Post
+				</button> 
+			</form>
+			<br>
+			<p><a href="/users/journal">Back to Journal Entries</a></p>
+		</div>
+	</div>
+</div>

@@ -32,7 +32,7 @@
 	    	<h1><i class="calendar outline icon"></i></h1>
 	      	<% if(user.lastWatered){ %>
 				<h2><%= moment(user.lastWatered).fromNow(true) %></h2>
-				<p>since you last checked your plants.</p>
+				<p>since you last checked your plants</p>
 			<% } else { %>
 				<p>When did you last check on your plants?</p>
 			<% } %>
@@ -51,6 +51,7 @@
 				<h2> 0 journal entries</h2>
 			<% } else if(user.journals.length == 1) { %>
 				<h2> 1 journal entry</h2>
+				<p><a href="journal">View All</a></p>
 			<% } else { %>
 				<h2><%= user.journals.length %> journal entries</h2>
 				<p><a href="journal">View All</a></p>
