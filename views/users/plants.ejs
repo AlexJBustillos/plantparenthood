@@ -3,7 +3,7 @@
 	<p>No plants added</p>
 <% } else { %>
 <div class="container">
-	<div class="pure-g">
+	<div class="ui stackable four column grid">
 		<% user.plants.sort(function(a, b){ %>
 			<% var x = a.name.toLowerCase(); %>
     		<% var y = b.name.toLowerCase(); %>
@@ -11,7 +11,7 @@
     		<% if (x > y) {return 1;} %>
     		<% return 0; %>
 		<% }).forEach(function(item){ %>
-			<div class="pure-u-1 pure-u-md-1-4">
+			<div class="column">
 				<% include ../partials/plantgrid %>
 				<a href="/plants/<%= item.id %>" class="delete-plant">
 				<button class="ui labeled icon mini button">

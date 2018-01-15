@@ -5,6 +5,7 @@
 
 * {
 	font-family: 'Raleway', sans-serif;
+	font-size: 1.10em;
 }
 
 body {
@@ -12,18 +13,18 @@ body {
 	margin: 0 auto;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 900 !important;
+	font-family: 'Raleway', sans-serif !important;
+}
+
 h1 {
 	font-size: 5em;
 	letter-spacing: 3px;
-	font-weight: 900 !important;
-	font-family: 'Raleway', sans-serif !important;
-
 }
 
 h2 {
 	font-size: 3em;
-	font-weight: 900 !important;
-	font-family: 'Raleway', sans-serif !important;
 }
 
 a {
@@ -38,13 +39,6 @@ a:hover {
 
 em {
 	font-weight: 400;
-}
-
-hr {
-	width: 7em;
-	height: 4px;
-	border: none;
-	background: #72766C;
 }
 
 .hero {
@@ -99,27 +93,6 @@ hr {
 	text-transform: uppercase;
 }
 
-
-input, textarea {
-	background: none;
-	font-family: 'Raleway', sans-serif;
-	border: 3px solid rgba(0,0,0,.8);
-	padding: 10px;
-	color: rgba(0,0,0,.8);
-	font-size: 1em;
-}
-
-input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus  {
-	outline: none;
-	border: 3px solid #2B7D43;
-}
-
-input[type="submit"] {
-	background: rgba(0,0,0,.8);
-	color: white;
-	font-weight: 400;
-}
-
 .tag-large {
 	background: #E3CB43;
 	color: black;
@@ -143,10 +116,13 @@ input[type="submit"] {
 	display: inline-block;
 	margin-top: 20px;
 	opacity: .9;
+	z-index: -1;
 }
 
 .plant-grid-name {
 	margin: 20px;
+	font-size: 1.4em;
+	font-family: 'Raleway', sans-serif !important;
 }
 
 .plant-grid-botanical {
@@ -239,33 +215,15 @@ footer {
 
 /* Semantic UI Overrides */
 
+/* Search bar */
 .ui.fluid.search.selection.dropdown {
 	border: 0;
 	margin: 20px auto;
 	border-radius: 0;
 	background: white;
 	width: 50%;
-	font-size: 1.5em;
+	font-size: 1.10em;
 }
-
-.ui.label {
-	background: #E3CB43;
-	color: rgba(0,0,0,.9);
-}
-
-.ui.label:hover {
-	background: #72766C;
-	color: rgba(0,0,0,.9);
-}
-
-/*.ui.icon.button {
-	background: rgba(0,0,0,.9);
-	color: white;
-}
-
-.ui.icon.button:hover {
-	background: #72766C;
-}*/
 
 body > header > form > div > div.menu.transition.visible {
 	border: 0;
@@ -273,6 +231,28 @@ body > header > form > div > div.menu.transition.visible {
 	border-radius: 0;
 }
 
+/* Plant grid */
+.column {
+	text-align: center;
+}
+
+/* Comments */
+.ui.comments {
+	text-align: left;
+	margin: 10px auto;
+	padding: 20px;
+}
+
+.ui.comments .comment {
+	padding: 10px;
+}
+
+.ui.basic.button, .ui.basic.buttons .button {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+}
+
+/* Mobile view */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 	h1, .hero h1 {
@@ -290,8 +270,9 @@ body > header > form > div > div.menu.transition.visible {
 	}
 
 	.ui.fluid.search.selection.dropdown {
-	width: 100%;
-	font-size: 1em;
+		width: 100%;
+		font-size: .75em;
 	}
 
 }
+
