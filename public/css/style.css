@@ -52,19 +52,18 @@ hr {
 input[type="date"], input[type="text"], input[type="password"], textarea, .ui.comments .reply.form textarea {
 	padding: 8px;
 	font-weight: 400;
-	border: 2px solid rgba(0,0,0,.8);
-	border-radius: 5px;
-	background: white;
 	margin: 5px;
-}
-
-input[type="password"] {
-	width: 215px;
 }
 
 input[type="date"] {
 	margin: 0 0 10px 0;
 	width: 175px;
+}
+
+.profilepic {
+	max-width: 200px;
+	border-radius: 100px;
+	max-height: 200px;
 }
 
 .ui.comments .reply.form textarea {
@@ -117,12 +116,13 @@ body > div:nth-child(2) > h3 > em {
 }
 
 .profile-hero {
-	background: url('/img/pexels-photo-213727.jpg');
+	background: url('/img/pexels-photo-92733.jpg');
 	background-position: bottom;
 	background-size: cover;
 	background-attachment: fixed;
 	color: rgba(0,0,0,.8);
 	padding: 50px;
+	color: #E3CB43;
 }
 
 .plants-hero h1 {

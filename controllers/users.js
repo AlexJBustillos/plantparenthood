@@ -6,6 +6,9 @@ var isLoggedIn = require('../middleware/loggedin');
 var session = require('express-session');
 var passport = require('../config/passportConfig');
 var db = require('../models');
+var multer = require('multer');
+var cloudinary = require('cloudinary');
+var upload = multer({ dest: './uploads/' });
 var router = express.Router();
 
 // Profile route
@@ -16,6 +19,34 @@ router.get('/profile', isLoggedIn, function(req, res){
 	}).then(function(user){
 		res.render('users/profile', {user: user});	
 	});
+});
+
+// Uploading profile picture
+router.get('/profilepic', isLoggedIn, function(req, res){	
+	db.user.findOne({
+		where: {id: req.user.id}
+	}).then(function(user){
+		res.render('users/profilepic', {user: user});	
+	});
+});
+
+// Post route for profile picture
+router.post('/profilepic', isLoggedIn, upload.single('profilePic'), function(req, res) {
+  cloudinary.uploader.upload(req.file.path, function(result) {
+  	var newImage = result.url;
+  	console.log(result);
+  	db.user.findOne({
+  		where: {id: req.user.id}
+  	}).then(function(user){
+  		user.userImg = newImage;
+  		user.save();
+  	}).then(function(photoUploaded){
+  		res.redirect('/users/profile');
+  	}).catch(function(err){
+  		console.log('An error happened', err);
+		res.send('Fail');
+  	});
+  });
 });
 
 // User's plant collection

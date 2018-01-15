@@ -1,14 +1,12 @@
 <!-- Top -->
 <header class="profile-hero">
-		<div class="plant-image">
+	<div class="plant-image">
 		<% if (plant.imageUrl){ %>
 			<img src="<%= plant.imageUrl %>" alt="<%= plant.name %>"></p>
 		<% } else { %>
 			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
 				<% } %>
 	</div>
-
-
 	<h1><%= plant.name %></h1>
 	<h3><em><%= plant.botanicalName %></em></h3>
 	<div>

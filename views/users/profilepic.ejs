@@ -1,0 +1,13 @@
+<div class="container">
+	<h2>Edit Profile Picture</h2>
+	<% if(user.userImg){ %>
+		<img src="<%= user.userImg %>" alt="Profile Picture">
+	<% } else { %>
+		<img src="/img/plant-pot.png" class="profile-pic" height="75px">
+	<% } %>
+	<p>Update your profile picture using the below upload form.</p>
+	<form enctype="multipart/form-data" action="/users/profilepic" method="POST">
+	  <input type="file" name="profilePic">
+	  <input type="submit">
+	</form>
+</div>

@@ -1,6 +1,6 @@
 <header class="profile-hero">
 <% if(user.userImg){ %>
-		Profile pic here
+		<a href="/users/profilepic"><img src="<%= user.userImg %>" alt="Profile Picture" class="profilepic"></a>
 	<% } else { %>
 		<img src="/img/plant-pot.png" class="profile-pic" height="75px">
 	<% } %>
@@ -49,6 +49,8 @@
 	    	<h1><i class="book icon"></i></h1>
 			<% if(user.journals.length < 1) { %>
 				<h2> 0 journal entries</h2>
+			<% } else if(user.journals.length == 1) { %>
+				<h2> 1 journal entry</h2>
 			<% } else { %>
 				<h2><%= user.journals.length %> journal entries</h2>
 				<p><a href="journal">View All</a></p>
