@@ -2,7 +2,7 @@
 <% if(user.userImg){ %>
 		<a href="/users/profilepic"><img src="<%= user.userImg %>" alt="Profile Picture" class="profilepic"></a>
 	<% } else { %>
-		<img src="/img/plant-pot.png" class="profile-pic" height="75px">
+		<a href="/users/profilepic"><img src="/img/plant-pot.png" height="75px"></a>
 	<% } %>
 	<h1><%= currentUser.name %></h1>
 </div>

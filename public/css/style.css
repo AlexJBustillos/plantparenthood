@@ -1,7 +1,5 @@
 /* YELLOW: #E3CB43 */
 /* GREEN: #2B7D43 */
-/* BLUE: #125d9e */
-/* GREY: #72766C */
 
 * {
 	font-family: 'Raleway', sans-serif;
@@ -48,6 +46,20 @@ hr {
 	height: 2px;
 }
 
+.alert {
+	padding: 10px;
+	color: white;
+	font-weight: 800;
+}
+
+.alert-success {
+	background: #2B7D43;
+}
+
+.alert-error {
+	background: #E3CB43;
+	color: rgba(0,0,0,.9);
+}
 
 input[type="date"], input[type="text"], input[type="password"], textarea, .ui.comments .reply.form textarea {
 	padding: 8px;

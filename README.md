@@ -3,7 +3,10 @@ Become a better plant parent.
 
 Technologies Used:
 * Node/Express
-  * Cheerio
+  * Key modules:
+    * Cheerio - Plant data scraping
+    * Passport / Bcrypt - Authentication and password hashing
+    * Cloudinary / Multer - Profile photo uploading
 * PostgreSQL
 * Sequelize
 * jQuery

@@ -18,13 +18,17 @@ router.get('/', function(req, res){
 	});
 });
 
+router.get('/notfound', function(req, res){
+	res.render('plants/notfound');	
+});
+
 router.get('/search', function(req, res){
 	db.plant.findAll({
 		where: { id: req.query.id }
 	}).then(function(plants){
 		res.redirect('/plants/' + req.query.id);
 	}).catch(function(err){
-		console.log('Plant not found');
+		res.redirect('/plants/notfound');
 	})
 });
 
