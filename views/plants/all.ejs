@@ -5,7 +5,7 @@
 			<div class="ui fluid search selection dropdown">
 	  			<input type="hidden" name="id">
 	  			<i class="search icon"></i>
-	  			<div class="default text">Search Plants</div>
+	  			<div class="default text">Search by plant name</div>
 	  			<div class="menu">
 					<% plants.sort(function(a, b){ %>
 						<% var x = a.name.toLowerCase(); %>
@@ -31,7 +31,9 @@
           <i class="dropdown icon"></i>
           <div class="default text">Water</div>
           <div class="menu">
-              <div class="item" data-value="1"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"></div>
+            <div class="item" data-value="1"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"></div>
+            <div class="item" data-value="2"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"></div>
+			<div class="item" data-value="3"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"><img src="/img/water-empty.png" class="plant-icon-small" alt="Water"></div>
           </div>
       </div>
       <div class="ui selection dropdown">
@@ -40,6 +42,9 @@
           <div class="default text">Light</div>
           <div class="menu">
               <div class="item" data-value="1"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"></div>
+              <div class="item" data-value="2"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"></div>
+              <div class="item" data-value="3"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"></div>
+              <div class="item" data-value="4"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"><img src="/img/sun-empty.png" class="plant-icon-small" alt="Light"></div>
           </div>
       </div>
   </div>
@@ -67,10 +72,18 @@
 				<% if(currentUser){ %>
 					<form method="post" action="/plants">
 						<input type="hidden" name="id" value="<%= item.id %>">
-						<input type="submit" value="+">
-					</form>
+						<button type="submit" class="ui labeled icon mini button">
+  							<i class="plus icon"></i>
+  							Add Plant
+						</button>
+					</form>						
 				<% } else { %>
-						<a href="/auth/login">+</a>
+					<a href="/auth/login">
+						<button class="ui labeled icon mini button">
+  							<i class="plus icon"></i>
+  							Add Plant
+						</button>
+					</a>
 				<% } %>
 			</div>
 		<% }); %>

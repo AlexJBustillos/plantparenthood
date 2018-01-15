@@ -20,6 +20,12 @@ h1 {
 
 }
 
+h2 {
+	font-size: 3em;
+	font-weight: 900 !important;
+	font-family: 'Raleway', sans-serif !important;
+}
+
 a {
 	color: #2B7D43;
 	text-decoration: none;
@@ -27,7 +33,7 @@ a {
 }
 
 a:hover {
-	color: black;
+	color: rgba(0,0,0,.8);
 }
 
 em {
@@ -66,11 +72,12 @@ hr {
 }
 
 .plants-hero {
-	background: url('/img/pexels-photo-213727.jpg');
+	background: url('/img/pexels-photo-92733.jpg');
 	background-position: bottom;
 	background-size: cover;
 	background-attachment: fixed;
 	padding: 50px;
+	color: #E3CB43;
 }
 
 .profile-hero {
@@ -92,12 +99,13 @@ hr {
 	text-transform: uppercase;
 }
 
+
 input, textarea {
 	background: none;
 	font-family: 'Raleway', sans-serif;
-	border: 3px solid black;
+	border: 3px solid rgba(0,0,0,.8);
 	padding: 10px;
-	color: black;
+	color: rgba(0,0,0,.8);
 	font-size: 1em;
 }
 
@@ -107,7 +115,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
 }
 
 input[type="submit"] {
-	background: black;
+	background: rgba(0,0,0,.8);
 	color: white;
 	font-weight: 400;
 }
@@ -134,6 +142,19 @@ input[type="submit"] {
 	text-align: center;
 	display: inline-block;
 	margin-top: 20px;
+	opacity: .9;
+}
+
+.plant-grid-name {
+	margin: 20px;
+}
+
+.plant-grid-botanical {
+	margin: 5px;
+}
+
+.plant-image:hover {
+	opacity: 1;
 }
 
 .plant-image img {
@@ -158,12 +179,20 @@ input[type="submit"] {
 }
 
 
+.plant-icon-section {
+	white-space: nowrap;
+	display: block;
+	margin: 10px 0;
+}
+
 .plant-icon-large {
 	max-height: 75px;
+	opacity: .8;
 }
 
 .plant-icon-small {
 	max-height: 25px;
+	opacity: .8;
 }
 
 .delete-link {
@@ -190,7 +219,7 @@ input[type="submit"] {
 }
 
 .container {
-	width: 75%;
+	width: 85%;
 	margin: 20px auto;
 }
 
@@ -203,7 +232,7 @@ input[type="submit"] {
 }
 
 footer {
-	background: #72766C;
+	background: #2B7D43;
 	color: white;
 }
 
@@ -221,14 +250,22 @@ footer {
 
 .ui.label {
 	background: #E3CB43;
-	color: black;
+	color: rgba(0,0,0,.9);
 }
 
 .ui.label:hover {
 	background: #72766C;
-	color: black;
+	color: rgba(0,0,0,.9);
 }
 
+/*.ui.icon.button {
+	background: rgba(0,0,0,.9);
+	color: white;
+}
+
+.ui.icon.button:hover {
+	background: #72766C;
+}*/
 
 body > header > form > div > div.menu.transition.visible {
 	border: 0;

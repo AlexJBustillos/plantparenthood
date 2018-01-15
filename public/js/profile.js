@@ -10,8 +10,8 @@ $('.ui.rating')
 ;
 
 $('.dropdown').dropdown({ 
-	transition: 'drop', 
+	transition: 'slide down', 
 	fullTextSearch: true,
 	sortSelect: true, 
-	match: 'text',
+	match: 'text'
 });

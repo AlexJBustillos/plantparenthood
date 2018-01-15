@@ -19,12 +19,18 @@
 				<% } %>
 			</div>
 			<div class="pure-u-1 pure-u-md-1-2">
-				<span>Last Checkup Date:</span>
-				<form method="post" action="/users/lastwatered">
-					<input type="hidden" name="id" value="<%= currentUser.id %>">
-					<input type="date" name="lastWatered" id="wateringCalendar">
-					<input type="submit" value="Update">
-					</form>
+				<h4 class="ui header">
+  					<i class="calendar icon"></i>
+  					Update Last Checkin Date
+  				</h4>
+  						<div class="content">
+    						<form method="post" action="/users/lastwatered">
+								<input type="hidden" name="id" value="<%= currentUser.id %>">
+								<input type="date" name="lastWatered" id="wateringCalendar">
+								<input type="submit" value="Update">
+							</form>
+  						</div>
+				</h3>
 			</div>
 	</div>
 	<div class="pure-u-1 pure-u-md-1-4 sidebar hide-on-mobile">

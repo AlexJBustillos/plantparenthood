@@ -6,10 +6,10 @@
 			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder">
 			<% } %>
 	</div>
-	<h3><%= item.name %></h3>
+	<h3 class="plant-grid-name"><%= item.name %></h3>
 </a>
-<h5><em><%= item.botanicalName %></em></h5>
-<p>
+<h5 class="plant-grid-botanical"><em><%= item.botanicalName %></em></h5>
+<span class="plant-icon-section">
 	<% var lightMax = 4; %>
 	<% for(var i = 1; i <= lightMax; i++) { %>
 		<% if(item.light >= i) { %>
@@ -18,8 +18,8 @@
 			N
 		<% } %>
 	<% } %>
-</p>
-<p>
+</span>
+<span class="plant-icon-section">
 	<% var waterMax = 3; %>
 	<% for(var i = 1; i <= waterMax; i++) { %>
 		<% if(item.water >= i) { %>
@@ -28,11 +28,4 @@
 			N
 		<% } %>
 	<% } %>
-</p>
-<p>
-	<% if (item.tags && item.tags.length > 0){ %>
-		<% item.tags.forEach(function(t){ %>
-			<a class="ui label"><%= t.content %></a>
-		<% }); %>
-	<% } %>
-</p>
+</span>

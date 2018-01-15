@@ -61,9 +61,10 @@ Technologies Used:
   * Plant Care Rankings - http://extension.uga.edu/publications/detail.html?number=B1318
 * Images
   * Individual Plant Images - Wikipedia
-  * Stock Photo - Pexel
+  * Stock Photos
+    * https://unsplash.com/photos/tn0496xKk8Q
   * Icons - Noun
     * https://thenounproject.com/term/drop/1372766/
     * https://thenounproject.com/term/fog/19882/
     * https://thenounproject.com/term/sun/1241046/
-    * https://thenounproject.com/term/temperature/399436/
+    * https://thenounproject.com/term/temperature/399436

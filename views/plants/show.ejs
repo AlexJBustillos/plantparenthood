@@ -12,16 +12,18 @@
 		<% if(currentUser){ %>
 			<form method="post" action="/plants">
 				<input type="hidden" name="id" value="<%= plant.id %>">
-				<input type="submit" value="Add Plant">
-			</form>
+					<button type="submit" class="ui labeled icon mini button">
+  						<i class="plus icon"></i>
+  						Add Plant
+					</button>
+			</form>	
 		<% } else { %>
-			<a href="/auth/login">+</a>
-		<% } %>
-		<% if (plant.tags && plant.tags.length > 0){ %>
-			<p><% plant.tags.forEach(function(t){ %>
-				<%= t.content %>
-			<% }); %>
-			</p>
+			<a href="/auth/login">
+				<button class="ui labeled icon mini button">
+  					<i class="plus icon"></i>
+  					Add Plant
+				</button>
+			</a>
 		<% } %>
 	</div>
 	<div class="pure-u-1 pure-u-md-1-2">
