@@ -13,9 +13,9 @@
 	<% var lightMax = 4; %>
 	<% for(var i = 1; i <= lightMax; i++) { %>
 		<% if(item.light >= i) { %>
-			<img src="/img/sun-empty.png" class="plant-icon-small" alt="Light">
+			<img src="/img/sun-full.png" class="plant-icon-small" alt="Light">
 		<% } else { %>
-			N
+			<img src="/img/sun-empty.png" class="plant-icon-small empty-icon" alt="Light">
 		<% } %>
 	<% } %>
 </span>
@@ -23,9 +23,9 @@
 	<% var waterMax = 3; %>
 	<% for(var i = 1; i <= waterMax; i++) { %>
 		<% if(item.water >= i) { %>
-			<img src="/img/water-empty.png" class="plant-icon-small" alt="Water">
+			<img src="/img/water-full.png" class="plant-icon-small" alt="Water">
 		<% } else { %>
-			N
+			<img src="/img/water-empty.png" class="plant-icon-small empty-icon" alt="Water">
 		<% } %>
 	<% } %>
 </span>

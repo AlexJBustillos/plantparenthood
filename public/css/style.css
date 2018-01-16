@@ -81,7 +81,7 @@ input[type="date"] {
 }
 
 .hero {
-	background: url('/img/pexels-photo-92733.jpg');
+	background: url('/img/hero-1.jpg');
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -119,7 +119,7 @@ input[type="date"] {
 }
 
 .plants-hero {
-	background: url('/img/pexels-photo-92733.jpg');
+	background: url('/img/hero-1.jpg');
 	background-position: bottom;
 	background-size: cover;
 	background-attachment: fixed;
@@ -135,10 +135,9 @@ body > div:nth-child(2) > h3 > em {
 }
 
 .profile-hero {
-	background: url('/img/pexels-photo-92733.jpg');
-	background-position: bottom;
+	background: url('/img/hero-2.jpg');
+	background-position: 0% 70%;
 	background-size: cover;
-	background-attachment: fixed;
 	color: rgba(0,0,0,.8);
 	padding: 50px;
 	color: #E3CB43;
@@ -230,6 +229,10 @@ body > div:nth-child(2) > h3 > em {
 .plant-icon-small {
 	max-height: 25px;
 	opacity: .8;
+}
+
+.empty-icon {
+	opacity: .5;
 }
 
 .delete-link {
