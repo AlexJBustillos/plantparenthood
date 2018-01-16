@@ -32,21 +32,38 @@ router.get('/profilepic', isLoggedIn, function(req, res){
 
 // Post route for profile picture
 router.post('/profilepic', isLoggedIn, upload.single('profilePic'), function(req, res) {
-  cloudinary.uploader.upload(req.file.path, function(result) {
-  	var newImage = result.url;
-  	console.log(result);
-  	db.user.findOne({
-  		where: {id: req.user.id}
-  	}).then(function(user){
-  		user.userImg = newImage;
-  		user.save();
-  	}).then(function(photoUploaded){
-  		res.redirect('/users/profile');
-  	}).catch(function(err){
-  		console.log('An error happened', err);
-		res.send('Fail');
-  	});
-  });
+	cloudinary.uploader.upload(req.file.path, function(result) {
+	  	var newImage = result.url;
+
+	  	console.log(result);
+
+	  	db.user.findOne({
+	  		where: { id: req.user.id }
+
+	  	}).then(function(user){
+	  		user.userImg = newImage;
+	  		user.save();
+
+		}).then(function(photoUploaded){
+
+	  		db.comment.findAll({
+	  			where: { userId: req.user.id }
+	  		}).then(function(comment){
+	  			comment.forEach(function(comment){
+	  				if(comment.imageUrl){
+	  					comment.imageUrl = newImage;
+	  					comment.save();
+	  				}
+	  			});
+	  		});
+	  	}).then(function(photoUpdated){
+	  		res.redirect('/users/profile');
+
+	  	}).catch(function(err){
+	  		console.log('An error happened', err);
+	  		res.send('Fail');
+	  	});
+	});
 });
 
 // User's plant collection

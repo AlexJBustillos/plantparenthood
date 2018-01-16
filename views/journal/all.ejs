@@ -3,7 +3,11 @@
 </header>
 	<div class="ui stackable centered padded grid">
 		 <div class="twelve wide column">
-			<h3><a href="/users/journal/new">New Entry</a></h3>
+		 	<a href="/users/journal/new">
+		 		<button type="submit" class="ui secondary button large">
+					New Entry
+				</button> 
+			</a>
 			<% if(user.journals.length <= 0) { %>
 				<h2>No entries yet</h2>
 			<% } else { %>

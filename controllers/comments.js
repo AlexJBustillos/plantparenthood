@@ -9,9 +9,9 @@ var db = require('../models');
 var router = express.Router();
 
 router.post('/', isLoggedIn, function(req, res){
-	db.comment.create(req.body).then(function(createdComment){
-		res.redirect('/plants/' + createdComment.plantId);
-	});
+	db.comment.create(req.body).then(function(commentAdded){
+    res.redirect('/plants/' + commentAdded.plantId);
+  })
 });
 
 router.delete('/:id', isLoggedIn, function(req, res){

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
 
   comment.associate = function (models) {
     models.comment.belongsTo(models.plant);
+    models.comment.belongsTo(models.user);
   };
 
   return comment;

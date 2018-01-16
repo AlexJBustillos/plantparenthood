@@ -3,7 +3,11 @@
 	<% plant.comments.forEach(function(c){ %>
 	<div class="comment">
     	<a class="avatar">
-      		<img src="/img/plant-pot.png">
+    		<% if (!c.imageUrl) { %>
+    			<img src="/img/plant-pot.png">
+    		<% } else { %>
+				<img src="<%= c.imageUrl%>" alt="<%= c.authorName %>">
+	    	<% } %>
    		</a>
     	<div class="content">
 			<b><%= c.authorName %></b>
@@ -31,6 +35,7 @@
     	<div class="field">
 			<textarea name="content" placeholder="Text here"></textarea>
 			<input type="hidden" name="userId" value="<%= currentUser.id %>">
+			<input type="hidden" name="imageUrl" value="<%= currentUser.userImg %>">
 			<input type="hidden" name="authorName" value="<%= currentUser.name %>">
 			<input type="hidden" name="plantId" value="<%= plant.id %>">
     	</div>
