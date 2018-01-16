@@ -113,29 +113,29 @@ router.get('/:id', function(req, res){
 // Remove comments from below to scrape all plant care rankings from UGA and input into db
 // TO DO: Need more hooks here to fix some typos and overly long names from original data source
 
-// request('http://extension.uga.edu/publications/detail.html?number=B1318', function(error, response, data){
-// 	var $ = cheerio.load(data);
+request('http://extension.uga.edu/publications/detail.html?number=B1318', function(error, response, data){
+	var $ = cheerio.load(data);
 
-// 	for (var i = 4; i <= 231; i++) {
-// 		var plantRow = 'body > main > div > div.large-8.columns.pub > table:nth-child(179) > tbody > tr:nth-child(';
-// 		var botanicalName = $(plantRow + i +') > td:nth-child(1)').text();
-// 		var commonName = $(plantRow + i +') > td:nth-child(2)').text();
-// 		var light = $(plantRow + i +') > td:nth-child(3)').text();
-// 		var temperature = $(plantRow + i +') > td:nth-child(4)').text();
-// 		var humidity = $(plantRow + i +') > td:nth-child(5)').text();
-// 		var water = $(plantRow + i +') > td:nth-child(6)').text();
-// 		var soil = $(plantRow + i +') > td:nth-child(7)').text();
-// 		db.plant.create({
-// 			name: commonName,
-// 			botanicalName: botanicalName,
-// 			light: light,
-// 			temperature: temperature,
-// 			humidity: humidity,
-// 			water: water,
-// 			soil: soil
-// 		});
-// 	}
-// });
+	for (var i = 4; i <= 231; i++) {
+		var plantRow = 'body > main > div > div.large-8.columns.pub > table:nth-child(179) > tbody > tr:nth-child(';
+		var botanicalName = $(plantRow + i +') > td:nth-child(1)').text();
+		var commonName = $(plantRow + i +') > td:nth-child(2)').text();
+		var light = $(plantRow + i +') > td:nth-child(3)').text();
+		var temperature = $(plantRow + i +') > td:nth-child(4)').text();
+		var humidity = $(plantRow + i +') > td:nth-child(5)').text();
+		var water = $(plantRow + i +') > td:nth-child(6)').text();
+		var soil = $(plantRow + i +') > td:nth-child(7)').text();
+		db.plant.create({
+			name: commonName,
+			botanicalName: botanicalName,
+			light: light,
+			temperature: temperature,
+			humidity: humidity,
+			water: water,
+			soil: soil
+		});
+	}
+});
 
 // STEP 2 FOR INPUTTING IMAGES
 // Remove comments from below and run this
