@@ -25,7 +25,57 @@ router.get('/:id', function(req, res){
 	});
 });
 
-// Adding tags to plants
+// STEP 1 FOR CREATING TAGS
+// Do this AFTER creating plant database
+// Remove comments and run the below once to generate initial tags
+
+// Creating tags
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "palm"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "cactus & succulent"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "flowering"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "ivy"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "fern"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "orchid"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "foliage"
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: "bromeliad"
+// 	}
+// });
+
+
+// STEP 2 - Add tags to plants
+// Remove comments from below to loop through
+// TO DO - Make more dry so I can re-use this more easily for more plant types
+// Since currently you have to make manual changes in this function
 
 // db.plant.findAll().then(function(plant){
 // 	plant.forEach(function(plant){
@@ -48,13 +98,16 @@ router.get('/:id', function(req, res){
 // 	});
 // });
 
+
+// STEP 3 - Use soil types to loop through and add more tags
+// TO DO - Make this more dry and reusable! Same as step 2 where you need to adjust manually
+
 // Flowering = scale 1, id = 2
 // Foliage = scale 2, id = 9
 // Bromeliads = scale 3, id = 11
 // Orchids = scale 4, id = 8
 // Succulents & cactus = scale 5, id = 10
 // Ferns = scale 6, id = 4
-
 
 // var soilType = "6";
 // var plantsArr = [];
@@ -84,62 +137,5 @@ router.get('/:id', function(req, res){
 // 	}
 // });
 
-// Creating tags
-
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "dog-friendly"
-// 	}
-// })
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "cat-friendly"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "palm"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "cactus & succulent"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "flowering"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "ivy"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "fern"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "low maintenance"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "orchid"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "foliage"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "bromeliad"
-// 	}
-// });
 
 module.exports = router;
