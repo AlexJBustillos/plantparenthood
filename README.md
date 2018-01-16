@@ -76,11 +76,12 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 
 ![](/public/img/live-screenshot-1.png)
 
-![](/public/img/live-screenshot-2.png)
-
 ![](/public/img/live-screenshot-3.png)
 
+![](/public/img/live-screenshot-2.png)
+
 #### Backlog
+  * Responsive navbar (Semantic UI does not have this component)
   * More dynamic tag and water filtering on page (have a start in my code, but not there yet)
   * Scrub database further, adjust plant names as needed so that they can be better located on Wikipedia
   * Scrape lists of easy houseplants and add to "low maintenance" tag
