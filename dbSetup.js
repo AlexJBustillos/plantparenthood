@@ -69,45 +69,44 @@ var router = express.Router();
 // Do this AFTER creating plant database
 // Remove comments and run the below once to generate initial tags
 
-Creating tags
 db.tag.findOrCreate({
 	where: {
-		content: "palm"
+		content: 'palm'
 	}
 });
 db.tag.findOrCreate({
 	where: {
-		content: "cactus & succulent"
+		content: 'cactus & succulent'
 	}
 });
 db.tag.findOrCreate({
 	where: {
-		content: "flowering"
+		content: 'flowering'
 	}
 });
 db.tag.findOrCreate({
 	where: {
-		content: "ivy"
+		content: 'ivy'
 	}
 });
 db.tag.findOrCreate({
 	where: {
-		content: "fern"
+		content: 'fern'
 	}
 });
 db.tag.findOrCreate({
 	where: {
-		content: "orchid"
+		content: 'orchid'
 	}
 });
 db.tag.findOrCreate({
 	where: {
-		content: "foliage"
+		content: 'foliage'
 	}
 });
 db.tag.findOrCreate({
 	where: {
-		content: "bromeliad"
+		content: 'bromeliad'
 	}
 });
 
