@@ -117,31 +117,31 @@ var router = express.Router();
 // Remove comments from below to loop through
 // Since currently you have to make manual changes in this function
 
-var addTags = function(tagName) {
-	db.plant.findAll().then(function(plant){
-		plant.forEach(function(plant){
-			var plantName = JSON.stringify(plant.name).toLowerCase();
-			var plantId = plant.id;
-			var addPlantTag = plantName.includes(tagName);
-			if (addPlantTag){
-				console.log(plant.name,'includes'+ tagName +'and ID is',plantId);
-				db.plant.findOne({
-					where: { id: plantId }
-				}).then(function(plant, found){
-					db.tag.findOrCreate({
-						where: { content: tagName }
-					}).spread(function(tag, found){
-						plant.addTag(tag);
-						console.log(tag,'added to',plant);
-					});
-				});
-			} 
-		});
-	});
-}
+// var addTags = function(tagName) {
+// 	db.plant.findAll().then(function(plant){
+// 		plant.forEach(function(plant){
+// 			var plantName = JSON.stringify(plant.name).toLowerCase();
+// 			var plantId = plant.id;
+// 			var addPlantTag = plantName.includes(tagName);
+// 			if (addPlantTag){
+// 				console.log(plant.name,'includes'+ tagName +'and ID is',plantId);
+// 				db.plant.findOne({
+// 					where: { id: plantId }
+// 				}).then(function(plant, found){
+// 					db.tag.findOrCreate({
+// 						where: { content: tagName }
+// 					}).spread(function(tag, found){
+// 						plant.addTag(tag);
+// 						console.log(tag,'added to',plant);
+// 					});
+// 				});
+// 			} 
+// 		});
+// 	});
+// }
 
 // addTags('palm');
-addTags('ivy');
+// addTags('ivy');
 // addTags('fern');
 // addTags('orchid');
 // addTags('bromeliad');

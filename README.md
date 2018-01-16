@@ -37,12 +37,16 @@ The target user for this app is the growing number of indoor houseplant enthusia
 ##### 1. Planned out features and functionality
 See "Routes and Models" section for final outline of website structure
 ##### 2. Developed Wireframes
+![](/public/img/wireframe-1.png)![](/public/img/wireframe-2.png)
+
 First round wireframes show the initial vision for plant view and profile pages.
 ##### 3. Developed Moodboards
 ![](/public/img/moodboard.jpg)
 
 I researched plant imagery and colors and created a moodboard. This helped identify the colors and mood I would be aiming for in my design.
 ##### 4. Setup Trello Board
+![](/public/img/trello-board.png)
+
 Trello board status as Sprint 3 wraps. Sprints were color coordinated to help see what might be lagging behind.
 ##### 5. Stubbed out Routes and Set up Models
 Got database running with models and associations.
