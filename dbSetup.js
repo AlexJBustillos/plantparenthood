@@ -38,22 +38,22 @@ var router = express.Router();
 // Remove comments from below and run this
 // May want to run for botanicalName and name to get maximum results
 
-for (var i = 1; i <= 227; i++) {
-	db.plant.findOne({
-		where: {id: i}
-		}).then(function(plant){
-			request('https://en.wikipedia.org/wiki/' + plant.botanicalName, function(error, response, data){
-			var $ = cheerio.load(data);
-			var imageSrc = $('#mw-content-text > div > table.infobox.biota > tbody > tr:nth-child(2) > td > a > img').attr('src');
-			if (imageSrc && !plant.imageUrl){
-				plant.imageUrl = 'http:' + imageSrc;
-				plant.save();
-				console.log(plant.name,"image url is",plant.imageUrl);
-			}
+// for (var i = 1; i <= 227; i++) {
+// 	db.plant.findOne({
+// 		where: {id: i}
+// 		}).then(function(plant){
+// 			request('https://en.wikipedia.org/wiki/' + plant.botanicalName, function(error, response, data){
+// 			var $ = cheerio.load(data);
+// 			var imageSrc = $('#mw-content-text > div > table.infobox.biota > tbody > tr:nth-child(2) > td > a > img').attr('src');
+// 			if (imageSrc && !plant.imageUrl){
+// 				plant.imageUrl = 'http:' + imageSrc;
+// 				plant.save();
+// 				console.log(plant.name,"image url is",plant.imageUrl);
+// 			}
 
-		});
-	});
-}
+// 		});
+// 	});
+// }
 
 // The below was used when I had weird dupes in the db
 // for (var i = 229; i <= 456; i++) {
@@ -69,47 +69,47 @@ for (var i = 1; i <= 227; i++) {
 // Do this AFTER creating plant database
 // Remove comments and run the below once to generate initial tags
 
-// Creating tags
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "palm"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "cactus & succulent"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "flowering"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "ivy"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "fern"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "orchid"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "foliage"
-// 	}
-// });
-// db.tag.findOrCreate({
-// 	where: {
-// 		content: "bromeliad"
-// 	}
-// });
+Creating tags
+db.tag.findOrCreate({
+	where: {
+		content: "palm"
+	}
+});
+db.tag.findOrCreate({
+	where: {
+		content: "cactus & succulent"
+	}
+});
+db.tag.findOrCreate({
+	where: {
+		content: "flowering"
+	}
+});
+db.tag.findOrCreate({
+	where: {
+		content: "ivy"
+	}
+});
+db.tag.findOrCreate({
+	where: {
+		content: "fern"
+	}
+});
+db.tag.findOrCreate({
+	where: {
+		content: "orchid"
+	}
+});
+db.tag.findOrCreate({
+	where: {
+		content: "foliage"
+	}
+});
+db.tag.findOrCreate({
+	where: {
+		content: "bromeliad"
+	}
+});
 
 
 // STEP 2 - Add tags to plants
