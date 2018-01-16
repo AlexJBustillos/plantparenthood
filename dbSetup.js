@@ -142,9 +142,9 @@ var addTags = function(tagName) {
 
 // addTags('palm');
 addTags('ivy');
-addTags('fern');
-addTags('orchid');
-addTags('bromeliad');
+// addTags('fern');
+// addTags('orchid');
+// addTags('bromeliad');
 
 // STEP 5 - Use soil types to loop through and add more tags
 // TO DO - Make this more dry and reusable! Same as step 2 where you need to adjust manually
