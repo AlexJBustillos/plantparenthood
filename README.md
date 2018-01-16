@@ -17,7 +17,7 @@ Become a better plant parent. Plant Parenthood is a database of over 200+ common
 ## User Stories
 The target user for this app is the growing number of indoor houseplant enthusiasts. These are not master gardeners, they are people who enjoy adding greenery to their space but may not know all the ins and outs of plant care. 
 * As a user, I want to...
-  * be able to easily save and keep track of my houseplants and see their care information displayed in a simple, easy to read format (without a ton of "master gardener" jargon). Similarly, I should be able to easily delete plants from my collection.
+  * be able to easily save and keep track of my houseplants and see their care information displayed in a simple, easy to read format (without a ton of jargon). Similarly, I should be able to easily delete plants from my collection.
   * be able to comment on plants and get feedback or suggestions from others on my issues or questions.
   * be easily track when was the last day I checked on my plants (because they might need water!).
   * be able to write a personal journal about adjustments I've made in my plant care routine, or tips I've learned along the way.
@@ -79,11 +79,11 @@ If you'd like to set this project up on your own local server:
   * Run `createdb plantparenthood` to create the database
   * Run `sequelize db:migrate` to run migrations
 * Create .env file, which will need to include:
-  * SESSION_SECRET (you determine this)
-  * BASE_URL (where you will deploy the site)
-  * CLOUDINARY_URL (from your Cloudinary account)
+  * `SESSION_SECRET` (you determine this)
+  * `BASE_URL` (where you will deploy the site)
+  * `CLOUDINARY_URL` (from your Cloudinary account)
 * Review database setup file
-  * Follow directions in file and run `node FILENAME` to scrape content into your database
+  * Follow directions in `node FILENAME` to scrape content into your database
 
 ## Sources
 * Plant Data
