@@ -113,10 +113,15 @@ input[type="date"] {
 }
 
 /* Headers and heros */
-.hero {
+header {
 	background: url('/img/hero-1.jpg');
+	background-size: cover;	
+	color: #E3CB43;
+}
+
+/* Hero for homepage */
+.hero {
 	background-position: center;
-	background-size: cover;
 	background-attachment: fixed;
 	height: 600px;
 	margin-bottom: 20px;
@@ -127,7 +132,6 @@ input[type="date"] {
 	letter-spacing: 3px;
 	position: relative;
 	line-height: 1em;
-	color: #E3CB43;
 	font-size: 5em;
 	margin-top: 150px;
 	display: inline-block;
@@ -143,21 +147,10 @@ input[type="date"] {
 	font-family: 'Raleway', sans-serif;
 }
 
+/* Header for section used most throughout the site */
 .plants-hero {
-	background: url('/img/hero-1.jpg');
 	background-position: 0 40%;
-	background-size: cover;
 	padding: 50px;
-	color: #E3CB43;
-}
-
-.profile-hero {
-	background: url('/img/hero-2.jpg');
-	background-position: 0% 60%;
-	background-size: cover;
-	color: rgba(0,0,0,.8);
-	padding: 50px;
-	color: #E3CB43;
 }
 
 .plants-hero h1 {
@@ -165,6 +158,13 @@ input[type="date"] {
 	letter-spacing: 3px;
 	font-size: 5em;
 	text-transform: uppercase;
+}
+
+/* Header used only on profile page */
+.profile-hero {
+	background-position: 0 25%;
+	padding: 50px;
+	margin-bottom: 20px;
 }
 
 /* Tags */
@@ -183,6 +183,11 @@ input[type="date"] {
 }
 
 /* Plant grid and images */
+
+h1.plant-name {
+	font-size: 2em;
+}
+
 .plant-image {
 	border-radius: 150px;
 	width: 150px;
@@ -205,6 +210,12 @@ input[type="date"] {
 	max-height: 175px;
 	max-width: 175px;
 	text-align: center;
+}
+
+.placeholder-profile-pic {
+	height: 150px;
+	margin-bottom: -20px;
+	filter: invert(100%);
 }
 
 .plant-grid-name {
@@ -273,6 +284,14 @@ input[type="date"] {
 .ui.basic.button, .ui.basic.buttons .button {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
+}
+
+.avatar {
+	opacity: .8;
+}
+
+.avatar:hover {
+	opacity: 1;
 }
 
 /* Search bar */

@@ -67,6 +67,13 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 ##### 3. Integrated Semantic UI, in particular to allow for a more user-friendly search tool
 ##### 4. Built out CSS further for subpages
 
+#### Backlog
+  * More dynamic tag and water filtering on page (have a start in my code, but not there yet)
+  * Scrub database further, adjust plant names as needed so that they can be better located on Wikipedia
+  * Scrape lists of easy houseplants and add to "low maintenance" tag
+  * Scrape ASCPA website for cat/dog safety and add "cat-friendly"/"dog-friendly" tags
+  * Lazy load functionality for longer pages
+  * Sticky "back to top" icon
 
 ## Routes and Models
 * **Routes**

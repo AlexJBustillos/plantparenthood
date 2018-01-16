@@ -1,13 +1,24 @@
 <div class="container">
-	<h2>Edit Profile Picture</h2>
 	<% if(user.userImg){ %>
-		<img src="<%= user.userImg %>" alt="Profile Picture">
+		<div class="plant-image">
+			<img src="<%= user.userImg %>" alt="Profile Picture">
+		</div>
 	<% } else { %>
-		<img src="/img/plant-pot.png" class="profile-pic" height="75px">
+		<img src="/img/profpic-default.png" class="empty-icon ui centered small image">
 	<% } %>
-	<p>Update your profile picture using the below upload form.</p>
-	<form enctype="multipart/form-data" action="/users/profilepic" method="POST">
-	  <input type="file" name="profilePic">
-	  <input type="submit">
-	</form>
+	<h2>Edit Profile Picture</h2>
+	<div class="ui stackable centered padded grid">
+		<div class="eight wide column">
+			<form enctype="multipart/form-data" action="/users/profilepic" method="POST">
+				<div class="field">
+			    	<input type="file" name="profilePic" class="ui basic button" required>
+			    	<button type="submit" class="ui secondary button large">
+						Upload
+					</button>
+			  	</div>		
+			</form>
+		</div>
+	</div>
 </div>
+
+

@@ -1,12 +1,15 @@
 <header class="profile-hero">
-	<div class="plant-image">
-		<a href="/users/profilepic">
-			<% if(user.userImg){ %>
+	<% if(user.userImg){ %>
+		<div class="plant-image">
+			<a href="/users/profilepic">
 				<img src="<%= user.userImg %>" alt="Profile Picture">
-			<% } else { %>
-				<img src="/img/profpic-default.png">
-			<% } %>
+			</a>
+		</div>
+	<% } else { %>
+		<a href="/users/profilepic">
+			<img src="/img/profpic-default.png" alt="Profile Picture" class="placeholder-profile-pic">
 		</a>
+	<% } %>
 	</div>
 	<h1><%= currentUser.name %></h1>
 </div>

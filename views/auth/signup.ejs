@@ -1,25 +1,33 @@
-<header class="profile-hero">
+<header class="plants-hero">
 	<h1>Sign Up</h1>
 </header>
 <div class="container">
-	<form method="post" action="/auth/signup">
-		<label>Name
-			<input type="text" name="name" class="form-control" placeholder="Name" required>
-		</label>
-		<br>
-		<label>
-			Email
-			<input type="text" name="email" class="form-control" placeholder="your@email.com" required>
-		</label>
-		<br>
-		<label>
-			Password
-			<input type="password" name="password" class="form-control" required>
-		</label>
-		<br>
-		<button type="submit" class="ui secondary button large">
-			Sign Up
-		</button>
-	</form>
+	<div class="ui stackable centered padded grid">
+		<div class="six wide column">
+			<form method="post" action="/auth/signup" class="ui form">
+				<div class="field">
+			    	<label>Name</label>
+			    	<input type="text" name="name" placeholder="Name" required>
+			  	</div>
+				<div class="field">
+					<label>Email</label>
+					<input type="text" name="email" placeholder="your@email.com" required>
+				</div>
+				<div class="field">
+					<label>Password</label>
+					<input type="password" name="password" required>
+				</div> 
+			  	<button type="submit" class="ui secondary button large">
+					Sign Up
+				</button>
+			</form>
+		</div>
+	</div>
+	<p>Already have an account? Please <a href="/auth/login">login</a>.</p>
 </div>
-<p>Already have an account? Please <a href="/auth/login">login</a>.</p>
+
+
+
+
+
+

@@ -8,20 +8,6 @@
 	<h2>Nothing in the database yet</h2>
 <% } else { %>
 	<div class="container">
-		<div class="ui stackable centered padded grid">
-			<div class="ten wide column center aligned">
-				<a class="ui label">cat-friendly</a>
-				<a class="ui label">dog-friendly</a>
-				<a class="ui label">fern</a>
-				<a class="ui label">ivy</a>
-				<a class="ui label">palm</a>
-				<a class="ui label">orchid</a>
-				<a class="ui label">foliage</a>
-				<a class="ui label">cactus & succulent</a>
-				<a class="ui label">low maintenance</a>
-				<a class="ui label">bromeliad</a>
-			</div>
-		</div>
 		<div class="ui stackable four column grid">
 		<% plants.sort(function(a, b){ %>
 			<% var x = a.name.toLowerCase(); %>
