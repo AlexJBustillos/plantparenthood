@@ -138,8 +138,8 @@ router.get('/:id', function(req, res){
 // });
 
 // STEP 2 FOR INPUTTING IMAGES
-Remove comments from below and run this
-May want to run for botanicalName and name to get maximum results
+// Remove comments from below and run this
+// May want to run for botanicalName and name to get maximum results
 
 for (var i = 1; i <= 227; i++) {
 	db.plant.findOne({
