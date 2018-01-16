@@ -69,46 +69,46 @@ var router = express.Router();
 // Do this AFTER creating plant database
 // Remove comments and run the below once to generate initial tags
 
-db.tag.findOrCreate({
-	where: {
-		content: 'palm'
-	}
-});
-db.tag.findOrCreate({
-	where: {
-		content: 'cactus & succulent'
-	}
-});
-db.tag.findOrCreate({
-	where: {
-		content: 'flowering'
-	}
-});
-db.tag.findOrCreate({
-	where: {
-		content: 'ivy'
-	}
-});
-db.tag.findOrCreate({
-	where: {
-		content: 'fern'
-	}
-});
-db.tag.findOrCreate({
-	where: {
-		content: 'orchid'
-	}
-});
-db.tag.findOrCreate({
-	where: {
-		content: 'foliage'
-	}
-});
-db.tag.findOrCreate({
-	where: {
-		content: 'bromeliad'
-	}
-});
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: 'palm'
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: 'cactus & succulent'
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: 'flowering'
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: 'ivy'
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: 'fern'
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: 'orchid'
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: 'foliage'
+// 	}
+// });
+// db.tag.findOrCreate({
+// 	where: {
+// 		content: 'bromeliad'
+// 	}
+// });
 
 
 // STEP 2 - Add tags to plants
@@ -116,26 +116,26 @@ db.tag.findOrCreate({
 // TO DO - Make more dry so I can re-use this more easily for more plant types
 // Since currently you have to make manual changes in this function
 
-// db.plant.findAll().then(function(plant){
-// 	plant.forEach(function(plant){
-// 		var plantName = JSON.stringify(plant.name).toLowerCase();
-// 		var plantId = plant.id;
-// 		var addPlantTag = plantName.includes('palm');
-// 		if (addPlantTag){
-// 			console.log(plant.name,'includes palm and ID is',plantId);
-// 			db.plant.findOne({
-// 				where: { id: plantId }
-// 			}).then(function(plant, found){
-// 				db.tag.findOrCreate({
-// 					where: { content: 'palm' }
-// 				}).spread(function(tag, found){
-// 					plant.addTag(tag);
-// 					console.log(tag,'added to',plant);
-// 				});
-// 			});
-// 		} 
-// 	});
-// });
+db.plant.findAll().then(function(plant){
+	plant.forEach(function(plant){
+		var plantName = JSON.stringify(plant.name).toLowerCase();
+		var plantId = plant.id;
+		var addPlantTag = plantName.includes('palm');
+		if (addPlantTag){
+			console.log(plant.name,'includes palm and ID is',plantId);
+			db.plant.findOne({
+				where: { id: plantId }
+			}).then(function(plant, found){
+				db.tag.findOrCreate({
+					where: { content: 'palm' }
+				}).spread(function(tag, found){
+					plant.addTag(tag);
+					console.log(tag,'added to',plant);
+				});
+			});
+		} 
+	});
+});
 
 
 // STEP 3 - Use soil types to loop through and add more tags
