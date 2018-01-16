@@ -38,7 +38,9 @@ The target user for this app is the growing number of indoor houseplant enthusia
 ##### 1. Planned out features and functionality
 See "Routes and Models" section for final outline of website structure
 ##### 2. Developed Wireframes
-![](/public/img/wireframe-1.png)![](/public/img/wireframe-2.png)
+![](/public/img/wireframe-1.png)
+
+![](/public/img/wireframe-2.png)
 
 First round wireframes show the initial vision for plant view and profile pages.
 ##### 3. Developed Moodboards
@@ -66,14 +68,16 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 ##### 5. Integrated repeated content into partials
 ##### 6. Completed MVP level functionality
 
-#### Sprint 3
+### Sprint 3
 ##### 1. Integrated Cloudinary API so that users could upload profile pictures
 ##### 2. Added search functionality for plants
 ##### 3. Integrated Semantic UI, in particular for grids and to allow for a more user-friendly search tool
 ##### 4. Built out CSS further for subpages
 
 ![](/public/img/live-screenshot-1.png)
+
 ![](/public/img/live-screenshot-2.png)
+
 ![](/public/img/live-screenshot-3.png)
 
 #### Backlog
