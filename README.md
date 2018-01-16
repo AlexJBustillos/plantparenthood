@@ -26,7 +26,7 @@ The target user for this app is the growing number of indoor houseplant enthusia
 
 #### Sprint 1
 
-##### 1. Planned out routes and functionality
+##### 1. Planned out features and functionality
 See "Routes and Models" section for final outline of website structure
 ##### 2. Developed Wireframes
 First round wireframes show the initial vision for plant view and profile pages.
@@ -35,14 +35,33 @@ First round wireframes show the initial vision for plant view and profile pages.
 I researched plant imagery and colors and created a moodboard. This helped identify the colors and mood I would be aiming for in my design.
 ##### 4. Setup Trello Board
 Trello board status as Sprint 3 wraps. Sprints were color coordinated to help see what might be lagging behind.
-##### 5. Stubbed out Routes
+##### 5. Stubbed out Routes and Set up Models
+Got database running with models and associations.
+##### 6. Setup Auth
+Utilized auth boilerplate and cloned to new project. 
+##### 7. Scraped Plant Data into Database
+Used Cheerio to pull plant care rankings out  of a research table, as well as images from Wikipedia, then inserted into database.
 
 #### Sprint 2
+##### 1. Built out key pages for all plants, plant detail, and user profile
+##### 2. Completed routes with get, post, put, and delete functionality
+   * Users can add/delete plants, add/delete comments, and add/delete/edit journal posts
+
+#### 3. Wrote hooks to correct problematic plant data
+#### 4. Wrote loops to go through and add tags as needed to plants
+#### 5. Integrated repeated content into partials
+#### 6. Completed MVP level functionality
+
 #### Sprint 3
+##### 1. Integrated Cloudinary API so that users could upload profile pictures
+##### 2. Added search functionality for plants
+##### 3. Integrated Semantic UI, in particular to allow for a more user-friendly search tool
+##### 4. Built out CSS further for subpages
+
 
 ## Routes and Models
 
-* Routes
+* **Routes**
   * Index
     * `GET /` - home page that welcomes user
   * Auth
@@ -77,7 +96,8 @@ Trello board status as Sprint 3 wraps. Sprints were color coordinated to help se
     * `GET /users/profilepic` - renders page to update user's profile picture
     * `POST /users/profile` - uploads user's new profile picture through Cloudinary
     * `POST /users/lastwatered` - edits the date in the database when user last checked on their plants
-* Models
+* **Models**
+(Note: some fields not listed below as they are not currently utilized)
   * Comment - content, userId, authorName, plantId, imageUrl
     * Belongs to plants and users
   * Journal - title, content, useId, imageUrl
