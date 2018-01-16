@@ -1,18 +1,26 @@
 # Plant Parenthood
 Become a better plant parent. Plant Parenthood is a database of over 200+ common indoor houseplants. Sign up to easily track plants you own and have quick access to their care information.
 
+## Requirements
+* Build a full stack Node app with at least 2 models.
+* Include sign up/log in functionality, with hashed passwords and an authorization flow.
+* Incorporate at least one API.
+* Have complete RESTful routes with `GET`, `POST`, `PUT`, and `DELETE`.
+* Utilize an ORM to create a database table structure and interact with your relationally-stored data.
+* Include wireframes designed during the planning process.
+* Have semantically clean HTML and CSS.
+* Be deployed online and accessible to the public.
+
 ## Technologies Used
 * Node/Express
   * Key modules:
     * Cheerio - Plant data scraping from 2 different sources
     * Passport / Bcrypt - Authentication and password hashing
-    * Cloudinary / Multer - Profile photo uploading
+    * Cloudinary / Multer - Profile photo uploading through Cloudinary API
 * PostgreSQL
 * Sequelize
 * jQuery
 * Semantic UI
-
-## Requirements
 
 ## User Stories
 The target user for this app is the growing number of indoor houseplant enthusiasts. These are not master gardeners, they are people who enjoy adding greenery to their space but may not know all the ins and outs of plant care. 
@@ -22,9 +30,9 @@ The target user for this app is the growing number of indoor houseplant enthusia
   * be easily track when was the last day I checked on my plants (because they might need water!).
   * be able to write a personal journal about adjustments I've made in my plant care routine, or tips I've learned along the way.
 
-### Development Sprints and Process
+## Development Sprints and Process
 
-#### Sprint 1
+### Sprint 1
 
 ##### 1. Planned out features and functionality
 See "Routes and Models" section for final outline of website structure
@@ -32,25 +40,26 @@ See "Routes and Models" section for final outline of website structure
 First round wireframes show the initial vision for plant view and profile pages.
 ##### 3. Developed Moodboards
 ![](/public/img/moodboard.jpg)
+
 I researched plant imagery and colors and created a moodboard. This helped identify the colors and mood I would be aiming for in my design.
 ##### 4. Setup Trello Board
 Trello board status as Sprint 3 wraps. Sprints were color coordinated to help see what might be lagging behind.
 ##### 5. Stubbed out Routes and Set up Models
 Got database running with models and associations.
 ##### 6. Setup Auth
-Utilized auth boilerplate and cloned to new project. 
+Utilized auth, including hashed passwords and an authorization flow.
 ##### 7. Scraped Plant Data into Database
 Used Cheerio to pull plant care rankings out  of a research table, as well as images from Wikipedia, then inserted into database.
 
-#### Sprint 2
+### Sprint 2
 ##### 1. Built out key pages for all plants, plant detail, and user profile
 ##### 2. Completed routes with get, post, put, and delete functionality
    * Users can add/delete plants, add/delete comments, and add/delete/edit journal posts
 
-#### 3. Wrote hooks to correct problematic plant data
-#### 4. Wrote loops to go through and add tags as needed to plants
-#### 5. Integrated repeated content into partials
-#### 6. Completed MVP level functionality
+##### 3. Wrote hooks to correct problematic plant data
+##### 4. Wrote loops to go through and add tags as needed to plants
+##### 5. Integrated repeated content into partials
+##### 6. Completed MVP level functionality
 
 #### Sprint 3
 ##### 1. Integrated Cloudinary API so that users could upload profile pictures
@@ -60,7 +69,6 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 
 
 ## Routes and Models
-
 * **Routes**
   * Index
     * `GET /` - home page that welcomes user
@@ -129,9 +137,11 @@ If you'd like to set this project up on your own local server:
   * Plant Care Rankings - http://extension.uga.edu/publications/detail.html?number=B1318
   * Individual Plant Images - https://www.wikipedia.org/
 * Supporting Icons and Imagery
-  * Stock Photos
-    * https://unsplash.com/photos/tn0496xKk8Q
+  * Stock Photos - Pexels
+    * https://www.pexels.com/photo/summer-branches-leaves-tree-92733/
+    * https://www.pexels.com/photo/botanical-cactuses-close-up-colors-305827/
   * Icons - Noun
+    * https://thenounproject.com/term/houseplant/321363/
     * https://thenounproject.com/term/drop/1372766/
     * https://thenounproject.com/term/fog/19882/
     * https://thenounproject.com/term/sun/1241046/

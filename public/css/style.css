@@ -13,6 +13,7 @@ body {
 	min-height: 100%;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif !important;
 }
@@ -50,12 +51,36 @@ hr {
 
 .container {
 	width: 85%;
-	margin: 40px auto;
+	margin: 30px auto;
 }
 
 footer {
+	margin-top: 20px;
 	background: #2B7D43;
 	color: white;
+	padding: 20px;
+}
+
+footer h4, footer p {
+	text-align: left;
+}
+
+footer a {
+	color: rgba(0,0,0,.8);
+	font-size: .9em;
+	font-weight: 400px;
+	display: block;
+}
+
+/* For sticky footer at bottom */
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
 }
 
 /* Alerts */
@@ -94,6 +119,7 @@ input[type="date"] {
 	background-size: cover;
 	background-attachment: fixed;
 	height: 600px;
+	margin-bottom: 20px;
 }
 
 .hero h1 {
