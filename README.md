@@ -1,4 +1,5 @@
 # Plant Parenthood
+## https://plant-parenthood.herokuapp.com
 Become a better plant parent. Plant Parenthood is a database of over 200+ common indoor houseplants. Sign up to easily track plants you own and have quick access to their care information.
 
 ## Requirements
@@ -68,8 +69,12 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 #### Sprint 3
 ##### 1. Integrated Cloudinary API so that users could upload profile pictures
 ##### 2. Added search functionality for plants
-##### 3. Integrated Semantic UI, in particular to allow for a more user-friendly search tool
+##### 3. Integrated Semantic UI, in particular for grids and to allow for a more user-friendly search tool
 ##### 4. Built out CSS further for subpages
+
+![](/public/img/live-screenshot-1.png)
+![](/public/img/live-screenshot-2.png)
+![](/public/img/live-screenshot-3.png)
 
 #### Backlog
   * More dynamic tag and water filtering on page (have a start in my code, but not there yet)
