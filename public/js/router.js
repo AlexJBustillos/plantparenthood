@@ -1,5 +1,4 @@
 // Profile page
-
 $('.delete-plant').click(function(event){
 	event.preventDefault();
 	$.ajax({

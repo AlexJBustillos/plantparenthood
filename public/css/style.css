@@ -9,6 +9,7 @@
 body {
 	text-align: center;
 	margin: 0 auto;
+	min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -74,12 +75,10 @@ input[type="date"] {
 }
 
 .profilepic {
-	max-width: 200px;
-	border-radius: 100px;
-	max-height: 200px;
+	max-width: 100px;
+	border-radius: 200px;
+	max-height: 100px;
 }
-
-
 
 .hero {
 	background: url('/img/pexels-photo-92733.jpg');
@@ -105,9 +104,18 @@ input[type="date"] {
 .hero h2 {
 	display: inline-block;
 	color: white;
-	line-height: 3em;
+	line-height: 1em;
 	letter-spacing: 1px;
 	font-family: 'Raleway', sans-serif;
+}
+
+/* CTA on header */
+.ui.inverted.button {
+	margin: 50px;
+}
+
+.ui.header+p {
+    font-size: 1.25em;
 }
 
 .plants-hero {

@@ -32,42 +32,6 @@ router.get('/search', function(req, res){
 	})
 });
 
-// The below is a work in progress, deciding the way I want to filter
-// router.get('/filter', function(req, res){
-// 	if (req.query.water && req.query.light) {	
-// 		db.plant.findAll({
-// 			where: { 
-// 				water: req.query.water,
-// 				light:  req.query.light
-// 			}
-// 		}).then(function(plants){
-// 			res.render('plants/all', {plants: plants});	
-// 		}).catch(function(err){
-// 			console.log('Plants not found');
-// 		})
-// 	} else if (req.query.water) {
-// 		db.plant.findAll({
-// 			where: { 
-// 				water: req.query.water
-// 			}
-// 		}).then(function(plants){
-// 			res.render('plants/all', {plants: plants});	
-// 		}).catch(function(err){
-// 			console.log('Plants not found');
-// 		})
-// 	} else if (req.query.light) {
-// 		db.plant.findAll({
-// 			where: { 
-// 				light:  req.query.light
-// 			}
-// 		}).then(function(plants){
-// 			res.render('plants/all', {plants: plants});	
-// 		}).catch(function(err){
-// 			console.log('Plants not found');
-// 		})
-// 	}
-// });
-
 router.post('/', isLoggedIn, function(req, res) {
 	db.plant.findOne({
 		where: {id: req.body.id}
@@ -108,6 +72,44 @@ router.get('/:id', function(req, res){
 	});
 });
 
+
+// The below is a work in progress, deciding the way I want to filter
+// router.get('/filter', function(req, res){
+// 	if (req.query.water && req.query.light) {	
+// 		db.plant.findAll({
+// 			where: { 
+// 				water: req.query.water,
+// 				light:  req.query.light
+// 			}
+// 		}).then(function(plants){
+// 			res.render('plants/all', {plants: plants});	
+// 		}).catch(function(err){
+// 			console.log('Plants not found');
+// 		})
+// 	} else if (req.query.water) {
+// 		db.plant.findAll({
+// 			where: { 
+// 				water: req.query.water
+// 			}
+// 		}).then(function(plants){
+// 			res.render('plants/all', {plants: plants});	
+// 		}).catch(function(err){
+// 			console.log('Plants not found');
+// 		})
+// 	} else if (req.query.light) {
+// 		db.plant.findAll({
+// 			where: { 
+// 				light:  req.query.light
+// 			}
+// 		}).then(function(plants){
+// 			res.render('plants/all', {plants: plants});	
+// 		}).catch(function(err){
+// 			console.log('Plants not found');
+// 		})
+// 	}
+// });
+
+
 // Used the below to scrape plant care data from UGA site and generate entries in DB:
 // request('http://extension.uga.edu/publications/detail.html?number=B1318', function(error, response, data){
 // 	var $ = cheerio.load(data);
@@ -139,7 +141,7 @@ router.get('/:id', function(req, res){
 // 	db.plant.findOne({
 // 		where: {id: i}
 // 		}).then(function(plant){
-// 			request('https://en.wikipedia.org/wiki/' + plant.name, function(error, response, data){
+// 			request('https://en.wikipedia.org/wiki/' + plant.botanicalName, function(error, response, data){
 // 			var $ = cheerio.load(data);
 // 			var imageSrc = $('#mw-content-text > div > table.infobox.biota > tbody > tr:nth-child(2) > td > a > img').attr('src');
 // 			if (imageSrc && !plant.imageUrl){

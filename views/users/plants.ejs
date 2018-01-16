@@ -1,10 +1,11 @@
 <header class="profile-hero">
 	<h1>Your Plants</h1>
 </header>
-<% if(user.plants.length <= 0) { %>
-	<p>No plants added</p>
-<% } else { %>
 <div class="container">
+<% if(user.plants.length <= 0) { %>
+	<h2>No plants added</h2>
+	<p><a href="/plants">Browse all plants</a></p>
+<% } else { %>
 	<div class="ui stackable four column grid">
 		<% user.plants.sort(function(a, b){ %>
 			<% var x = a.name.toLowerCase(); %>
@@ -24,5 +25,5 @@
 			</div>
 		<% }); %>
 	</div>
-</div>
 <% } %>
+</div>

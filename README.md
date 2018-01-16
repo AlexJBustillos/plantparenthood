@@ -1,7 +1,7 @@
 # Plant Parenthood
-Become a better plant parent.
+Become a better plant parent. Plant Parenthood is a database of over 200+ common indoor houseplants. Sign up to easily track plants you own and have quick access to their care information.
 
-Technologies Used:
+## Technologies Used:
 * Node/Express
   * Key modules:
     * Cheerio - Plant data scraping from 2 different sources
@@ -14,17 +14,24 @@ Technologies Used:
 
 ## Requirements
 
-## Process
+## User Stories
+The target user for this app is the growing number of indoor houseplant enthusiasts. These are not master gardeners, they are people who enjoy adding greenery to their space but may not know all the ins and outs of plant care. 
+* As a user, I want to...
+  * be able to easily save and keep track of my houseplants and see their care information displayed in a simple, easy to read format (without a ton of "master gardener" jargon). Similarly, I should be able to easily delete plants from my collection.
+  * be able to comment on plants and get feedback or suggestions from others on my issues or questions.
+  * be easily track when was the last day I checked on my plants (because they might need water!).
+  * be able to write a personal journal about adjustments I've made in my plant care routine, or tips I've learned along the way.
 
-### User Stories
+### Development Sprints and Process
+#### Sprint 1
+Wireframes
+Moodboard
+#### Sprint 2
+#### Sprint 3
 
-### Trello
+Pictured above - Trello board status as Sprint 3 wraps.
 
-### Wireframes
-
-### Development Sprints
-
-## Setup
+## Routes and Models
 
 * Routes
   * Index
@@ -63,17 +70,25 @@ Technologies Used:
     * `POST /users/lastwatered` - edits the date in the database when user last checked on their plants
 * Models
 
-## Getting Started
+## Steps to Setting Up
+If you'd like to set this project up on your own local server:
 * Fork and clone this repository
 * Run `npm install` to install dependencies
   * Use `nodemon` to start your application
-* ENV
-* Sequelize
+* Setup your database (this app already has one existing model)
+  * Run `createdb plantparenthood` to create the database
+  * Run `sequelize db:migrate` to run migrations
+* Create .env file, which will need to include:
+  * SESSION_SECRET (you determine this)
+  * BASE_URL (where you will deploy the site)
+  * CLOUDINARY_URL (from your Cloudinary account)
+* Review database setup file
+  * Follow directions in file and run `node FILENAME` to scrape content into your database
 
 ## Sources
 * Plant Data
   * Plant Care Rankings - http://extension.uga.edu/publications/detail.html?number=B1318
-  * Individual Plant Images - Wikipedia
+  * Individual Plant Images - https://www.wikipedia.org/
 * Supporting Icons and Imagery
   * Stock Photos
     * https://unsplash.com/photos/tn0496xKk8Q
