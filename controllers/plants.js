@@ -141,21 +141,21 @@ router.get('/:id', function(req, res){
 // Remove comments from below and run this
 // May want to run for botanicalName and name to get maximum results
 
-for (var i = 1; i <= 227; i++) {
-	db.plant.findOne({
-		where: {id: i}
-		}).then(function(plant){
-			request('https://en.wikipedia.org/wiki/' + plant.botanicalName, function(error, response, data){
-			var $ = cheerio.load(data);
-			var imageSrc = $('#mw-content-text > div > table.infobox.biota > tbody > tr:nth-child(2) > td > a > img').attr('src');
-			if (imageSrc && !plant.imageUrl){
-				plant.imageUrl = 'http:' + imageSrc;
-				plant.save();
-				console.log(plant.name,"image url is",plant.imageUrl);
-			}
+// for (var i = 1; i <= 227; i++) {
+// 	db.plant.findOne({
+// 		where: {id: i}
+// 		}).then(function(plant){
+// 			request('https://en.wikipedia.org/wiki/' + plant.botanicalName, function(error, response, data){
+// 			var $ = cheerio.load(data);
+// 			var imageSrc = $('#mw-content-text > div > table.infobox.biota > tbody > tr:nth-child(2) > td > a > img').attr('src');
+// 			if (imageSrc && !plant.imageUrl){
+// 				plant.imageUrl = 'http:' + imageSrc;
+// 				plant.save();
+// 				console.log(plant.name,"image url is",plant.imageUrl);
+// 			}
 
-		});
-	});
-}
+// 		});
+// 	});
+// }
 
 module.exports = router;
