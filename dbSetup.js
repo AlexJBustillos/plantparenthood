@@ -5,6 +5,8 @@ var request = require('request');
 var cheerio = require('cheerio');
 var router = express.Router();
 
+// TO DO:
+// Make these dryer, use async to make db easier to setup in one go
 
 // STEP 1 FOR SCRAPING PLANT CARE DATA
 // Remove comments from below to scrape all plant care rankings from UGA and input into db
@@ -34,7 +36,7 @@ var router = express.Router();
 // 	}
 // });
 
-// STEP 2 FOR INPUTTING IMAGES
+// STEP 2 - FOR INPUTTING IMAGES
 // Remove comments from below and run this
 // May want to run for botanicalName and name to get maximum results
 
@@ -65,7 +67,7 @@ var router = express.Router();
 // 	});
 // }
 
-// STEP 1 FOR CREATING TAGS
+// STEP 3 - FOR CREATING TAGS
 // Do this AFTER creating plant database
 // Remove comments and run the below once to generate initial tags
 
@@ -111,34 +113,40 @@ var router = express.Router();
 // });
 
 
-// STEP 2 - Add tags to plants
+// STEP 4 - Add tags to plants
 // Remove comments from below to loop through
-// TO DO - Make more dry so I can re-use this more easily for more plant types
 // Since currently you have to make manual changes in this function
 
-db.plant.findAll().then(function(plant){
-	plant.forEach(function(plant){
-		var plantName = JSON.stringify(plant.name).toLowerCase();
-		var plantId = plant.id;
-		var addPlantTag = plantName.includes('palm');
-		if (addPlantTag){
-			console.log(plant.name,'includes palm and ID is',plantId);
-			db.plant.findOne({
-				where: { id: plantId }
-			}).then(function(plant, found){
-				db.tag.findOrCreate({
-					where: { content: 'palm' }
-				}).spread(function(tag, found){
-					plant.addTag(tag);
-					console.log(tag,'added to',plant);
+var addTags = function(tagName) {
+	db.plant.findAll().then(function(plant){
+		plant.forEach(function(plant){
+			var plantName = JSON.stringify(plant.name).toLowerCase();
+			var plantId = plant.id;
+			var addPlantTag = plantName.includes(tagName);
+			if (addPlantTag){
+				console.log(plant.name,'includes'+ tagName +'and ID is',plantId);
+				db.plant.findOne({
+					where: { id: plantId }
+				}).then(function(plant, found){
+					db.tag.findOrCreate({
+						where: { content: tagName }
+					}).spread(function(tag, found){
+						plant.addTag(tag);
+						console.log(tag,'added to',plant);
+					});
 				});
-			});
-		} 
+			} 
+		});
 	});
-});
+}
 
+// addTags('palm');
+addTags('ivy');
+addTags('fern');
+addTags('orchid');
+addTags('bromeliad');
 
-// STEP 3 - Use soil types to loop through and add more tags
+// STEP 5 - Use soil types to loop through and add more tags
 // TO DO - Make this more dry and reusable! Same as step 2 where you need to adjust manually
 
 // Flowering = scale 1, id = 2
