@@ -137,7 +137,7 @@ If you'd like to set this project up on your own local server:
   * `BASE_URL` (where you will deploy the site)
   * `CLOUDINARY_URL` (from your Cloudinary account)
 * Review database setup file
-  * Follow directions in `controllers/plants.js` and `controllers/tags.js` to scrape data and add tags
+  * Follow directions in `dbSetup.js` to scrape data and add tags
 
 ## Sources
 * Plant Data
