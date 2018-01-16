@@ -43,6 +43,38 @@ em {
 	font-weight: 400;
 }
 
+nav {
+	padding: 10px;
+	text-align: left;
+	color: white;
+	background: rgba(0,0,0,.95);
+}
+
+nav i {
+	font-size: 2em;
+		color: white;
+}
+
+nav a {
+	color: white;
+	text-transform: uppercase;
+	margin: 0 10px;
+}
+
+nav a:hover {
+	border-bottom: 2px solid white;
+	color: white;
+}
+
+nav a.sub-nav {
+	font-weight: 400;
+}
+
+nav .hamburger {
+	display: none;
+}
+
+
 hr {
 	width: 60%;
 	background: rgba(0,0,0,.5);
@@ -366,7 +398,8 @@ div.ui.comments {
 	padding: 20px !important;
 }
 
-/* Navbar */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 760px) {
 
 /* Mobile view */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -395,4 +428,5 @@ div.ui.comments {
 		width: 100%;
 		font-size: .75em;
 	}
+
 }

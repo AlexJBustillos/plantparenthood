@@ -1,13 +1,25 @@
 <nav>
-  <a href="/">Plant Parenthood</a>
-  | <a href="/plants">All Plants</a>
-  <% if(!currentUser){ %>
-    | <a href="/auth/signup">Signup</a>
-    | <a href="/auth/login">Login</a>
-  <% } else { %>
-    | <a href="/users/profile"><i class="user circle"></i> <%= currentUser.name %></a>
-    | <a href="/users/plants">Your Plants</a>
-    | <a href="/users/journal">Journal</a>
-    | <a href="/auth/logout">Logout</a>
-  <% } %>  
+  <div class="ui stackable centered padded grid">
+    <div class="six wide column">
+      <a href="/">Plant Parenthood</a>
+      <a href="/plants">Plants</a>
+    </div>
+    <% if(!currentUser){ %>
+    <div class="four wide column">
+    </div>
+    <div class="six wide column">
+      <a href="/auth/signup">Signup</a>
+      <a href="/auth/login">Login</a>
+    </div>
+    <% } else { %>
+    <div class="one wide column">
+    </div>
+    <div class="nine wide column">
+      <a href="/users/profile"><i class="user icon"></i> <%= currentUser.name %></a>
+      <a href="/users/plants" class="sub-nav">Your Plants</a>
+      <a href="/users/journal" class="sub-nav">Journal</a>
+      <a href="/auth/logout" class="sub-nav">Logout</a>
+    <% } %>  
+    </div>
+  </div>
 </nav>

@@ -137,7 +137,7 @@ If you'd like to set this project up on your own local server:
   * `BASE_URL` (where you will deploy the site)
   * `CLOUDINARY_URL` (from your Cloudinary account)
 * Review database setup file
-  * Follow directions in `node FILENAME` to scrape content into your database
+  * Follow directions in `controllers/plants.js` and `controllers/tags.js` to scrape data and add tags
 
 ## Sources
 * Plant Data
@@ -146,7 +146,6 @@ If you'd like to set this project up on your own local server:
 * Supporting Icons and Imagery
   * Stock Photos - Pexels
     * https://www.pexels.com/photo/summer-branches-leaves-tree-92733/
-    * https://www.pexels.com/photo/botanical-cactuses-close-up-colors-305827/
   * Icons - Noun
     * https://thenounproject.com/term/houseplant/321363/
     * https://thenounproject.com/term/drop/1372766/
