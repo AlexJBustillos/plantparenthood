@@ -1,7 +1,7 @@
 # Plant Parenthood
 Become a better plant parent. Plant Parenthood is a database of over 200+ common indoor houseplants. Sign up to easily track plants you own and have quick access to their care information.
 
-## Technologies Used:
+## Technologies Used
 * Node/Express
   * Key modules:
     * Cheerio - Plant data scraping from 2 different sources
@@ -25,7 +25,7 @@ The target user for this app is the growing number of indoor houseplant enthusia
 ### Development Sprints and Process
 #### Sprint 1
 Wireframes
-Moodboard
+![](/public/img/moodboard.jpg)
 #### Sprint 2
 #### Sprint 3
 

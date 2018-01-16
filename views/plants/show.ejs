@@ -13,6 +13,7 @@
 	<h1><%= plant.name %></h1>
 	<h3><em><%= plant.botanicalName %></em></h3>
 	<div>
+		<br>
 		<% if(currentUser){ %>
 			<form method="post" action="/plants">
 				<input type="hidden" name="id" value="<%= plant.id %>">

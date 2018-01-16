@@ -1,6 +1,7 @@
 /* YELLOW: #E3CB43 */
 /* GREEN: #2B7D43 */
 
+/* General body styles */
 * {
 	font-family: 'Raleway', sans-serif;
 	font-size: 1.10em;
@@ -47,6 +48,17 @@ hr {
 	height: 2px;
 }
 
+.container {
+	width: 85%;
+	margin: 40px auto;
+}
+
+footer {
+	background: #2B7D43;
+	color: white;
+}
+
+/* Alerts */
 .alert {
 	padding: 10px;
 	color: white;
@@ -62,6 +74,7 @@ hr {
 	color: rgba(0,0,0,.9);
 }
 
+/* Inputs */
 input[type="date"], input[type="text"], input[type="password"], textarea, .ui.comments .reply.form textarea {
 	padding: 8px;
 	font-weight: 400;
@@ -74,12 +87,7 @@ input[type="date"] {
 	width: 175px;
 }
 
-.profilepic {
-	max-width: 100px;
-	border-radius: 200px;
-	max-height: 100px;
-}
-
+/* Headers and heros */
 .hero {
 	background: url('/img/hero-1.jpg');
 	background-position: center;
@@ -109,34 +117,17 @@ input[type="date"] {
 	font-family: 'Raleway', sans-serif;
 }
 
-/* CTA on header */
-.ui.inverted.button {
-	margin: 50px;
-}
-
-.ui.header+p {
-    font-size: 1.25em;
-}
-
 .plants-hero {
 	background: url('/img/hero-1.jpg');
-	background-position: bottom;
+	background-position: 0 40%;
 	background-size: cover;
-	background-attachment: fixed;
 	padding: 50px;
 	color: #E3CB43;
 }
 
-
-body > div:nth-child(2) > h3 > em {
-	position: relative;
-	bottom: 10px;
-	margin: 40px;
-}
-
 .profile-hero {
 	background: url('/img/hero-2.jpg');
-	background-position: 0% 70%;
+	background-position: 0% 60%;
 	background-size: cover;
 	color: rgba(0,0,0,.8);
 	padding: 50px;
@@ -150,6 +141,7 @@ body > div:nth-child(2) > h3 > em {
 	text-transform: uppercase;
 }
 
+/* Tags */
 .tag-large {
 	background: #E3CB43;
 	color: black;
@@ -164,6 +156,7 @@ body > div:nth-child(2) > h3 > em {
 	background: white;
 }
 
+/* Plant grid and images */
 .plant-image {
 	border-radius: 150px;
 	width: 150px;
@@ -176,6 +169,18 @@ body > div:nth-child(2) > h3 > em {
 	z-index: -1;
 }
 
+.plant-image:hover {
+	opacity: 1;
+}
+
+.plant-image img {
+	min-height: 150px;
+	min-width: 150px;
+	max-height: 175px;
+	max-width: 175px;
+	text-align: center;
+}
+
 .plant-grid-name {
 	margin: 20px;
 	font-size: 1.4em;
@@ -184,17 +189,6 @@ body > div:nth-child(2) > h3 > em {
 
 .plant-grid-botanical {
 	margin: 5px;
-}
-
-.plant-image:hover {
-	opacity: 1;
-}
-
-.plant-image img {
-	min-height: 150px;
-	min-width: 150px;
-	max-height: 200px;
-	max-width: 200px;
 }
 
 .plant-image-small {
@@ -213,7 +207,7 @@ body > div:nth-child(2) > h3 > em {
 	max-width: 90px;
 }
 
-
+/* Plant icons*/
 .plant-icon-section {
 	white-space: nowrap;
 	display: block;
@@ -235,35 +229,25 @@ body > div:nth-child(2) > h3 > em {
 	opacity: .5;
 }
 
-.delete-link {
-	background: #1C3E5D;
-	color: white;
-	padding: 10px;
+/**************************/
+/* SEMANTIC UI OVERRIDES */
+/*************************/
+
+/* Buttons */
+.ui.inverted.button {
+	margin: 50px;
+}
+
+.ui.secondary.button {
+	background: rgba(0,0,0,.8);
+	font-family: 'Raleway', sans-serif !important;
 	margin: 10px;
-	font-weight: 400;
 }
 
-.sidebar img {
-	padding-top: 50px;
-	filter: invert(100%);
-	max-width: 100px;
+.ui.basic.button, .ui.basic.buttons .button {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
 }
-
-.container {
-	width: 85%;
-	margin: 40px auto;
-}
-
-.inline-block {
-	display: inline-block;
-}
-
-footer {
-	background: #2B7D43;
-	color: white;
-}
-
-/* Semantic UI Overrides */
 
 /* Search bar */
 .ui.fluid.search.selection.dropdown {
@@ -281,15 +265,20 @@ body > header > form > div > div.menu.transition.visible {
 	border-radius: 0;
 }
 
-.ui.secondary.button {
-	background: rgba(0,0,0,.8);
-	font-family: 'Raleway', sans-serif !important;
-	margin: 10px;
-}
-
-/* Plant grid */
+/* Grid alignment */
 .column {
 	text-align: center;
+}
+
+/* Text adjustments */
+.ui.header+p {
+    font-size: 1.25em;
+}
+
+body > div:nth-child(2) > h3 > em {
+	position: relative;
+	bottom: 10px;
+	margin: 40px;
 }
 
 /* Comments */
@@ -298,6 +287,10 @@ body > header > form > div > div.menu.transition.visible {
 	text-align: left;
 	margin: 10px auto;
 	padding: 20px;
+}
+
+.ui.comments .comment {
+	padding: 10px;
 }
 
 .ui.comments .comment .text {
@@ -310,19 +303,6 @@ div.text p {
 
 div.ui.comments {
 	font-size: 1.10em;
-}
-
-.ui.comments .reply.form textarea {
-	width: default;
-}
-
-.ui.comments .comment {
-	padding: 10px;
-}
-
-.ui.basic.button, .ui.basic.buttons .button {
-	font-family: 'Raleway', sans-serif;
-	font-weight: 800;
 }
 
 /* Tags */
@@ -341,15 +321,10 @@ div.ui.comments {
 	padding: 20px !important;
 }
 
-
 /* Navbar */
-
-
-
 
 /* Mobile view */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-
 	h1, .hero h1 {
 		font-size: 2.5em;
 	}
@@ -375,6 +350,4 @@ div.ui.comments {
 		width: 100%;
 		font-size: .75em;
 	}
-
 }
-
