@@ -23,13 +23,22 @@ The target user for this app is the growing number of indoor houseplant enthusia
   * be able to write a personal journal about adjustments I've made in my plant care routine, or tips I've learned along the way.
 
 ### Development Sprints and Process
+
 #### Sprint 1
-Wireframes
+
+##### 1. Planned out routes and functionality
+See "Routes and Models" section for final outline of website structure
+##### 2. Developed Wireframes
+First round wireframes show the initial vision for plant view and profile pages.
+##### 3. Developed Moodboards
 ![](/public/img/moodboard.jpg)
+I researched plant imagery and colors and created a moodboard. This helped identify the colors and mood I would be aiming for in my design.
+##### 4. Setup Trello Board
+Trello board status as Sprint 3 wraps. Sprints were color coordinated to help see what might be lagging behind.
+##### 5. Stubbed out Routes
+
 #### Sprint 2
 #### Sprint 3
-
-Pictured above - Trello board status as Sprint 3 wraps.
 
 ## Routes and Models
 
@@ -69,6 +78,16 @@ Pictured above - Trello board status as Sprint 3 wraps.
     * `POST /users/profile` - uploads user's new profile picture through Cloudinary
     * `POST /users/lastwatered` - edits the date in the database when user last checked on their plants
 * Models
+  * Comment - content, userId, authorName, plantId, imageUrl
+    * Belongs to plants and users
+  * Journal - title, content, useId, imageUrl
+    * Belongs to user
+  * Plant - name, botanicalName, light, temperature, humidity, water, soil, imageUrl
+    * Belongs to many users, belongs to many tags, has many comments
+  * Tag - content
+    * Belongs to many plants
+  * User - name, email, password, zipcode, userImg, lastWatered
+    * Belongs to many plants, has many journals, has many comments
 
 ## Steps to Setting Up
 If you'd like to set this project up on your own local server:
