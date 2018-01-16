@@ -8,7 +8,7 @@ var router = express.Router();
 
 for (var i = 229; i <= 456; i++) {
 	var currentPlantId = i;
-	db.comment.destroy({
+	db.plant.destroy({
     	where: { id: currentPlantId }
 	}).then(function(deleted){
     	console.log("Plant deleted",deleted);
