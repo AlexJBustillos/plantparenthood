@@ -15,3 +15,7 @@ $('.dropdown').dropdown({
 	sortSelect: true, 
 	match: 'text'
 });
+
+$(".nav-hamburger").click(function(){
+	$(".desktop-nav").toggle("blind", 500);
+});

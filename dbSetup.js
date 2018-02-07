@@ -24,7 +24,7 @@ var router = express.Router();
 // 		var humidity = $(plantRow + i +') > td:nth-child(5)').text();
 // 		var water = $(plantRow + i +') > td:nth-child(6)').text();
 // 		var soil = $(plantRow + i +') > td:nth-child(7)').text();
-// 		db.plant.create({
+// 		db.plant.findOrCreate({
 // 			name: commonName,
 // 			botanicalName: botanicalName,
 // 			light: light,

@@ -44,10 +44,17 @@ em {
 }
 
 nav {
-	padding: 5px;
+	padding: 20px;
 	text-align: left;
 	color: white;
 	background: rgba(0,0,0,.95);
+	position: fixed;
+  	top: 0;
+  	width: 100%;
+  	z-index: 99;
+  	font-size: .95em;
+  	letter-spacing: 1px;
+  	transition: content 2s;
 }
 
 nav i {
@@ -70,10 +77,13 @@ nav a.sub-nav {
 	font-weight: 400;
 }
 
-nav .hamburger {
+.nav-hamburger {
 	display: none;
 }
 
+.nav-hamburger:hover {
+	border-bottom: 0;
+}
 
 hr {
 	width: 60%;
@@ -113,6 +123,7 @@ footer a {
 
 .site-content {
   flex: 1;
+  padding-top: 58px;
 }
 
 /* Alerts */
@@ -189,6 +200,13 @@ header {
 	line-height: 1em;
 	letter-spacing: 3px;
 	font-size: 5em;
+	text-transform: uppercase;
+}
+
+.plants-hero.small h1, .profile-hero h1 {
+	line-height: 1em;
+	letter-spacing: 3px;
+	font-size: 3em;
 	text-transform: uppercase;
 }
 
@@ -399,10 +417,13 @@ div.ui.comments {
 }
 
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 760px) {
-
-/* Mobile view */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media all and (max-width: 760px){
+	.desktop-nav {
+		display: none;
+	}
+	.nav-hamburger {
+		display: inline-block;
+	}
 	h1, .hero h1 {
 		font-size: 2.5em;
 	}
@@ -415,18 +436,20 @@ div.ui.comments {
 		letter-spacing: 3px;
 	}
 
-
 	h2 {
 		font-size: 1.25em;
 	}
-
-	.container {
-		width: 100%;
-	}
-
 	.ui.fluid.search.selection.dropdown {
 		width: 100%;
 		font-size: .75em;
 	}
-
+	.container {
+		width: 90%;
+	}
+}
+/* Mobile view */
+@media all and (min-device-width : 320px) and (max-device-width : 480px) {
+	.container {
+		width: 100%;
+	}
 }
