@@ -86,7 +86,7 @@ nav a.sub-nav {
 .nav-responsive {
 	display: none;
 	position: relative;
-	top: 65px;
+	top: 64px;
 	font-size: 1em;
 	background: rgba(0, 0, 0, .9);
 }
@@ -199,8 +199,10 @@ header {
 .hero {
 	background-position: center;
 	background-attachment: fixed;
-	height: 600px;
+	height: 100vh;
 	margin-bottom: 20px;
+	margin-top: -64px;
+	padding-top: 55px;
 }
 
 .hero h1 {
@@ -290,7 +292,6 @@ h1.plant-name {
 .plant-image img {
 	min-height: 150px;
 	min-width: 150px;
-	max-height: 175px;
 	max-width: 175px;
 	text-align: center;
 }
@@ -464,6 +465,10 @@ div.ui.comments {
 		font-size: 2.5em;
 	}
 
+	.hero {
+		padding-top: 70px;
+	}
+
 	.plants-hero h1, .plants-hero.small h1, .profile-hero h1 {
 		font-size: 2em;
 	}
@@ -488,5 +493,8 @@ div.ui.comments {
 @media all and (min-device-width : 320px) and (max-device-width : 480px) {
 	.container {
 		width: 100%;
+	}
+	.hero {
+		padding-top: 90px;
 	}
 }
