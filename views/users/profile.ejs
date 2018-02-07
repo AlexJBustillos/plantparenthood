@@ -16,7 +16,7 @@
 </header>
 <div class="ui stackable centered padded grid">
 	<div class="row">
-		 <div class="three wide column">
+		 <div class="four wide column">
 			<% if(user.plants.length <= 0) { %>
 				<a href="/plants">
 					<div class="plant-image plant-image-small">
@@ -45,7 +45,7 @@
 				<p><a href="plants">View All Plants</a></p>
 			<% } %>
 	    </div>
-	    <div class="three wide column">
+	    <div class="four wide column">
 	    	<h1><i class="calendar outline icon"></i></h1>
 	      	<% if(user.lastWatered){ %>
 				<h2><%= moment(user.lastWatered).fromNow(true) %></h2>
@@ -62,7 +62,7 @@
 					</button>
 				</form>
 	    </div>
-	    <div class="three wide column">
+	    <div class="four wide column">
 	    	<h1><i class="book icon"></i></h1>
 			<% if(user.journals.length < 1) { %>
 				<h2> 0 journal entries</h2>

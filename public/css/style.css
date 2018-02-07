@@ -299,6 +299,7 @@ h1.plant-name {
 	height: 150px;
 	margin-bottom: -20px;
 	filter: invert(100%);
+	opacity: .9;
 }
 
 .plant-grid-name {
@@ -463,7 +464,7 @@ div.ui.comments {
 		font-size: 2.5em;
 	}
 
-	.plants-hero h1 {
+	.plants-hero h1, .plants-hero.small h1, .profile-hero h1 {
 		font-size: 2em;
 	}
 
