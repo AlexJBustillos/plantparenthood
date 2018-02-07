@@ -47,7 +47,7 @@ nav {
 	height: 65px;
 	text-align: left;
 	color: white;
-	background: rgba(0,0,0,.95);
+	background: rgba(0,0,0,.9);
 	position: fixed;
   	top: 0;
   	width: 100%;
@@ -229,6 +229,8 @@ header {
 .plants-hero {
 	background-position: 0 40%;
 	padding: 50px;
+	margin-top: -64px;
+	padding-top: 114px;
 }
 
 .plants-hero h1 {
@@ -495,6 +497,6 @@ div.ui.comments {
 		width: 100%;
 	}
 	.hero {
-		padding-top: 90px;
+		padding-top: 80px;
 	}
 }
