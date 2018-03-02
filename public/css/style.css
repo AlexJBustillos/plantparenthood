@@ -4,7 +4,7 @@
 /* General body styles */
 * {
 	font-family: 'Raleway', sans-serif;
-	font-size: 1.10em;
+/*	font-size: 1.10em;*/
 }
 
 body {
@@ -164,6 +164,9 @@ footer a {
 	padding: 10px;
 	color: white;
 	font-weight: 800;
+	position: absolute;
+	top: 64px;
+	width: 100%;
 }
 
 .alert-success {
@@ -173,6 +176,7 @@ footer a {
 .alert-error {
 	background: #E3CB43;
 	color: rgba(0,0,0,.9);
+	z-index: 200;
 }
 
 /* Inputs */
@@ -458,7 +462,7 @@ body > div:nth-child(2) > h3 > em {
 
 /* Comments */
 .ui.comments {
-	font-size: 1em;
+	font-size: .75em;
 	text-align: left;
 	margin: 10px auto;
 	padding: 20px;
@@ -468,16 +472,8 @@ body > div:nth-child(2) > h3 > em {
 	padding: 10px;
 }
 
-.ui.comments .comment .text {
-	font-size: .80em;
-}
-
 div.text p {
 	font-size: 1.25em;
-}
-
-div.ui.comments {
-	font-size: 1.10em;
 }
 
 /* Tags */
@@ -524,7 +520,6 @@ div.ui.comments {
 
 	h2 {
 		font-size: 1em;
-		font-weight: 400;
 	}
 
 	.ui.fluid.search.selection.dropdown {

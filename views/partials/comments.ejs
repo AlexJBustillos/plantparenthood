@@ -28,7 +28,7 @@
  	 </div>		
 	<% }); %>
 <% } else { %>
-	<p>No posts yet.</p>
+	<center><p>No posts yet.</p></center>
 <% }; %>
 <% if(currentUser){ %>
 	<form method="post" action="/comments" class="ui reply form">
@@ -44,6 +44,6 @@
 		</button> 
   	</form>
 <% } else { %>
-	<p><a href="/auth/signup">Sign up</a> or <a href="/auth/login">log in</a> to join the discussion.</p>
+	<br><center><p><a href="/auth/signup">Sign up</a> or <a href="/auth/login">log in</a> to join the discussion.</p></center>
 <% } %>
 </div>

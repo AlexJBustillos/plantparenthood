@@ -5,10 +5,6 @@ if(wateringCalendar) {
 }
 
 // Semantic UI
-$('.ui.rating')
-  .rating()
-;
-
 $('.dropdown').dropdown({ 
 	transition: 'slide down', 
 	fullTextSearch: true,
@@ -31,4 +27,11 @@ function checkSize(){
     if ($(".nav-hamburger").css("display") == "none" ){
         $(".nav-responsive").hide();
     }
+}
+
+var alert = document.getElementsByClassName('alert');
+if (alert) {
+	setTimeout(function(){ 
+		$('.alert').toggle("fade", 2000);
+	}, 2000);
 }

@@ -7,14 +7,39 @@ var session = require('express-session');
 var passport = require('../config/passportConfig');
 var db = require('../models');
 var request = require('request');
-var cheerio = require('cheerio');
 var router = express.Router();
 
 router.get('/', function(req, res){
-	db.plant.findAll({
-		include: [db.tag]
-	}).then(function(plants){
-		res.render('plants/all', {plants: plants});	
+	var tags;
+	var plants;
+	var userPlants;
+
+	db.tag.findAll().then(function(tags){
+		console.log("found tags",tags);
+	});
+
+	if(req.user){
+		db.user.findOne({
+			where: {id: req.user.id},
+			include: [db.plant]
+		}).then(function(user){
+			console.log("found user");
+			userPlants = user.plants;
+		}).catch(function(err){
+			console.log("no user found");
+		})
+	}
+	else {
+		console.log("No user");
+	}
+	
+	db.plant.findAll().then(function(plants){
+		console.log("userPlants",userPlants)
+		res.render('plants/all', {
+			plants: plants,
+			userPlants: userPlants,
+			tags: tags
+		});	
 	});
 });
 
