@@ -19,13 +19,28 @@
 			<div class="column">
 				<% include ../partials/plantgrid %>
 				<% if(currentUser){ %>
-					<form method="post" action="/plants">
-						<input type="hidden" name="id" value="<%= item.id %>">
-						<button type="submit" class="ui labeled icon mini button">
-  							<i class="plus icon"></i>
-  							Add Plant
-						</button>
-					</form>						
+
+					<% if (userPlants){ %>
+						<% var match = userPlants.find(o => o.name === item.name) %>
+					<% } %>
+					
+	     			<% if (match) { %>
+
+	       				<a href="/plants/<%= item.id %>" class="delete-plant">
+							<button class="ui labeled icon mini basic button"><i class="remove icon"></i>
+  							Delete Plant
+						</button></a>
+
+	     			<% } else { %>
+	        			<form method="post" action="/plants">
+							<input type="hidden" name="id" value="<%= item.id %>">
+							<button type="submit" class="ui labeled icon mini button">
+	  							<i class="plus icon"></i>
+	  							Add Plant
+							</button>
+						</form>	
+	      			<% } %>
+								
 				<% } else { %>
 					<a href="/auth/login">
 						<button class="ui labeled icon tiny button">

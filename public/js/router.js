@@ -5,7 +5,7 @@ $('.delete-plant').click(function(event){
 		url: $(this).attr('href'),
 		method: 'DELETE'
 	}).success(function(data){
-		window.location.href = 'plants'; 
+		window.location.reload(true);
 	});
 });
 

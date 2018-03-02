@@ -11,35 +11,38 @@ var router = express.Router();
 
 router.get('/', function(req, res){
 	var tags;
-	var plants;
-	var userPlants;
 
 	db.tag.findAll().then(function(tags){
 		console.log("found tags",tags);
+		tags = tags;
 	});
 
-	if(req.user){
-		db.user.findOne({
-			where: {id: req.user.id},
-			include: [db.plant]
-		}).then(function(user){
-			console.log("found user");
-			userPlants = user.plants;
-		}).catch(function(err){
-			console.log("no user found");
-		})
-	}
-	else {
-		console.log("No user");
-	}
-	
 	db.plant.findAll().then(function(plants){
-		console.log("userPlants",userPlants)
-		res.render('plants/all', {
-			plants: plants,
-			userPlants: userPlants,
-			tags: tags
-		});	
+		if(req.user){
+			db.user.findOne({
+				where: {id: req.user.id},
+				include: [db.plant]
+			}).then(function(user){
+				console.log("found user");
+				res.render('plants/all', {
+					plants: plants,
+					userPlants: user.plants,
+					tags: tags
+				});	
+			}).catch(function(err){
+				console.log("no user found");
+				res.render('plants/all', {
+					plants: plants,
+					tags: tags
+				});
+			})
+		}
+		else {
+			res.render('plants/all', {
+				plants: plants,
+				tags: tags
+			});	
+		}
 	});
 });
 
@@ -65,7 +68,7 @@ router.post('/', isLoggedIn, function(req, res) {
 			plant.addUser(req.user);
 		}
 	}).then(function(plantAdded){
-		res.redirect('/users/plants');
+		res.redirect(req.get('referer'));
 	}).catch(function(err){
 		console.log('An error happened', err);
 		res.send('Fail');
@@ -73,15 +76,12 @@ router.post('/', isLoggedIn, function(req, res) {
 });
 
 router.delete('/:id', isLoggedIn, function(req, res){
-	console.log('Delete route reached');
 	db.plant.findOne({
 		where: {id: req.params.id}
 	}).then(function(plant){
-		if(plant){
-			plant.removeUser(req.user);
-		}
-	}).then(function(plantDeleted){
-		res.send('Plant deleted');
+		console.log("found plant",plant);
+		plant.removeUser(req.user);
+		res.send("Deleted");
 	}).catch(function(err){
 		console.log('An error happened', err);
 		res.send('Fail');
@@ -89,11 +89,35 @@ router.delete('/:id', isLoggedIn, function(req, res){
 });
 
 router.get('/:id', function(req, res){
+
+	var userPlants;
+
 	db.plant.findOne({
 		where: {id: req.params.id},
 		include: [db.tag, db.user, db.comment]
 	}).then(function(plant){
-		res.render('plants/show', {plant: plant});
+		if(req.user){
+			db.user.findOne({
+				where: {id: req.user.id},
+				include: [db.plant]
+			}).then(function(user){
+				console.log("found user");
+				res.render('plants/show', {
+					plant: plant,
+					userPlants: user.plants
+				});
+			}).catch(function(err){
+				console.log("no user found");
+				res.render('plants/show', {
+					plant: plant
+				});	
+			})
+		}
+		else {
+			res.render('plants/show', {
+				plant: plant
+			});
+		}		
 	});
 });
 

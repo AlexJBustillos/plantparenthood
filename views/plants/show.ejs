@@ -11,17 +11,24 @@
 				<% } %>
 	</div>
 	<h1 class="plant-name"><%= plant.name %></h1>
-	<h3><em><%= plant.botanicalName %></em></h3>
+	<h3 class="plant-botanical-name"><em><%= plant.botanicalName %></em></h3>
 	<div>
 		<br>
 		<% if(currentUser){ %>
-			<form method="post" action="/plants">
-				<input type="hidden" name="id" value="<%= plant.id %>">
-				<button type="submit" class="ui labeled icon tiny button">
-				  	<i class="plus icon"></i>
-				  	Add Plant
-				</button>
-			</form>	
+
+			<% if (userPlants){ %>
+				<% var match = userPlants.find(o => o.name === plant.name) %>
+			<% } %>
+					
+	     	<% if (match){ %>
+	       		<a href="/plants/<%= plant.id %>" class="delete-plant"><button class="ui labeled icon tiny basic button"><i class="remove icon"></i>Delete Plant</button></a>
+	     	<% } else { %>
+	        	<form method="post" action="/plants">
+					<input type="hidden" name="id" value="<%= plant.id %>">
+					<button type="submit" class="ui labeled icon tiny button"><i class="plus icon"></i>Add Plant</button>
+				</form>
+	      	<% } %>
+		
 		<% } else { %>
 			<a href="/auth/login">
 				<button class="ui labeled icon tiny button">
