@@ -200,9 +200,12 @@ header {
 	background-position: center;
 	background-attachment: fixed;
 	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin-bottom: 20px;
 	margin-top: -64px;
-	padding-top: 55px;
+	padding-top: 74px;
 }
 
 .hero h1 {
@@ -211,7 +214,7 @@ header {
 	position: relative;
 	line-height: 1em;
 	font-size: 5em;
-	margin-top: 130px;
+/*	margin-top: 130px;*/
 	display: inline-block;
 	text-transform: uppercase;
 	text-align: left;
@@ -223,6 +226,33 @@ header {
 	line-height: 1em;
 	letter-spacing: 1px;
 	font-family: 'Raleway', sans-serif;
+}
+
+.sub-section {
+	min-height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: left;
+}
+
+.sub-section h1 {
+	font-size: 3em;
+	text-align: left;
+}
+
+.sub-section p {
+	font-size: 1.25em;
+	line-height: 2em;
+	text-align: left;
+}
+
+.big-number {
+	display: block;
+	font-size: 4em;
+	line-height: .50em;
+	margin-top: .1em;
+	margin-bottom: .2em;
 }
 
 /* Header for section used most throughout the site */
@@ -359,13 +389,27 @@ h1.plant-name {
 
 /* Buttons */
 .ui.inverted.button {
-	margin: 50px;
+	margin-top: 15px;
 }
 
 .ui.secondary.button {
 	background: rgba(0,0,0,.8);
 	font-family: 'Raleway', sans-serif !important;
 	margin: 10px;
+}
+
+.green-button {
+	min-height: 1em;
+	outline: 0;
+	padding: 10px;
+	font-size: 1.28571429em;
+	box-shadow: 0 0 0 2px green inset;
+	transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+}
+
+.green-button:hover {
+	background: green;
+	color: white;
 }
 
 .ui.basic.button, .ui.basic.buttons .button {
@@ -464,15 +508,15 @@ div.ui.comments {
 
 @media all and (max-width: 780px){
 	h1, .hero h1 {
-		font-size: 2.5em;
+		font-size: 2.25em;
 	}
 
 	.hero {
-		padding-top: 70px;
+		padding: 40px;
 	}
 
 	.plants-hero h1, .plants-hero.small h1, .profile-hero h1 {
-		font-size: 2em;
+		font-size: 2.25em;
 	}
 
 	.hero h1 {
@@ -480,23 +524,46 @@ div.ui.comments {
 	}
 
 	h2 {
-		font-size: 1.25em;
+		font-size: 1em;
+		font-weight: 400;
 	}
+
 	.ui.fluid.search.selection.dropdown {
 		width: 100%;
 		font-size: .75em;
 	}
+
 	.container {
 		width: 90%;
+	}
+
+	.sub-section {
+		padding: 5px 15px;
+	}
+
+	.sub-section h1 {
+		font-size: 2.5em;
+	}
+
+	.sub-section .big-number {
+		display: inline;
+		font-size: inherit;
+		line-height: inherit;
 	}
 
 }
 /* Mobile view */
 @media all and (min-device-width : 320px) and (max-device-width : 480px) {
+
 	.container {
 		width: 100%;
 	}
+
 	.hero {
-		padding-top: 80px;
+		background-size: 400%;
+  		background-position: 0% 80%;
+		height: 95vh;
+		padding: 50px;
 	}
+
 }

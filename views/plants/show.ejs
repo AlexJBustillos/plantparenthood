@@ -37,11 +37,9 @@
 		<div class="six wide column">
 			<% var lightMax = 4; %>
 			<% for(var i = 1; i <= lightMax; i++) { %>
-				<% if(plant.light >= i) { %>
-					<img src="/img/sun-full.png" class="plant-icon-large" alt="Light">
-				<% } else { %>
-					<img src="/img/sun-empty.png" class="plant-icon-large empty-icon" alt="Light">
-				<% } %>
+				<% var imageSrc = plant.light >= i ? '/img/sun-full.png' : '/img/sun-empty.png' %>
+				<% var imageClass = plant.light >= i ? 'plant-icon-large' : 'plant-icon-large empty-icon' %>
+				<img src="<%= imageSrc %>" class="<%= imageClass %>" alt="Light">
 			<% } %>
 			<h3>Light</h3>
 			<p>
