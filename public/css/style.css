@@ -259,6 +259,19 @@ header {
 	margin-bottom: .2em;
 }
 
+a.green-button {
+	display: inline-block;
+	margin-top: 5px;
+	padding: 15px 20px;
+	border-radius: 5px;
+	border: 2px solid #2B7D43;
+}
+
+a.green-button:hover {
+	background: #2B7D43;
+	color: white;
+}
+
 /* Header for section used most throughout the site */
 .plants-hero {
 	background-position: 0 40%;
@@ -332,7 +345,7 @@ h1.plant-name {
 .plant-image img {
 	min-height: 150px;
 	min-width: 150px;
-	max-width: 175px;
+	max-width: 250px;
 	text-align: center;
 }
 
@@ -341,6 +354,13 @@ h1.plant-name {
 	margin-bottom: -20px;
 	filter: invert(100%);
 	opacity: .9;
+}
+
+.edit-pic {
+	position: relative;
+    right: 40px;
+    bottom: 10px;
+    margin-right: -40px;
 }
 
 .plant-grid-name {
@@ -404,20 +424,6 @@ h1.plant-name {
 	background: rgba(0,0,0,.8);
 	font-family: 'Raleway', sans-serif !important;
 	margin: 10px;
-}
-
-a.green-button {
-	display: inline-block;
-	margin-top: 5px;
-	padding: 10px 15px;
-	border-radius: 5px;
-	border: 2px solid #2B7D43;
-}
-
-
-a.green-button:hover {
-	background: #2B7D43;
-	color: white;
 }
 
 .ui.basic.button, .ui.basic.buttons .button, .ui.labeled.icon.button {
