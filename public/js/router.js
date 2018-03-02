@@ -1,4 +1,4 @@
-// Profile page
+// Add/delete plant to user's account
 $('.delete-plant').click(function(event){
 	event.preventDefault();
 	$.ajax({
@@ -8,6 +8,17 @@ $('.delete-plant').click(function(event){
 		window.location.reload(true);
 	});
 });
+
+$('.add-plant').click(function(event){
+	event.preventDefault();
+	$.ajax({
+		url: $(this).attr('href'),
+		method: 'POST'
+	}).success(function(data){
+		window.location.reload(true);
+	});
+});
+
 
 // Journal
 $('.delete-journal').click(function(event){

@@ -60,15 +60,15 @@ router.get('/search', function(req, res){
 	})
 });
 
-router.post('/', isLoggedIn, function(req, res) {
+router.post('/:id', isLoggedIn, function(req, res) {
 	db.plant.findOne({
-		where: {id: req.body.id}
+		where: {id: req.params.id}
 	}).then(function(plant){
 		if(plant){
 			plant.addUser(req.user);
 		}
 	}).then(function(plantAdded){
-		res.redirect(req.get('referer'));
+		res.send("Added");
 	}).catch(function(err){
 		console.log('An error happened', err);
 		res.send('Fail');
