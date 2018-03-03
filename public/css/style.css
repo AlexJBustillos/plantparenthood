@@ -4,7 +4,6 @@
 /* General body styles */
 * {
 	font-family: 'Raleway', sans-serif;
-/*	font-size: 1.10em;*/
 }
 
 body {
@@ -229,6 +228,7 @@ header {
 	line-height: 1em;
 	letter-spacing: 1px;
 	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
 }
 
 .sub-section {
@@ -240,20 +240,20 @@ header {
 }
 
 .sub-section h1 {
-	font-size: 3em;
+	font-size: 2.5em;
 	line-height: 1.10em;
 	text-align: left;
 }
 
 .sub-section p {
-	font-size: 1.25em;
+	font-size: 1.1em;
 	line-height: 2em;
 	text-align: left;
 }
 
 .big-number {
 	display: block;
-	font-size: 4em;
+	font-size: 3.5em;
 	line-height: .50em;
 	margin-top: .1em;
 	margin-bottom: .2em;
@@ -529,23 +529,11 @@ body > div:nth-child(2) > h3 > em {
 
 @media all and (max-width: 780px){
 	h1, .hero h1 {
-		font-size: 2.25em;
-	}
-
-	.hero {
-		padding: 40px;
+		font-size: 3em;
 	}
 
 	.plants-hero h1, .plants-hero.small h1, .profile-hero h1 {
 		font-size: 2.25em;
-	}
-
-	.hero h1 {
-		letter-spacing: 3px;
-	}
-
-	h2 {
-		font-size: 1em;
 	}
 
 	.ui.fluid.search.selection.dropdown {
@@ -574,19 +562,33 @@ body > div:nth-child(2) > h3 > em {
 
 }
 /* Mobile view */
-@media all and (min-device-width : 320px) and (max-device-width : 480px) {
+@media all and (max-width: 500px){
 
 	.container {
 		width: 100%;
 	}
 
-	header.hero {
-		background: url('/img/hero-2.jpg');
+	nav {
+		font-size: 1em;
 	}
 
-	.hero {
-		height: 95vh;
-		padding: 50px;
+	header.hero {
+		background: url('/img/hero-2.jpg');
+		background-position: bottom;
+		background-attachment: fixed;
+	}
+
+	.hero h2 {
+		font-size: 1.5em;
+	}
+
+	.sub-section {
+		min-height: 80vh;
+	}
+
+	.sub-section h1 {
+		font-size: 2em;
+		line-height: 1em;
 	}
 
 }
