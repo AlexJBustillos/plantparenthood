@@ -571,6 +571,10 @@ div.text p {
 		width: 100%;
 	}
 
+	header.hero {
+		background: url('/img/hero-2.jpg');
+	}
+
 	.hero {
 		height: 95vh;
 		padding: 50px;
