@@ -298,6 +298,8 @@ a.green-button:hover {
 .profile-hero {
 	background-position: 0 25%;
 	padding: 50px;
+	margin-top: -64px;
+	padding-top: 114px;
 	margin-bottom: 20px;
 }
 
@@ -479,19 +481,19 @@ body > div:nth-child(2) > h3 > em {
 
 /* Comments */
 .ui.comments {
-	font-size: 1.1em;
+	font-size: 1em;
 	text-align: left;
 	margin: 10px auto;
 	padding: 20px;
 }
 
-.ui.comments .comment {
+/*.ui.comments .comment {
 	padding: 10px;
 }
-
-div.text p {
+*/
+/*div.text p {
 	font-size: 1.25em;
-}
+}*/
 
 /* Tags */
 .ui.label {
@@ -506,7 +508,7 @@ div.text p {
 
 .ui.centered.grid>.column:not(.aligned):not(.row), .ui.centered.grid>.row>.column:not(.aligned), .ui.grid .centered.row>.column:not(.aligned) {
 	text-align: center;
-	padding: 20px !important;
+/*	padding: 20px !important;*/
 }
 
 @media all and (max-width: 920px){
