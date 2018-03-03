@@ -326,7 +326,7 @@ h1.plant-name {
 	margin-top: -3px;
 }
 
-.plant-image {
+.plant-image, .profile-pic {
 	border-radius: 150px;
 	width: 150px;
 	height: 150px;
@@ -343,11 +343,16 @@ h1.plant-name {
 }
 
 .plant-image img {
-	max-height: 250px;
-	min-height: 150px;
 	min-width: 150px;
-	max-width: 150px;
-	text-align: center;
+	min-height: 150px;
+	max-width: 250px;
+	max-height: 250px;
+}
+
+.profile-pic img {
+	height: 150px;
+	min-width: 150px;
+	max-width: 200px;
 }
 
 .placeholder-profile-pic {

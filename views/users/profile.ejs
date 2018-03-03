@@ -1,6 +1,6 @@
 <header class="profile-hero small">
 	<% if(user.userImg){ %>
-		<div class="plant-image"><img src="<%= user.userImg %>" alt="Profile Picture"></div>
+		<div class="profile-pic"><img src="<%= user.userImg %>" alt="Profile Picture"></div>
 		<a href="/users/profilepic" class="edit-pic"><button class="circular ui icon button"><i class="icon pencil alternate"></i></button></a>
 	<% } else { %>
 		<img src="/img/profpic-default.png" alt="Profile Picture" class="placeholder-profile-pic">
