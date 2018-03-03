@@ -576,6 +576,7 @@ body > div:nth-child(2) > h3 > em {
 		background: url('/img/hero-2.jpg');
 		background-position: bottom;
 		background-attachment: fixed;
+		background-size: cover;
 	}
 
 	.hero h2 {
