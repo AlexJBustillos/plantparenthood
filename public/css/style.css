@@ -419,6 +419,22 @@ h1.plant-name {
 	opacity: .5;
 }
 
+/* Back to top button */
+a.top {
+	text-align: center;
+	position: fixed;
+	display: none;
+	right: 20px;
+	bottom: 20px;
+	color: rgba(0,0,0,.8);
+	font-size: 2.5em;
+}
+
+a.top.scrolling {
+	display: inline-block;
+}
+
+
 /**************************/
 /* SEMANTIC UI OVERRIDES */
 /*************************/
@@ -487,14 +503,6 @@ body > div:nth-child(2) > h3 > em {
 	padding: 20px;
 }
 
-/*.ui.comments .comment {
-	padding: 10px;
-}
-*/
-/*div.text p {
-	font-size: 1.25em;
-}*/
-
 /* Tags */
 .ui.label {
 	background: #E3CB43;
@@ -508,7 +516,6 @@ body > div:nth-child(2) > h3 > em {
 
 .ui.centered.grid>.column:not(.aligned):not(.row), .ui.centered.grid>.row>.column:not(.aligned), .ui.grid .centered.row>.column:not(.aligned) {
 	text-align: center;
-/*	padding: 20px !important;*/
 }
 
 @media all and (max-width: 920px){

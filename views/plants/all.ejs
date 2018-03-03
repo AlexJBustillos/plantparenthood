@@ -8,7 +8,7 @@
 	<h2>Nothing in the database yet</h2>
 <% } else { %>
 	<div class="container">
-		<div class="ui stackable four column grid">
+		<div class="ui stackable four column grid all-plants">
 		<% plants.sort(function(a, b){ %>
 			<% var x = a.name.toLowerCase(); %>
     		<% var y = b.name.toLowerCase(); %>
@@ -42,5 +42,8 @@
 		<% }); %>
 	</div>
 </div>
-	<a href="#" alt="Back to Top">Top</a>
+<div class="ui large centered inline text loader">
+    Adding more content...
+ </div>
+<a href="#" alt="Back to Top" class="top"><i class="chevron circle up icon"></i></a>
 <% } %>

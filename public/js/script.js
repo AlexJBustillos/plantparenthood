@@ -29,9 +29,20 @@ function checkSize(){
     }
 }
 
+// Fades out flash messages
 var alert = document.getElementsByClassName('alert');
 if (alert) {
 	setTimeout(function(){ 
 		$('.alert').toggle("fade", 2000);
 	}, 2000);
 }
+
+$(window).scroll(function() {
+  var height = $(window).scrollTop();
+  if(height  > 300) {
+    $('.top').addClass('scrolling');
+  }
+  else {
+    $('.top').removeClass('scrolling');
+  }
+});
