@@ -77,7 +77,7 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 ##### 3. Integrated Semantic UI, in particular for grids and to allow for a more user-friendly search tool
 ##### 4. Built out CSS further for subpages
 
-Sprint 4
+### Sprint 4
 #### 1. Made custom responsive navbar with jQuery and CSS as Semantic UI lacks this component.
 #### 2. Added sticky back to top icon.
 #### 3. Further responsive adjustments.
