@@ -78,10 +78,10 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 ##### 4. Built out CSS further for subpages
 
 ### Sprint 4
-#### 1. Made custom responsive navbar with jQuery and CSS as Semantic UI lacks this component.
-#### 2. Added sticky back to top icon.
-#### 3. Further responsive adjustments.
-#### 4. Made better routing for adding/deleting pages from several areas of the site.
+##### 1. Made custom responsive navbar with jQuery and CSS as Semantic UI lacks this component.
+##### 2. Added sticky back to top icon.
+##### 3. Further responsive adjustments.
+##### 4. Made better routing for adding/deleting pages from several areas of the site.
 
 #### Backlog
   * More dynamic tag and water filtering on page (have a start in my code, but not there yet)
