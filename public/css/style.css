@@ -193,7 +193,7 @@ input[type="date"] {
 
 /* Headers and heros */
 header {
-	background: url('/img/hero-1.jpg');
+	background: url('/img/hero-large.jpg');
 	background-size: cover;	
 	color: #E3CB43;
 }
@@ -573,8 +573,8 @@ body > div:nth-child(2) > h3 > em {
 	}
 
 	header.hero {
-		background: url('/img/hero-2.jpg');
-		background-size: cover;
+		background: url('/img/hero-mobile.jpg');
+		background-size: 100%;
 		background-position: bottom;
 		background-attachment: fixed;
 		height: 90vh;
