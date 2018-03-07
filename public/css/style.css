@@ -532,6 +532,12 @@ body > div:nth-child(2) > h3 > em {
 	text-align: center;
 }
 
+@media all and (min-width: 1400px){
+	.container {
+		width: 65%;
+	}
+}
+
 @media all and (max-width: 920px){
 	.desktop-nav {
 		display: none;
