@@ -24,3 +24,121 @@ a {
   font-weight: 800; }
   a:hover {
     color: rgba(0, 0, 0, 0.8); }
+
+em {
+  font-weight: 400; }
+
+hr {
+  width: 60%;
+  background: rgba(0, 0, 0, 0.5);
+  height: 2px; }
+
+nav {
+  height: 65px;
+  text-align: left;
+  color: white;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 99;
+  font-size: .8em;
+  letter-spacing: 1px;
+  transition: content 2s; }
+  @media all and (max-width: 500px) {
+    nav {
+      font-size: 1em; } }
+  nav i {
+    font-size: 2em;
+    color: white; }
+  nav a {
+    color: white;
+    text-transform: uppercase;
+    margin: 0 10px; }
+    nav a:hover {
+      border-bottom: 2px solid white;
+      color: white; }
+    nav a.sub-nav {
+      font-weight: 400; }
+  nav .nav-hamburger {
+    display: none; }
+    nav .nav-hamburger:hover {
+      border-bottom: 0; }
+    @media all and (max-width: 920px) {
+      nav .nav-hamburger {
+        display: inline-block; } }
+  nav .nav-responsive {
+    display: none;
+    position: relative;
+    top: 64px;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.9); }
+  nav .nav-responsive a {
+    display: block;
+    padding: 30px 0; }
+    nav .nav-responsive a:hover {
+      border-bottom: 0; }
+  nav .nav-left, nav .nav-right {
+    display: inline-block;
+    position: absolute;
+    top: 23px; }
+  nav .nav-left {
+    text-align: left;
+    left: 20px; }
+  nav .nav-right {
+    text-align: right;
+    right: 20px; }
+  @media all and (max-width: 920px) {
+    nav .desktop-nav {
+      display: none; } }
+
+.container {
+  width: 85%;
+  margin: 30px auto; }
+  @media all and (min-width: 1400px) {
+    .container {
+      width: 55%; } }
+  @media all and (max-width: 780px) {
+    .container {
+      width: 90%; } }
+  @media all and (max-width: 500px) {
+    .container {
+      width: 100%; } }
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+  .site .site-content {
+    flex: 1;
+    padding-top: 64px; }
+
+.alert-success, .alert-error {
+  padding: 10px;
+  font-weight: 800;
+  position: absolute;
+  top: 64px;
+  width: 100%; }
+
+.alert-success {
+  background: #2B7D43;
+  color: white; }
+
+.alert-error {
+  background: #E3CB43;
+  color: rgba(0, 0, 0, 0.9); }
+
+footer {
+  margin-top: 20px;
+  background: #2B7D43;
+  color: white;
+  padding: 20px; }
+  footer h4, footer p {
+    text-align: left; }
+  footer a {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: .9em;
+    font-weight: 400px;
+    display: block; }

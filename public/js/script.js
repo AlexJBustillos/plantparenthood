@@ -30,10 +30,10 @@ function checkSize(){
 }
 
 // Fades out flash messages
-var alert = document.getElementsByClassName('alert');
+var alert = document.getElementsByClassName('alert-error') || document.getElementsByClassName('alert-success');
 if (alert) {
 	setTimeout(function(){ 
-		$('.alert').toggle("fade", 2000);
+		$(alert).toggle("fade", 2000);
 	}, 2000);
 }
 
