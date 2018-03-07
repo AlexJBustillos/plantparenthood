@@ -193,7 +193,7 @@ input[type="date"] {
 
 /* Headers and heros */
 header {
-	background: url('/img/hero-large.jpg');
+	background: url('/img/hero-large.jpg') no-repeat;
 	background-size: cover;	
 	color: #E3CB43;
 }
@@ -232,7 +232,7 @@ header {
 }
 
 .sub-section {
-	min-height: 90vh;
+	min-height: 55vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -583,7 +583,7 @@ body > div:nth-child(2) > h3 > em {
 	}
 
 	header.hero {
-		background: url('/img/hero-mobile.jpg');
+		background: url('/img/hero-mobile.jpg') no-repeat;
 		background-size: 100%;
 		background-position: bottom;
 		background-attachment: fixed;
@@ -592,10 +592,6 @@ body > div:nth-child(2) > h3 > em {
 
 	.hero h2 {
 		font-size: 1.5em;
-	}
-
-	.sub-section {
-		min-height: 80vh;
 	}
 
 	.sub-section h1 {
