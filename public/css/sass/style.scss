@@ -22,6 +22,9 @@ h1 {
 	font-size: 4em;
 	font-weight: 900 !important;
 	line-height: 1em
+	@media all and (max-width: 780px){
+		font-size: 3em;
+	}
 }
 
 h2 {
@@ -137,6 +140,7 @@ nav {
 .container {
 	width: 85%;
 	margin: 30px auto;
+
 	@media all and (min-width: 1400px){
 		width: 55%;
 	}
@@ -181,6 +185,117 @@ nav {
 	color: $black_color;
 }
 
+%input {
+	padding: 8px;
+	font-weight: 400;
+	margin: 5px;
+	font-family: $primary_font !important;
+}
+
+input {
+	&[type="date"], &[type="text"], &[type="password"] {
+		@extend %input;
+	}
+	&[type="date"] {
+		margin: 0 0 10px 0;
+		width: 175px;
+	}
+}
+
+textarea, .reply.form textarea, .ui.comments {
+	@extend %input;
+}
+
+header {
+	background: url('/img/hero-large.jpg') no-repeat;
+	background-size: cover;	
+	color: $yellow_color;
+
+	//Homepage header
+	&.hero {
+		background-position: center;
+		background-attachment: fixed;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+		margin-top: -64px;
+		padding-top: 64px;
+		h1 {
+			font-size: 5em;
+			letter-spacing: 3px;
+			position: relative;
+			line-height: 1em;
+			font-size: 5em;
+			display: inline-block;
+			text-transform: uppercase;
+			text-align: left;
+			@media all and (max-width: 780px){
+				font-size: 3em;
+			}
+		}
+		h2 {
+			display: inline-block;
+			color: white;
+			line-height: 1em;
+			letter-spacing: 1px;
+			font-family: $primary_font;
+			font-weight: 400;
+			@media all and (max-width: 500px){
+				font-size: 1.5em;
+			}
+		}
+		@media all and (max-width: 500px){
+			background: url('/img/hero-mobile.jpg') no-repeat;
+			background-size: cover;
+			background-position: bottom;
+			background-attachment: fixed;
+			height: 90vh;
+		}
+	}
+
+	// Header throughout most of site
+	&.plants-hero {
+		background-position: 0 40%;
+		padding: 50px;
+		margin-top: -64px;
+		padding-top: 114px;
+		h1 {
+			line-height: 1em;
+			letter-spacing: 3px;
+			font-size: 5em;
+			text-transform: uppercase;
+			@media all and (max-width: 780px){
+				font-size: 2.25em;
+			}
+		}	
+		&.small h1 {
+			font-size: 3em;
+			@media all and (max-width: 780px){
+				font-size: 2.25em;
+			}
+		}
+	}
+
+	// Profile page header
+	&.profile-hero {
+		background-position: 0 25%;
+		padding: 50px;
+		margin-top: -64px;
+		padding-top: 114px;
+		margin-bottom: 20px;
+		h1 {
+			line-height: 1em;
+			letter-spacing: 3px;
+			font-size: 3em;
+			text-transform: uppercase;
+			@media all and (max-width: 780px){
+				font-size: 2.25em;
+			}
+		}
+	}
+}
 
 footer {
 	margin-top: 20px;
