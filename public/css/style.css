@@ -584,7 +584,7 @@ body > div:nth-child(2) > h3 > em {
 
 	header.hero {
 		background: url('/img/hero-mobile.jpg') no-repeat;
-		background-size: 100%;
+		background-size: cover;
 		background-position: bottom;
 		background-attachment: fixed;
 		height: 90vh;
