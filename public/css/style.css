@@ -533,8 +533,9 @@ body > div:nth-child(2) > h3 > em {
 }
 
 @media all and (min-width: 1400px){
+
 	.container {
-		width: 65%;
+		width: 55%;
 	}
 }
 
