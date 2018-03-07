@@ -381,6 +381,10 @@ h1.plant-name {
     margin-right: -40px;
 }
 
+.all-plants .column {
+	padding-top: 35px !important;
+}
+
 .plant-grid-name {
 	margin: 20px;
 	font-size: 1.4em;
@@ -421,7 +425,7 @@ h1.plant-name {
 }
 
 .plant-icon-small {
-	max-height: 25px;
+	max-height: 16px;
 	opacity: .8;
 }
 
