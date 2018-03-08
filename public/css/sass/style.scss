@@ -6,13 +6,13 @@ $light_grey: #E8E8E8;
 $primary_font: 'Raleway', sans-serif;
 
 * {
-	font: $primary_font;
+	font-family: $primary_font;
 }
 
 body {
 	text-align: center;
 	min-height: 100%;
-	margin: 0 auto
+	margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,6 +25,7 @@ h1 {
 	line-height: 1em;
 	letter-spacing: 3px;
 	text-transform: uppercase;
+	display: block;
 	@media all and (max-width: 780px){
 		font-size: 2.25em;
 	}
@@ -95,7 +96,7 @@ nav {
 		&-left, &-right {
 			display: inline-block;
 			position: absolute;
-			top: 23px;
+			top: 25px;
 		}
 
 		&-left {
@@ -138,6 +139,24 @@ nav {
 				display: none;
 			}
 		}
+	}
+}
+
+footer {
+	margin-top: 20px;
+	background: $green_color;
+	color: white;
+	padding: 20px;
+
+	h4, p {
+		text-align: left;
+		font-weight: 700;
+	}
+
+	a {
+		color: $font_color;
+		font-size: .9em;
+		display: block;
 	}
 }
 
@@ -216,15 +235,15 @@ header {
 	margin-top: -64px;
 	padding-top: 64px;
 	margin-bottom: 20px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	
 	//Homepage header
 	&.hero {
 		background-position: center;
 		background-attachment: fixed;
 		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		h1 {
 			font-size: 5em;
@@ -275,6 +294,62 @@ header {
 	}
 }
 
+// Secondary section on homepage
+.sub-section {
+	min-height: 55vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: left;
+	@media all and (max-width: 780px){
+		padding: 5px 15px;
+	}
+	h1 {
+		font-size: 2.5em;
+		line-height: 1.10em;
+		text-align: left;
+		letter-spacing: 0px;
+		text-transform: none;
+		@media all and (max-width: 780px){
+			font-size: 2.5em;
+			line-height: inherit;
+		}
+		@media all and (max-width: 500px){
+			font-size: 2em;
+		}
+	}
+	p {
+		font-size: 1.1em;
+		line-height: 2em;
+		text-align: left;
+	}
+	.big-number {
+		display: block;
+		font-size: 3.5em;
+		line-height: .50em;
+		margin-top: .1em;
+		margin-bottom: .2em;
+		@media all and (max-width: 780px){
+			display: inline;
+			font-size: inherit;
+			line-height: inherit;
+		}
+	}
+}
+
+a.green-button {
+	display: inline-block;
+	margin-top: 5px;
+	padding: 15px 20px;
+	border-radius: 5px;
+	border: 2px solid #2B7D43;
+	&:hover {
+		background: #2B7D43;
+		color: white;
+	}
+}
+
+// Tags
 .tag-large {
 	background: $yellow_color;
 	color: $black_color;
@@ -288,17 +363,23 @@ header {
 	}
 }
 
-// Plant grid
+// Plant grid and plant details
 .plant {
-	&-name {
-		font-size: 2em;
-		text-transform: none;
+	&-grid .column {
+		padding-top: 35px !important;
 	}
 
-	&-botanical-name {
-		margin-top: -3px;
+	&-grid-name {
+		margin: 20px;
+		font-size: 1.4em;
+		font-family: $primary_font;
 	}
 
+	&-grid-botanical {
+		margin: 5px;
+	}
+
+	// Rounded plant images
 	&-image {
 		border-radius: 150px;
 		width: 150px;
@@ -318,7 +399,66 @@ header {
 			max-width: 250px;
 			max-height: 250px;
 		}
+
+		&-small {
+			border-radius: 120px;
+			width: 75px;
+			height: 75px;
+			position: relative;
+			bottom: 20px;
+			margin-bottom: -20px;
+			img {
+				min-height: 75px;
+				min-width: 75px;
+				max-height: 90px;
+				max-width: 90px;
+			}
+		}
 	}
+
+	// Icons
+	&-icon {
+		&-section {
+			white-space: nowrap;
+			display: block;
+			margin: 10px 0;
+		}
+
+		&-large {
+			max-height: 40px;
+			opacity: .8;
+			margin-bottom: -20px;
+		}
+
+		&-small {
+			max-height: 16px;
+			opacity: .8;
+		}
+
+		&-empty {
+			opacity: .5;
+		}
+	}
+
+	// Individual plant page
+	&-name {
+		font-size: 2em;
+		letter-spacing: 0px;
+		text-transform: none;
+	}
+
+	&-botanical-name {
+		margin-top: -3px;
+	}
+}
+
+p.no-image {
+	@extend .plant-image;
+	margin-top: 0;
+	background-color: #E8E8E8;
+	padding: 50px;
+	color: rgba(0,0,0,.8);
+	font-weight: 400;
 }
 
 .profile-pic {
@@ -330,28 +470,105 @@ header {
 	}
 }
 
-p.no-image {
-	@extend .plant-image;
-	background-color: $light_grey;
-	padding: 50px;
-	color: $font_color;
-	// font-weight: 400;
+.placeholder-profile-pic {
+	height: 150px;
+	margin-bottom: -20px;
+	filter: invert(100%);
+	opacity: .9;
 }
 
-footer {
-	margin-top: 20px;
-	background: $green_color;
-	color: white;
-	padding: 20px;
+.edit-pic {
+	position: relative;
+    right: 40px;
+    bottom: 10px;
+    margin-right: -40px;
+}
 
-	h4, p {
+// Back to top button
+a.top {
+	text-align: center;
+	position: fixed;
+	display: none;
+	right: 20px;
+	bottom: 20px;
+	color: $font_color;
+	font-size: 2.5em;
+	&.scrolling {
+		display: inline-block;
+	}
+}
+
+// SEMANTIC UI-SPECIFIC OVERRIDES
+.ui {
+	&.inverted.button {
+		margin-top: 15px;
+	}
+	&.secondary.button {
+		background: $font_color;
+		font-family: $primary_font !important;
+		margin: 10px;
+	}
+	&.basic.button, &.basic.buttons, &.labeled.icon.button {
+		font-family: $primary_font;
+		font-weight: 800;
+	}
+	&.fluid.search.selection.dropdown {
+		border: 0;
+		margin: 20px auto;
+		border-radius: 0;
+		background: white;
+		width: 55%;
+		font-size: 1.10em;
+		@media all and (max-width: 780px){
+			width: 100%;
+			font-size: .75em;
+		}
+	}
+	&.header+p {
+    	font-size: 1.25em;
+	}
+	&.comments {
+		font-size: 1em;
 		text-align: left;
+		margin: 10px auto;
+		padding: 20px;
 	}
+	&.label {
+		background: $yellow_color;
+		color: $black_color;
+		margin: 5px;
+		&.big {
+			margin: 10px;
+		}
+	}
+	&.centered.grid>.column:not(.aligned):not(.row), &.centered.grid>.row>.column:not(.aligned), &.grid .centered.row>.column:not(.aligned) {
+		text-align: center;
+	}	
+}
 
-	a {
-		color: $font_color;
-		font-size: .9em;
-		font-weight: 400px;
-		display: block;
+.button {
+	@extend .ui.basic.button;
+}
+
+.column, .four.wide.column {
+	text-align: center;
+}
+
+.avatar {
+	opacity: .8;
+	&:hover {
+		opacity: 1;
 	}
+}
+
+body > div:nth-child(2) > h3 > em {
+	position: relative;
+	bottom: 10px;
+	margin: 40px;
+}
+
+body > header > form > div > div.menu.transition.visible {
+	border: 0;
+	background: white;
+	border-radius: 0;
 }

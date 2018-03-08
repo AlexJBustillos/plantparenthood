@@ -42,7 +42,7 @@
 			<% var lightMax = 4; %>
 			<% for(var i = 1; i <= lightMax; i++) { %>
 				<% var imageSrc = plant.light >= i ? '/img/sun-full.png' : '/img/sun-empty.png' %>
-				<% var imageClass = plant.light >= i ? 'plant-icon-large' : 'plant-icon-large empty-icon' %>
+				<% var imageClass = plant.light >= i ? 'plant-icon-large' : 'plant-icon-large plant-icon-empty' %>
 				<img src="<%= imageSrc %>" class="<%= imageClass %>" alt="Light">
 			<% } %>
 			<h3>Light</h3>
@@ -64,7 +64,7 @@
 				<% if(plant.water >= i) { %>
 					<img src="/img/water-full.png" class="plant-icon-large" alt="Water">
 				<% } else { %>
-					<img src="/img/water-empty.png" class="plant-icon-large empty-icon" alt="Water">
+					<img src="/img/water-empty.png" class="plant-icon-large plant-icon-empty" alt="Water">
 				<% } %>
 			<% } %>
 			<h3>Water</h3>
