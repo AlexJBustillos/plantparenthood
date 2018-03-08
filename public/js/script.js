@@ -29,14 +29,6 @@ function checkSize(){
     }
 }
 
-// Fades out flash messages
-var alert = document.getElementsByClassName('alert');
-if (alert) {
-	setTimeout(function(){ 
-		$('.alert').toggle("fade", 2000);
-	}, 2000);
-}
-
 $(window).scroll(function() {
   var height = $(window).scrollTop();
   if(height  > 300) {
@@ -46,3 +38,13 @@ $(window).scroll(function() {
     $('.top').removeClass('scrolling');
   }
 });
+
+$( document ).ready(function() {
+  var alert = $(document).find('.alert-success, .alert-error');
+  if (alert) {
+    setTimeout(function(){ 
+      $(alert).toggle("fade", 2000);
+    }, 2000);
+  }
+});
+

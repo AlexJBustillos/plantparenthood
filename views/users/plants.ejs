@@ -6,7 +6,7 @@
 	<h2>No plants added</h2>
 	<p><a href="/plants">Browse all plants</a></p>
 <% } else { %>
-	<div class="ui stackable four column grid">
+	<div class="ui stackable four column grid plant-grid">
 		<% user.plants.sort(function(a, b){ %>
 			<% var x = a.name.toLowerCase(); %>
     		<% var y = b.name.toLowerCase(); %>

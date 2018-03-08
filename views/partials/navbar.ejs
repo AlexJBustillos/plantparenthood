@@ -1,18 +1,18 @@
 <nav>
   <div class="nav-left">
     <a href="/">Plant Parenthood</a>
-    <a href="/plants" class="desktop-nav">Plants</a>
+    <a href="/plants" class="nav-desktop">Plants</a>
   </div>
   <div class="nav-right">
     <a href="#" class="nav-hamburger"><i class="sidebar icon"></i></a>
     <% if(!currentUser){ %>
-      <a href="/auth/signup" class="desktop-nav">Signup</a>
-      <a href="/auth/login" class="desktop-nav">Login</a>
+      <a href="/auth/signup" class="nav-desktop">Signup</a>
+      <a href="/auth/login" class="nav-desktop">Login</a>
     <% } else { %>
-      <a href="/users/profile" class="desktop-nav"><i class="user icon"></i> Profile</a>
-      <a href="/users/plants" class="sub-nav desktop-nav">Your Plants</a>
-      <a href="/users/journal" class="sub-nav desktop-nav">Journal</a>
-      <a href="/auth/logout" class="sub-nav desktop-nav">Logout</a>
+      <a href="/users/profile" class="nav-desktop"><i class="user icon"></i> Profile</a>
+      <a href="/users/plants" class="sub-nav nav-desktop">Your Plants</a>
+      <a href="/users/journal" class="sub-nav nav-desktop">Journal</a>
+      <a href="/auth/logout" class="sub-nav nav-desktop">Logout</a>
     <% } %>  
     </div>
     <div class="nav-responsive">
