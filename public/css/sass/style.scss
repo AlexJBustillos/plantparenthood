@@ -2,6 +2,7 @@ $green_color: #2B7D43;
 $yellow_color: #E3CB43;
 $font_color: rgba(0,0,0,.8);
 $black_color: rgba(0,0,0,.9);
+$light_grey: #E8E8E8;
 $primary_font: 'Raleway', sans-serif;
 
 * {
@@ -19,11 +20,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 4em;
+	font-size: 3em;
 	font-weight: 900 !important;
-	line-height: 1em
+	line-height: 1em;
+	letter-spacing: 3px;
+	text-transform: uppercase;
 	@media all and (max-width: 780px){
-		font-size: 3em;
+		font-size: 2.25em;
 	}
 }
 
@@ -88,51 +91,52 @@ nav {
 		}
 	}
 
-	.nav-hamburger {
-		display: none;
-		&:hover {
-			border-bottom: 0;
-		}
-		@media all and (max-width: 920px){
+	.nav {
+		&-left, &-right {
 			display: inline-block;
+			position: absolute;
+			top: 23px;
 		}
-	}
 
-	.nav-responsive {
-		display: none;
-		position: relative;
-		top: 64px;
-		font-size: 1em;
-		background: $black_color;
-	}
-
-	.nav-responsive a {
-		display: block;
-		padding: 30px 0;
-		&:hover {
-			border-bottom: 0;
+		&-left {
+			text-align: left;
+			left: 20px;
 		}
-	}
 
-	.nav-left, .nav-right {
-		display: inline-block;
-		position: absolute;
-		top: 23px;
-	}
+		&-right {
+			text-align: right;
+			right: 20px;
+		}
 
-	.nav-left {
-		text-align: left;
-		left: 20px;
-	}
-
-	.nav-right {
-		text-align: right;
-		right: 20px;
-	}
-
-	.desktop-nav {
-		@media all and (max-width: 920px){
+		&-hamburger {
 			display: none;
+			&:hover {
+				border-bottom: 0;
+			}
+			@media all and (max-width: 920px){
+				display: inline-block;
+			}
+		}
+
+		&-responsive {
+			display: none;
+			position: relative;
+			top: 64px;
+			font-size: 1em;
+			background: $black_color;
+			a {
+				display: block;
+				padding: 30px 0;
+				&:hover {
+					border-bottom: 0;
+				}
+			}
+		}
+
+		&-desktop {
+			@media all and (max-width: 920px){
+				display: none;
+			}
 		}
 	}
 }
@@ -162,7 +166,6 @@ nav {
 		flex: 1;
 		padding-top: 64px;
 	}
-
 }
 
 %alert {
@@ -210,26 +213,23 @@ header {
 	background: url('/img/hero-large.jpg') no-repeat;
 	background-size: cover;	
 	color: $yellow_color;
-
+	margin-top: -64px;
+	padding-top: 64px;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
 	//Homepage header
 	&.hero {
 		background-position: center;
 		background-attachment: fixed;
 		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: 20px;
-		margin-top: -64px;
-		padding-top: 64px;
+
 		h1 {
 			font-size: 5em;
-			letter-spacing: 3px;
 			position: relative;
-			line-height: 1em;
-			font-size: 5em;
 			display: inline-block;
-			text-transform: uppercase;
 			text-align: left;
 			@media all and (max-width: 780px){
 				font-size: 3em;
@@ -240,7 +240,6 @@ header {
 			color: white;
 			line-height: 1em;
 			letter-spacing: 1px;
-			font-family: $primary_font;
 			font-weight: 400;
 			@media all and (max-width: 500px){
 				font-size: 1.5em;
@@ -259,22 +258,12 @@ header {
 	&.plants-hero {
 		background-position: 0 40%;
 		padding: 50px;
-		margin-top: -64px;
 		padding-top: 114px;
 		h1 {
-			line-height: 1em;
-			letter-spacing: 3px;
 			font-size: 5em;
-			text-transform: uppercase;
-			@media all and (max-width: 780px){
-				font-size: 2.25em;
-			}
 		}	
 		&.small h1 {
 			font-size: 3em;
-			@media all and (max-width: 780px){
-				font-size: 2.25em;
-			}
 		}
 	}
 
@@ -282,19 +271,71 @@ header {
 	&.profile-hero {
 		background-position: 0 25%;
 		padding: 50px;
-		margin-top: -64px;
 		padding-top: 114px;
-		margin-bottom: 20px;
-		h1 {
-			line-height: 1em;
-			letter-spacing: 3px;
-			font-size: 3em;
-			text-transform: uppercase;
-			@media all and (max-width: 780px){
-				font-size: 2.25em;
-			}
+	}
+}
+
+.tag-large {
+	background: $yellow_color;
+	color: $black_color;
+	padding: 10px;
+	line-height: 3em;
+	font-weight: 800;
+	border-radius: 10px;
+	white-space: nowrap;
+	&:hover {
+		background: white;
+	}
+}
+
+// Plant grid
+.plant {
+	&-name {
+		font-size: 2em;
+		text-transform: none;
+	}
+
+	&-botanical-name {
+		margin-top: -3px;
+	}
+
+	&-image {
+		border-radius: 150px;
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+		text-align: center;
+		display: inline-block;
+		margin-top: 20px;
+		opacity: .9;
+		z-index: -1;
+		&:hover {
+			opacity: 1;
+		}
+		img {
+			min-width: 150px;
+			min-height: 150px;
+			max-width: 250px;
+			max-height: 250px;
 		}
 	}
+}
+
+.profile-pic {
+	@extend .plant-image;
+	img {
+		height: 150px;
+		min-width: 150px;
+		max-width: 200px;
+	}
+}
+
+p.no-image {
+	@extend .plant-image;
+	background-color: $light_grey;
+	padding: 50px;
+	color: $font_color;
+	// font-weight: 400;
 }
 
 footer {
