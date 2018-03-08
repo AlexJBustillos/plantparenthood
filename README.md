@@ -24,6 +24,7 @@ Become a better plant parent. Plant Parenthood is a database of over 200+ common
 * PostgreSQL
 * Sequelize
 * jQuery
+* SASS
 * Semantic UI
 
 ## User Stories
@@ -82,6 +83,7 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 ##### 2. Added sticky back to top icon.
 ##### 3. Further responsive adjustments.
 ##### 4. Made better routing for adding/deleting pages from several areas of the site.
+##### 5. Rebuilt CSS using SASS.
 
 #### Backlog
   * More dynamic tag and water filtering on page (have a start in my code, but not there yet)
