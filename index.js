@@ -45,3 +45,5 @@ app.use('/users/journal', require('./controllers/journal'));
 
 // Listen port where hosted or find port 3000
 app.listen(process.env.PORT || 3000);
+
+module.exports = app;

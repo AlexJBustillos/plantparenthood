@@ -15,7 +15,9 @@ router.get('/', function(req, res){
 	db.tag.findAll().then(function(tags){
 		console.log("found tags",tags);
 		tags = tags;
-	});
+	}).catch(function(err){
+		console.log("No tags");
+	})
 
 	db.plant.findAll().then(function(plants){
 		if(req.user){
@@ -35,7 +37,7 @@ router.get('/', function(req, res){
 					plants: plants,
 					tags: tags
 				});
-			})
+			});
 		}
 		else {
 			res.render('plants/all', {
