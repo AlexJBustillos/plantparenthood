@@ -30,9 +30,6 @@ router.get('/signup', function(req, res){
 
 // Where signup form data gets sent
 router.post('/signup', function(req, res, next){
-	// console.log(req.body);
-	// res.send('signup post route coming soon');
-
 	db.user.findOrCreate({
 		where: { email: req.body.email },
 		defaults: {

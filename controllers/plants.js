@@ -10,15 +10,6 @@ var request = require('request');
 var router = express.Router();
 
 router.get('/', function(req, res){
-	var tags;
-
-	db.tag.findAll().then(function(tags){
-		console.log("found tags",tags);
-		tags = tags;
-	}).catch(function(err){
-		console.log("No tags");
-	})
-
 	db.plant.findAll().then(function(plants){
 		if(req.user){
 			db.user.findOne({
@@ -29,22 +20,20 @@ router.get('/', function(req, res){
 				res.render('plants/all', {
 					plants: plants,
 					userPlants: user.plants,
-					tags: tags
 				});	
+				done();
 			}).catch(function(err){
 				console.log("no user found");
 				res.render('plants/all', {
-					plants: plants,
-					tags: tags
+					plants: plants
 				});
-			});
+			})
 		}
 		else {
-			res.render('plants/all', {
-				plants: plants,
-				tags: tags
-			});	
+			res.render('plants/all', {plants: plants});	
 		}
+	}).catch(function(err){
+		res.send(err);
 	});
 });
 
@@ -120,7 +109,9 @@ router.get('/:id', function(req, res){
 				plant: plant
 			});
 		}		
-	});
+	}).catch(function(err){
+		res.send(err);
+	})
 });
 
 // The below is a work in progress, deciding the way I want to filter
