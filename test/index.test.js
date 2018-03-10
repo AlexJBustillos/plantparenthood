@@ -10,30 +10,13 @@ before(function(done){
   authenticatedUser
     .post('/auth/login')
     .set('content-type', 'application/x-www-form-urlencoded')
-    .send({
-    	email: 'test@testing.com',
-    	password: 'test123'
-    })
+    .send({email: 'test@testing.com'})
+    .send({password: 'test123'})
     .end(function(err, response){
       expect(response.statusCode).to.equal(302);
       expect('Location', '/users/profile');
       done();
     });
-});
-
-describe('GET /users/profile', function(done){
-//addresses 1st bullet point: if the user is logged in we should get a 200 status code
-  it('should return a 200 response if the user is logged in', function(done){
-    authenticatedUser.get('/users/profile')
-    .expect('Location', '/users/profile')
-    .expect(200, done);
-  });
-//addresses 2nd bullet point: if the user is not logged in we should get a 302 response code and be directed to the /login page
-  it('should return a 302 response and redirect to /login', function(done){
-    request(app).get('/users/profile')
-    .expect('Location', '/auth/login')
-    .expect(302, done);
-  });
 });
 
 describe('GET /', function() {
@@ -63,6 +46,36 @@ describe('GET /plants', function() {
   });
 });
 
+
+describe('GET /users', function(done){
+  it('/profile should return a 200 response if logged in', function(done){
+    authenticatedUser.get('/users/profile')
+    .expect(200, done);
+  });
+  it('/profile should return 302 and redirect if not logged in', function(done){
+    request(app).get('/users/profile')
+    .expect('Location', '/auth/login')
+    .expect(302, done);
+  });
+  it('/profilepic should return a 200 response if logged in', function(done){
+    authenticatedUser.get('/users/profilepic')
+    .expect(200, done);
+  });
+  it('/profilepic should return 302 and redirect if not logged in', function(done){
+    request(app).get('/users/profilepic')
+    .expect('Location', '/auth/login')
+    .expect(302, done);
+  });
+  it('/plants should return a 200 response if logged in', function(done){
+    authenticatedUser.get('/users/plants')
+    .expect(200, done);
+  });
+  it('/plants should return 302 and redirect if not logged in', function(done){
+    request(app).get('/users/plants')
+    .expect('Location', '/auth/login')
+    .expect(302, done);
+  });
+});
 
 describe('GET /auth', function() {
   it('/signup should return a 200 response', function(done) {
