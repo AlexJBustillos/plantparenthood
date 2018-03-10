@@ -80,7 +80,7 @@ router.get('/plants', isLoggedIn, function(req, res){
 router.post('/lastwatered', isLoggedIn, function(req, res) {
 	var lastWatered = req.body.lastWatered;
 	db.user.findOne({
-		where: {id: req.body.id}
+		where: {id: req.user.id}
 	}).then(function(user){
 		user.lastWatered = lastWatered;
 		user.save();
