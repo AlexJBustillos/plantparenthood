@@ -15,12 +15,6 @@ router.post('/login', passport.authenticate('local', {
 	successFlash: 'Login successful',
 	failureRedirect: '/auth/login',
 	failureFlash: 'Username or password is incorrect'
-
-	// Started w/ the below:
-	// console.log('req.body is ' + req.body);
-	// res.send('login post route coming soon');
-	// After testing route, once other stuff configed, took out req, res
-	// Then, added a call to passport
 }));
 
 // Signup form page
@@ -51,6 +45,7 @@ router.post('/signup', function(req, res, next){
 		}
 	}).catch(function(err){
 		req.flash('error', err.message);
+		res.send(err);
 		res.redirect('/auth/signup');
 	});
 });
