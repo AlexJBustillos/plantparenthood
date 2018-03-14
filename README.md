@@ -93,46 +93,53 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
   * Lazy load functionality for longer pages
 
 ## Routes and Models
-**Routes**
-| CRUD | Route | Function |
-|---|---|---|
-| `GET` |  `/` | home page that welcomes user |
-| `GET` |  `/auth/login` | renders login page |
-| `POST` | `/auth/login` | signs in existing user |
-| `GET` | `/auth/signup` | renders sign up page |
-| `POST` | `/auth/signup` | creates new user in database |
-| `GET` | `/auth/logout` | logs out user | 
-| `GET` | `/plants` | loads full plant database |
-| `GET` | `/plants/:id` | loads individual plant |
-| `POST` | `/plants` | associates plant with user in the database (adds to their list of plants) |
-| `DELETE` | `/plants/:id` | removes association of user and plant in the database (removes from list of plants) |
-| `GET` | `/plants/search` | runs a query for the plant based on the user's search input |
-| `GET` | `/plants/notfound` | loads 404 page when user searches for a plant that doesn't exist |
-| `POST` | `/comments` | adds comment to individual plant |
-| `DELETE` `/comments/:id` | removes comment from individual plant |
-| `GET` | `/journal` | renders full page of all journal entries |
-| `GET` | `/journal/new` | renders page for user to post a new journal entry |
-| `GET` | `/journal/:id` | renders page for individual journal entry |
-| `POST` | `/journal` | adds entry to user's journal |
-| `GET` | `/journal/edit/:id` | renders page for user to edit an existing journal entry |
-| `PUT` | `/journal/:id` | edits journal entry in database |
-| `DELETE` | `/journal/:id` | deletes journal entry from database |
-| `GET` | `/tags/:id` | renders all plants for the selected tag |
-| `GET` | `/users/profile` | renders user's profile page when logged in |
-| `GET` | `/users/plants` | renders page with user's full collection of saved plants |
-| `GET` | `/users/profilepic` | renders page to update user's profile picture |
-| `POST` | `/users/profile` | uploads user's new profile picture through Cloudinary |
-| `POST` | `/users/lastwatered` | edits the date in the database when user last checked on their plants |
-
-**Models**
+* **Routes**
+  * Index
+    * `GET /` - home page that welcomes user
+  * Auth
+    * `GET /auth/login` - renders login page
+    * `POST /auth/login` - signs in existing user 
+    * `GET /auth/signup` - renders sign up page  
+    * `POST /auth/signup` - creates new user in database 
+    * `GET /auth/logout` - logs out user 
+  * Plants
+    * `GET /plants` - loads full plant database
+    * `GET /plants/:id` - loads individual plant
+    * `POST /plants` - associates plant with user in the database (adds to their list of plants)
+    * `DELETE /plants/:id` - removes association of user and plant in the database (removes from list of plants)
+    * `GET /plants/search` - runs a query for the plant based on the user's search input
+    * `GET /plants/notfound` - loads 404 page when user searches for a plant that doesn't exist
+  * Comments
+    * `POST /comments` - adds comment to individual plant
+    * `DELETE /comments/:id` - removes comment from individual plant
+  * Journal
+    * `GET /journal` - renders full page of all journal entries
+    * `GET /journal/new` - renders page for user to post a new journal entry
+    * `GET /journal/:id` - renders page for individual journal entry
+    * `POST /journal` - adds entry to user's journal
+    * `GET /journal/edit/:id` - renders page for user to edit an existing journal entry
+    * `PUT /journal/:id` - edits journal entry in database
+    * `DELETE /journal/:id` - deletes journal entry from database
+  * Tags
+    * `GET /tags/:id` - renders all plants for the selected tag
+  * Users
+    * `GET /users/profile` - renders user's profile page when logged in
+    * `GET /users/plants` - renders page with user's full collection of saved plants
+    * `GET /users/profilepic` - renders page to update user's profile picture
+    * `POST /users/profile` - uploads user's new profile picture through Cloudinary
+    * `POST /users/lastwatered` - edits the date in the database when user last checked on their plants
+* **Models**
 (Note: some fields not listed below as they are not currently utilized)
-| Model | Schema | Assocations |
-|---|---|---|
-| Comment | content, userId, authorName, plantId, imageUrl | Belongs to plants and users |
-| Journal | title, content, useId, imageUrl | Belongs to user |
-| Plant | name, botanicalName, light, temperature, humidity, water, soil, imageUrl | Belongs to many users, belongs to many tags, has many comments |
-| Tag | content | Belongs to many plants |
-| User | name, email, password, zipcode, userImg, lastWatered | Belongs to many plants, has many journals, has many comments |
+  * Comment - content, userId, authorName, plantId, imageUrl
+    * Belongs to plants and users
+  * Journal - title, content, useId, imageUrl
+    * Belongs to user
+  * Plant - name, botanicalName, light, temperature, humidity, water, soil, imageUrl
+    * Belongs to many users, belongs to many tags, has many comments
+  * Tag - content
+    * Belongs to many plants
+  * User - name, email, password, zipcode, userImg, lastWatered
+    * Belongs to many plants, has many journals, has many comments
 
 ## Steps to Setting Up
 If you'd like to set this project up on your own local server:
