@@ -95,7 +95,7 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 ## Routes and Models
 **Routes**
 | CRUD | Route | Function |
-| :---: | :---: | :---: |
+|---|---|---|
 | `GET` |  `/` | home page that welcomes user |
 | `GET` |  `/auth/login` | renders login page |
 | `POST` | `/auth/login` | signs in existing user |
@@ -127,7 +127,7 @@ Used Cheerio to pull plant care rankings out  of a research table, as well as im
 **Models**
 (Note: some fields not listed below as they are not currently utilized)
 | Model | Schema | Assocations |
-| :---: | :---: | :---: | 
+|---|---|---|
 | Comment | content, userId, authorName, plantId, imageUrl | Belongs to plants and users |
 | Journal | title, content, useId, imageUrl | Belongs to user |
 | Plant | name, botanicalName, light, temperature, humidity, water, soil, imageUrl | Belongs to many users, belongs to many tags, has many comments |
