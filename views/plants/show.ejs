@@ -7,8 +7,8 @@
 		<% if (plant.imageUrl){ %>
 			<img src="<%= plant.imageUrl %>" alt="<%= plant.name %>"></p>
 		<% } else { %>
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/220px-Sedum_rubrotinctum.jpg" alt="Placeholder"></p>
-				<% } %>
+			<p class="no-image">Image Coming Soon</p>
+		<% } %>	
 	</div>
 	<h1 class="plant-name"><%= plant.name %></h1>
 	<h3 class="plant-botanical-name"><em><%= plant.botanicalName %></em></h3>
