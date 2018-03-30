@@ -15,17 +15,7 @@
 	<div>
 		<br>
 		<% if(currentUser){ %>
-
-			<% if (userPlants){ %>
-				<% var match = userPlants.find(o => o.name === plant.name) %>
-			<% } %>
-					
-	     	<% if (match){ %>
-	       		<a href="/plants/<%= plant.id %>" class="delete-plant"><button class="ui labeled icon tiny basic button"><i class="remove icon"></i>Delete Plant</button></a>
-	     	<% } else { %>
-	     		<a href="/plants/<%= plant.id %>" class="add-plant"><button class="ui labeled icon tiny button"><i class="plus icon"></i>Add Plant</button></a>
-	      	<% } %>
-		
+	    	<a href="/plants/<%= plant.id %>" class="add-plant"><button class="ui labeled icon tiny button"><i class="plus icon"></i>Add Plant</button></a>
 		<% } else { %>
 			<a href="/auth/login">
 				<button class="ui labeled icon tiny button">

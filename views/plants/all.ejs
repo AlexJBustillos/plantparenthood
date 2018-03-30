@@ -19,17 +19,7 @@
 			<div class="column">
 				<% include ../partials/plantgrid %>
 				<% if(currentUser){ %>
-
-					<% if (userPlants){ %>
-						<% var match = userPlants.find(o => o.name === item.name) %>
-					<% } %>
-					
-	     			<% if (match) { %>
-	       				<a href="/plants/<%= item.id %>" class="delete-plant">
-							<button class="ui labeled icon mini basic button"><i class="remove icon"></i>Delete Plant</button></a>
-	     			<% } else { %>
-	        			<a href="/plants/<%= item.id %>" class="add-plant"><button class="ui labeled icon mini button"><i class="plus icon"></i>Add Plant</button></a>
-	      			<% } %>				
+	        		<a href="/plants/<%= item.id %>" class="add-plant"><button class="ui labeled icon mini button"><i class="plus icon"></i>Add Plant</button></a>			
 				<% } else { %>
 					<a href="/auth/login">
 						<button class="ui labeled icon mini button">

@@ -11,27 +11,35 @@ var router = express.Router();
 
 router.get('/', function(req, res){
 	db.plant.findAll().then(function(plants){
-		if(req.user){
-			db.user.findOne({
-				where: {id: req.user.id},
-				include: [db.plant]
-			}).then(function(user){
-				console.log("found user");
-				res.render('plants/all', {
-					plants: plants,
-					userPlants: user.plants,
-				});	
-				done();
-			}).catch(function(err){
-				console.log("no user found");
-				res.render('plants/all', {
-					plants: plants
-				});
-			})
-		}
-		else {
+		// if(req.user){
+		// 	db.user.findOne({
+		// 		where: {id: req.user.id},
+		// 		include: [db.plant]
+		// 	}).then(function(user){
+		// 		console.log("found user");
+		// 		// if(user.plants.length > 0) {
+		// 		// 	res.render('plants/all', {
+		// 		// 		plants: plants,
+		// 		// 		userPlants: user.plants
+		// 		// 	});	
+		// 		// }
+		// 		// else {
+		// 			res.render('plants/all', {
+		// 				plants: plants
+		// 				// userPlants: ''
+		// 			});	
+		// 		// }
+		// 		done();
+		// 	}).catch(function(err){
+		// 		console.log("no user found");
+		// 		res.render('plants/all', {
+		// 			plants: plants
+		// 		});
+		// 	})
+		// }
+		// else {
 			res.render('plants/all', {plants: plants});	
-		}
+		// }
 	}).catch(function(err){
 		res.send(err);
 	});
